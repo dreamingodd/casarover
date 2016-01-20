@@ -1,0 +1,125 @@
+/*个人主页*/
+.person-main {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.head-pic {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  margin-top: 30px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  border-radius: 150px;
+  background: #ffffff;
+}
+.head-pic img {
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
+  border: 6px solid #ffffff;
+}
+.name {
+  font-weight: normal;
+  font-size: 20px;
+  color: #333;
+  text-align: center;
+}
+.name input {
+  display: none;
+}
+.name-change span {
+  display: none;
+}
+.name-change input {
+  display: block;
+}
+.name-change .form-control {
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
+.person-message {
+  background: #ffffff;
+  border-bottom: 1px solid #d7d7d7;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
+}
+.person-message .list {
+  line-height: 50px;
+  font-size: 20px;
+  height: 50px;
+  border-bottom: 1px solid #eee;
+}
+.phone #num {
+  color: #ff8c00;
+}
+.phone #get-code {
+  display: none;
+}
+.phone .form-control {
+  display: none;
+  float: left;
+  margin-top: 11px;
+  width: 150px;
+}
+.phone-change #num {
+  display: none;
+}
+.phone-change #get-code {
+  display: inline-block;
+}
+.phone-change #change-phone {
+  display: none;
+}
+.phone-change .form-control {
+  display: block;
+  float: left;
+  margin-top: 11px;
+  width: 150px;
+}
+.message-main {
+  width: 80%;
+  margin: 0 auto;
+  padding-left: 60px;
+}
+.message-main .save {
+  margin-top: 20px;
+  width: 70px;
+  margin-bottom: 50px;
+}
+.card {
+  width: 300px;
+  height: 150px;
+  overflow: hidden;
+  float: left;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #d7d7d7;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+}
+.card p {
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: normal;
+  text-align: center;
+  line-height: 150px;
+}
+/*头像选择控件*/
+.head-pic a {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
+}
+.head-pic a input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 100px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}

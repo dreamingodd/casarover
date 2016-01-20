@@ -1,0 +1,1 @@
+if exist abc\1.txt echo 10

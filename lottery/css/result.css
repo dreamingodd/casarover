@@ -1,0 +1,150 @@
+*{
+    margin:0;padding:0;
+}
+body{
+    /*font-family: "微软雅黑";*/
+    font-family: "FangSong";
+}
+.head-pic{
+    padding-left: 1em;
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+.slogn{
+    width: 30%;
+    height: 100%;
+    float: left;
+    color: #8c8c8c;
+    line-height: 40px;
+    padding-left: 10px;
+}
+.us{
+    float: right;
+    line-height: 40px;
+    margin-right: 1em;
+    border: 1px solid #eee;
+    color: #ffffff;
+    background: #6699CC;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.05);
+    margin-bottom: 2px;
+}
+.us a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.main{
+    width: 95%;
+    margin: 0 auto;
+    height: 100%;
+    overflow: hidden;
+    background: #ffffff
+}
+.luck img{
+    display: block;
+    vertical-align:bottom;
+}
+.luck-mess{
+    width: 80%;
+    margin:-2px auto;
+    padding: 20px 10px;
+    line-height: 24px;
+    background: #D43B24;
+    color: #FFDD95;
+}
+.luck-mess p{
+    padding-left: 30px;
+}
+.joke{
+    border: 28px solid rgb(255, 129, 36);
+    border-image-source: url('../photo/bg.png');
+    border-image-slice: 28;
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    color: rgb(123, 123, 111);
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.joke p{
+    text-align:left;
+    margin-left:10px;
+}
+.place{
+    margin-bottom: 10px;
+    text-align: center;
+}
+.place h3{
+    text-align: center;
+    font-size: 18px;
+    line-height: 28.8px;
+}
+.place .pic{
+    width: 70%;
+    margin: 0 auto;
+}
+.reward-mess{
+    color: rgb(33, 33, 33);
+    margin: -10em auto 0px 2.2em;
+    padding: 30px;
+    border: 1px solid rgb(245, 245, 245);
+    box-shadow: rgb(117, 117, 117) 0px 0px 6px;
+    box-sizing: border-box;
+    background-color: rgb(254, 254, 255);
+}
+.reward-mess p{
+    padding-left: 30px;
+}
+section{
+    width: 40%;
+    box-sizing: border-box;
+    padding-top: 2px;
+    padding-right: 2px;
+    padding-left: 2px;
+    border-top-width: 3px;
+    border-top-style: solid;
+    border-top-color: rgb(33, 33, 34);
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(33, 33, 34);
+    display: inline-block;
+    data-width="40%";
+    font-size:12px;
+}
+.phone, .address{
+    font-size: 14px;
+}
+#input-phone{
+    border: 1px solid #eee;
+    color: #ffffff;
+    background: #6699CC;
+    line-height: 40px;
+}
+.get-phone{
+    text-align: center;
+    color: red;
+    margin-bottom: 1em;
+}
+.get-phone input{
+    height: 2em;
+}
+.full{
+    padding-top: 10px;
+    height: 200px;
+    width: 95%;
+    background: #CCCCFF;
+    font-size: 20px;
+    padding-top: 50px;
+    position: absolute;
+    z-index: 999;
+    text-align: center;
+    display: none;
+}

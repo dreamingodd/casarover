@@ -1,0 +1,178 @@
+/*index部分*/
+.map-img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+.map-img svg {
+  margin-left: -30px;
+}
+@media screen and (min-width: 500px) {
+  .theme-two {
+    display: none;
+  }
+}
+.theme-two {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.theme-two .col-md-4 {
+  margin-top: 20px;
+}
+.vertical > a {
+  display: inline-block;
+  margin: 22px 0;
+  margin-top: 22px;
+  margin-right: 0px;
+  margin-bottom: 22px;
+  margin-left: 0px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: large;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+.nav-right {
+  float: right;
+  width: 317px;
+  text-align: center;
+}
+.middle-tab {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.content_tabs {
+  width: 1000px;
+  height: 72px;
+  float: right;
+  background: url(../image/content_tab.gif);
+}
+.content_tabs span {
+  width: 140px;
+  height: 72px;
+  float: left;
+  font-size: 18px;
+  text-align: center;
+  line-height: 72px;
+  color: #fff;
+  display: block;
+}
+.content_tabs_inner {
+  margin-left: 300px;
+}
+.content_tab_active {
+  background-image: url(../image/content_tab_hover.gif);
+}
+.content_left {
+  width: 787px;
+  height: 533px;
+  float: left;
+}
+.theme-one {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.float_text_title {
+  width: 204px;
+  height: 33px;
+  display: block;
+  font-size: 16px;
+  color: #fff;
+  line-height: 33px;
+}
+.float_text_content {
+  width: 204px;
+  height: 123px;
+  font-size: 13px;
+  padding-top: 7px;
+  display: block;
+  color: #fff;
+}
+.col-md-4,
+.col-md-8 {
+  padding: 0;
+}
+.nav-or {
+  width: 100%;
+  height: 50px;
+  text-indent: 30px;
+  line-height: 50px;
+  color: #ffffff;
+  background: #ff8c00;
+}
+@media screen and (max-width: 500px) {
+  .nav-or {
+    height: 35px;
+    line-height: 35px;
+  }
+}
+.content_right_top {
+  width: 100%;
+  height: 196px;
+  cursor: pointer;
+  background: #123;
+}
+.content_right_top img {
+  height: 196px;
+  overflow: hidden;
+}
+.content_right_down {
+  width: 100%;
+  height: 50%;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.content_map {
+  overflow: hidden;
+  max-height: 159px;
+  width: 30%;
+  float: left;
+  cursor: pointer;
+}
+.content_map_right {
+  width: 70%;
+  overflow: hidden;
+  max-height: 159px;
+  height: 250px;
+  float: right;
+}
+.logo_bottom {
+  margin-top: 500px;
+  height: 250px;
+  background: url(../image/logo_bottom.png);
+}
+.theme-name-head {
+  width: 80%;
+  margin: 0 auto;
+}
+.theme-tag {
+  width: 80%;
+  margin: 0 auto;
+}
+/*slides图片变成手的形状*/
+.showinfo {
+  display: none;
+  left: 1px;
+  top: 1px;
+  width: 100px;
+  min-height: 23px;
+  background: #ffffff;
+  position: fixed;
+  z-index: 999999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+.btn-default {
+  background: #ff8c00;
+  color: #ffffff;
+}
+/*end index*/

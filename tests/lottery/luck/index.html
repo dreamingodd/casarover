@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Document</title>
+<style type="text/css">
+body{
+    font-size:12px;
+    background:#ffffff;
+}
+*{
+    margin:0;padding:0;
+}
+img{
+    border:0
+}
+#mian{
+    width:700px;
+    height:600px;
+}
+#zhuanpan{
+    width:100%;
+    height:100%;
+    position:absolute;
+    overflow:hidden;
+}
+#tip{
+    position:absolute;
+    left:0px;
+    top:0px;
+    cursor:pointer;
+}
+</style>
+
+<script src="//cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/jQueryRotate.js"></script>
+<script type="text/javascript">
+function GetRandomNum(Min,Max){  
+        var Range = Max - Min;  
+        var Rand = Math.random();  
+        return(Min + Math.round(Rand * Range));  
+}  
+</script>
+<script type="text/javascript"> 
+$(document).ready(function(){
+    var roll= function(){
+        $(this).unbind('mouseenter').unbind('mouseleave'); 
+        $(this).attr("src","images/01.png");
+        if(parseInt($(".coud_num").html())<= 0){
+            alert("您的抽奖机会已用完，您可以完成任务获取更多抽奖机会!");
+            var json_error= "error_0";
+            return false;
+        }
+    $(this).unbind("click",roll);
+    var angle = 0;
+    var angle2 =0;
+    var Rand_num = GetRandomNum(1,99);
+    //var json_error;
+    
+    switch(Rand_num){ 
+    case "2":
+                    var json_error="win_1";
+                    break;
+    case "32":
+                    var json_error="win_2";
+                    break;
+    case "62":
+                    var json_error="win_3";
+                    break;
+    case "92":
+                    var json_error="win_4";
+                    break;  
+    default :
+        var json_error="error_2";                                           
+    
+     }
+switch(json_error){   
+    case "error_0":   
+    alert("您的抽奖机会已用完，您可以完成任务获取更多抽奖机会.");
+    return false;
+    break;
+    case "win_1":
+    var $dushu= 1080;
+    break;
+    case "win_2":
+    var $dushu= 1350;                       
+    break;   
+    case "win_3": 
+    var $dushu= 1260;           
+    break;   
+    case "win_4": 
+    var $dushu= 1170;
+    break;   
+    case "error_2":
+    var error_num = GetRandomNum(1,4);
+    if(error_num==1){
+        var $dushu= 1125;
+    }else if(error_num==2){
+        var $dushu= 1215;
+    }else if(error_num==3){
+        var $dushu= 1305;
+    }else if(error_num==4){
+        var $dushu= 1395;
+    }
+    break;   
+    default:        
+}
+    var zhuan=setInterval(function(){
+            angle+=19;
+            angle2+=3;
+            $("#img").rotate(angle2);
+            $("#tip").rotate(angle);
+            if(angle >= $dushu){
+                clearInterval(zhuan);
+                switch(json_error){ 
+                
+                    case "win_1":   
+                    // location.href='result.html';
+
+                        alert("恭喜您获得一等奖!");
+                        break;
+                    case "win_2":   
+                    // location.href='result.html';
+
+                        alert("恭喜您获得二等奖!");
+                        break;
+                    case "win_3":   
+                    // location.href='result.html';
+
+                        alert("恭喜您获得三等奖!");
+                        break;
+                    case "win_4":   
+                    // location.href='result.html';
+                        alert("恭喜您获得四等奖!");
+                        break;
+                    case "error_2":
+                        if(error_num==1){
+                            // location.href='result.html';
+                            alert("很抱歉，请再接再厉，完成任务可获得更多抽奖机会哦!");
+                        }else if(error_num==2){
+                            // location.href='result.html';
+
+                            alert("不要灰心，说不定下把就中了，完成任务可获得更多抽奖机会哦!");
+                        }else if(error_num==3){
+                            // location.href='result.html';
+
+                            alert("就差一点点啦，完成任务可获得更多抽奖机会哦!");
+                        }else if(error_num==4){
+                            // location.href='result.html';
+
+                            alert("加勒个油哦，亲!");
+                        }   
+                        
+                        break;
+                    default:
+                }
+                $(".coud_num").html($(".coud_num").html()-1);
+                $("#tip").bind("click",roll );
+                
+                $("#tip").attr("src","images/01.png");
+                $("#tip").hover(
+                    function () {
+                        $(this).attr("src","images/01.png");
+                    },
+                    function () {
+                        $(this).attr("src","images/01.png");
+                    }
+                ); 
+
+                
+            }               
+        },20);              
+}
+$("#tip").bind("click",roll );
+    
+});
+document.onselectstart=new Function("event.returnValue=false;");
+document.oncontextmenu=new Function("event.returnValue=false;");
+</script>
+
+</head>
+<body>
+<div id="mian">
+    <!-- <div class="youhave">您还有<span class="coud_num">10</span>次抽奖机会</div> -->
+    <div id="zhuanpan">
+        <img id="img" src="images/02.png" width="100%" >
+        <img id="tip" src="images/01.png" width="100%" >
+    </div>
+    <div id="sub">点击</div>
+</div>
+</body>
+</html>

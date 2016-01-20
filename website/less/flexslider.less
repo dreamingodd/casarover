@@ -1,0 +1,142 @@
+/* 所有的轮播图 **********************************************************/
+
+/* Index Page */
+.slides{
+    li{
+        cursor: pointer;
+        float: left;
+        width: 50%;
+        height:533px;
+    }
+}
+.flexslider{
+    position:relative;
+    height:100%;
+    overflow:hidden;
+    background:url(../image/lbt/loading.gif) 50% no-repeat;
+}
+.flex-control-nav{
+    position:absolute;
+    bottom:10px;
+    z-index:2;
+    width:100%;
+    text-align:center;
+    li{
+        display:inline-block;
+        width:14px;
+        height:14px;
+        margin:0 5px;
+        display:inline;
+        zoom:1;
+    }
+    a{
+        display:inline-block;
+        width:14px;
+        height:14px;
+        line-height:40px;
+        overflow:hidden;
+        background:url(../image/lbt/dot.png) right 0 no-repeat;
+        cursor:pointer;
+    }
+    .flex-active{
+        background-position:0 0;
+    }
+}
+.flex-direction-nav a  {
+    text-decoration:none;
+    width: 40px;
+    height: 48px;
+    margin: -20px 0 0;
+    position: absolute;
+    top: 50%; z-index: 10;
+    overflow: hidden;
+    opacity: 0;
+    cursor: pointer;
+    color: rgba(0,0,0,0.8);
+    background:url(../image/arr.png) no-repeat;
+    text-indent:-999em;
+}
+.flex-direction-nav .flex-prev {
+    left: -50px;
+    background-position:0 0;
+}
+.flex-direction-nav .flex-next {
+    right: -50px;
+    background-position:-132px 0;
+}
+.flexslider:hover .flex-prev {
+    opacity: 0.7;
+    left: 10px;
+}
+.flexslider:hover .flex-next {
+    opacity: 0.7;
+    right: 10px;
+}
+.flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover {
+    opacity: 1;
+}
+.flex-direction-nav .flex-disabled {
+    opacity: 0!important;
+    filter:alpha(opacity=0);
+    cursor: default;
+}
+
+/*小屏幕重写 **/
+@media screen and (max-width: 500px) {
+    .city-slider{
+        height: 233px !important ;
+    }
+    .slides li{
+       // height: 233px;
+    }
+    .flex-prev{
+        display: none;
+    }
+    .flex-next{
+        display: none;
+    }
+}
+/*热门推荐**/
+.float_text {
+    width:204px;
+    height: 156px;
+    position: absolute;
+    right:0px;
+    top: 224px;
+}
+
+/****************************************************************************************************/
+/*City Page 城市页面轮播图**/
+.city-slider{
+    width: 100%;
+    height: 335px;
+    overflow: hidden;
+    .flexslider{
+        width: 100%;
+    }
+    .pic{
+        width: 66%;
+        height: 100%;
+        background-size: 100% 100%;
+    }
+}
+.slides{
+    .show-mess{
+        height: 350px;
+        width: 34%;
+        background: #99CCCC;
+        position: absolute;
+        top: 0;
+        right: 0;
+        .main{
+            width: 80%;
+            height: 80%;
+            overflow: hidden;
+            margin: 0 auto;
+            margin-top: 20px;
+        } 
+    }
+}
+
+/****************************************************************************************************/
+/*Wechat Index Page 微信主页轮播图**/

@@ -1,0 +1,104 @@
+body {
+  background: #ddfcff;
+}
+.full_div {
+  height: 100%:
+	width:100%;
+  overflow: hidden;
+}
+.clear {
+  clear: both;
+}
+.lead {
+  width: 240px;
+}
+.col-md-3,
+.col-md-4,
+.col-md-8,
+.col-md-9 {
+  padding-right: 0;
+  padding-left: 0;
+}
+.content p {
+  margin-left: 10px;
+}
+.head .pic {
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  vertical-align: middle;
+}
+.head .pic .show {
+  height: 100%;
+  color: #CFCFCF;
+  position: relative;
+  background: url('../../website/image/header-bg.jpg') no-repeat fixed center bottom / cover;
+}
+.section {
+  margin-top: 4%;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.top .head-pic {
+  float: left;
+}
+.top .pic {
+  max-height: 234px;
+  overflow: hidden;
+}
+.recom-main {
+  background: #dae6f1;
+}
+.recom-content {
+  -webkit-box-shadow: #bbb 0px 0px 3px;
+  -moz-box-shadow: #bbb 0px 0px 3px;
+  box-shadow: #bbb 0px 0px 3px;
+  margin: 5px 20px 15px 20px;
+  height: 100%;
+  overflow: hidden;
+}
+.recom-content .top-pic {
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid #eee;
+  overflow: hidden;
+}
+.recom-content .content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #9aafce;
+  color: #ffffff;
+}
+.recom-content .content h3 {
+  margin-left: 10px;
+}
+.recom-content .content p {
+  margin-left: 10px;
+}
+.recom-content .content p span {
+  float: right;
+  padding-right: 10px;
+}
+.m-radius-title {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 100%;
+  height: 100%;
+  background: #ff8c00;
+  padding: 2px;
+}
+.m-radius-title h4 {
+  text-align: left;
+  margin-left: 20px;
+  color: #ffffff;
+}
+.radius {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}

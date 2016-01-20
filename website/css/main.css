@@ -1,0 +1,417 @@
+/*共用部分*/
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow-x: hidden;
+  font-family: '微软雅黑';
+  background: #ededef;
+}
+.clear {
+  clear: both;
+}
+.container {
+  padding: 0;
+}
+.head-search .form-control {
+  float: right;
+  width: 50%;
+  margin-top: 10px;
+  height: 40px;
+  margin-right: 10px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.m-full {
+  padding-top: 10px;
+  height: 100%;
+  width: 100%;
+  background: #ffffff;
+  position: absolute;
+  z-index: 999;
+}
+.m-full .form-control {
+  width: 80%;
+  float: left;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.m-full .back {
+  float: left;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+}
+.m-full .search {
+  float: left;
+  height: 34px;
+  margin-left: 3px;
+  font-size: 14px;
+  line-height: 34px;
+}
+.m-citysearch li {
+  width: 20%;
+  float: left;
+  border: 1px solid #eee;
+  list-style-type: none;
+  text-align: center;
+  line-height: 30px;
+}
+.input_error {
+  border-color: red;
+}
+.input_error:focus {
+  border-color: red;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #ff0000;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #ff0000;
+}
+.head_height {
+  height: 94px;
+  float: left;
+}
+.font_h2 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 94px;
+}
+/*header*/
+.header {
+  width: 1280px;
+  margin: 0 auto;
+  height: 94px;
+  overflow: hidden;
+}
+.header-left {
+  width: 944px;
+  height: 94px;
+  float: left;
+  background: url("../image/left_bg.png");
+}
+.header-left a {
+  margin-left: 30px;
+}
+.header-right {
+  width: 336px;
+  height: 94px;
+  float: left;
+  background: #ff8c00;
+}
+.header-right-nav {
+  height: 94px;
+  float: left;
+  width: 112px;
+  text-align: center;
+}
+.header-right-nav a {
+  outline: none;
+  /*去除点击之后的虚框*/
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 94px;
+}
+.header-right-nav a:hover {
+  color: #ffffff;
+}
+.header-right-nav span {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 94px;
+  cursor: pointer;
+}
+/*微信图片定位*/
+#wxImg {
+  position: absolute;
+  top: 85px;
+  right: 220px;
+  z-index: 15;
+  display: none;
+  height: 50px;
+}
+#wxImg img {
+  width: 180px;
+  height: 180px;
+}
+/*endheader*/
+/*登录模态框*/
+.modal-header {
+  background: url("../image/login/login_head.png");
+}
+.login-modal {
+  margin-top: 100px;
+  width: 492px;
+}
+.login-header-m {
+  height: 54px;
+}
+/*重写bootstrap去除模态框圆角*/
+.modal-content {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.login-input-m .form-control {
+  margin: 0 auto;
+  width: 70%;
+  height: 50px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.login-checkbox-m {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 50%;
+  text-align: center;
+}
+.modal-footer-bot {
+  overflow: hidden;
+  margin: 0 auto;
+  width: 50%;
+  height: 100%;
+}
+.login-more {
+  float: left;
+}
+.content-qq {
+  float: left;
+  margin-left: 13px;
+}
+.content-weixin {
+  float: left;
+  margin-left: 13px;
+}
+.login-more-bottom {
+  margin-top: 20px;
+}
+/*end模态框*/
+/*搜索选择框*/
+.search-place {
+  width: 100%;
+  height: 75px;
+  overflow: hidden;
+}
+.search-place-left {
+  width: 50%;
+  height: 85px;
+  overflow: hidden;
+  background: #ff8c00;
+  font-size: 0;
+}
+.search-frame {
+  background: url("../image/place.png");
+  padding-left: 45px;
+  background-repeat: no-repeat;
+  margin-top: 14px;
+  margin-left: 140px;
+  height: 47px;
+  width: 320px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  float: left;
+}
+.city-s {
+  height: 44px;
+  width: 44px;
+  background: url("../image/xia.png");
+  position: relative;
+  top: 26px;
+  left: 482px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+/*end搜索选择框*/
+/*login部分*/
+.login_content {
+  margin: 0;
+  width: 40px;
+  height: 40px;
+}
+.icon-qq-hover {
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  background-image: url("../image/login/qq.png");
+}
+.icon-weixin-hover {
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  background-image: url("../image/login/weixin.png");
+}
+.login {
+  width: 500px;
+  background: #ffffff;
+}
+.login_form {
+  margin-top: 10px;
+}
+.logn_sub {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 50%;
+}
+.login_message {
+  margin: 0 auto;
+  margin-top: 10%;
+  width: 500px;
+  background: #ffffff;
+}
+.login_btn {
+  margin: 0 auto;
+  width: 100%;
+  background: #ff8c00;
+  color: #ffffff;
+}
+.go_login {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+}
+/*忘了这里为什么写了个全局作用的*/
+a {
+  color: #333333;
+}
+a:hover {
+  color: #333333;
+  text-decoration: none;
+}
+.input-s {
+  padding: 20px 20px 20px 40px;
+  background-color: #ff8c00;
+}
+.regist-message .form-control {
+  height: 50px;
+}
+.text-white > a {
+  color: #ffffff;
+}
+/*endlogin*/
+/*footer*/
+.footer {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #cedeee;
+}
+.footer .top {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.footer .top .pic {
+  margin-top: 20px;
+  width: 40%;
+  height: 100%:
+            overflow:hidden;
+  float: left;
+  text-align: center;
+}
+.footer .top .pic img {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+.footer .top .message {
+  float: left;
+  margin-top: 20px;
+  width: 20%;
+  text-align: left;
+}
+.footer .top .message h4 {
+  font-size: 20px;
+  font-weight: 500;
+}
+.footer-bottom {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #c8e0ff;
+}
+.footer-bottom ul {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.footer-bottom-message {
+  width: 100%;
+  text-align: center;
+}
+.footer-bottom-message li {
+  list-style: none;
+  height: 100%;
+  line-height: 100%;
+}
+.footer-tm-unstyled a {
+  color: #333333;
+}
+.footer-tm-unstyled li {
+  list-style: none;
+}
+/*endfooter*/
+/*多于两个页面使用*/
+.footer-logo {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.house-message {
+  width: 320px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  background: #ffffff;
+  border: 1px solid #d7d7d7;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+.house-message .top {
+  height: 200px;
+  width: 320px;
+  overflow: hidden;
+}
+.house-message .bottom {
+  text-align: center;
+}
+.house-message img {
+  width: 100%;
+  height: 200px;
+}
+/*重写bootstrap样式*/
+.col-md-6 {
+  padding: 0;
+}
+.navbar {
+  margin: 0;
+  border: 0px solid transparent;
+}
+.navbar-default {
+  border-color: #ffffff;
+  background-color: #9aafce;
+}
+.navbar-toggle {
+  margin-top: 15px;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+.md > .col-md-4,
+.col-md-3 {
+  padding: 0;
+}
+.alert {
+  text-align: center;
+}
+.navbar-brand {
+  height: 60px;
+}
+/*endbootstrap重写*/

@@ -1,0 +1,18 @@
+@container:1280px;
+@header_left:944px;
+
+.full_div(){
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.base_radius(@radius:0){
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+.base_shadow(@color:#bbb,@width:3px){
+	-webkit-box-shadow: @color 0px 0px @width;
+	-moz-box-shadow: @color 0px 0px @width;
+	box-shadow: @color 0px 0px @width;
+}

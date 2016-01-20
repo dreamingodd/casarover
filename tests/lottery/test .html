@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>幸运大转盘</title>
+
+<style type="text/css">
+body{font-size:12px;background:#920903;}
+*{margin:0;padding:0;}
+img{border:0}
+#mian{width:700px;height:600px;}
+.youhave{
+	position:absolute;
+	color:#fff;
+	font-weight:bold;
+	height:30px;
+	line-height:30px;
+	top:123px;
+	left:195px;
+	font-size:14px;
+}
+#zhuanpan{
+	width:526px;
+	height:526px;
+	top:65px;
+	left:400px;
+	position:absolute;
+	overflow:hidden;
+}
+#tip{position:absolute;left:203px;;top:145px;cursor:pointer;}
+</style>
+
+<script src="//cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/jQueryRotate.js"></script>
+<script type="text/javascript">
+function GetRandomNum(Min,Max){  
+
+		var Range = Max - Min;  
+
+		var Rand = Math.random();  
+
+		return(Min + Math.round(Rand * Range));  
+
+}  
+</script>
+<script type="text/javascript">	
+$(document).ready(function(){
+	$("#tip").hover(
+		function () {
+			$(this).attr("src","images/four2.gif");
+		},
+		function () {
+			$(this).attr("src","images/four1.gif");
+		}
+	); 
+	
+	
+	var roll= function(){
+		$(this).unbind('mouseenter').unbind('mouseleave'); 
+		$(this).attr("src","images/four2.gif");
+		if(parseInt($(".coud_num").html())<= 0){
+			alert("您的抽奖机会已用完，您可以完成任务获取更多抽奖机会!");
+			var json_error= "error_0";
+			return false;
+		}
+
+		$(this).unbind("click",roll);
+		
+		var angle = 0;
+		
+		var Rand_num = GetRandomNum(1,99);
+		
+		//var json_error;
+		
+		switch(Rand_num){ 
+		case "2":
+						var json_error="win_1";
+						break;
+		case "32":
+						var json_error="win_2";
+						break;
+		case "62":
+						var json_error="win_3";
+						break;
+		case "92":
+						var json_error="win_4";
+						break;	
+	    default :
+			var json_error="error_2";											
+		
+		 }
+		
+				switch(json_error){   
+					case "error_0":   
+						alert("您的抽奖机会已用完，您可以完成任务获取更多抽奖机会.");
+						return false;
+						break;
+					case "win_1":
+						var $dushu= 1080;
+						break;
+					case "win_2":
+						var $dushu= 1350;  						
+						break;   
+					case "win_3": 
+						var $dushu= 1260;			
+						break;   
+					case "win_4": 
+						var $dushu= 1170;
+						break;   
+					case "error_2":
+						var error_num = GetRandomNum(1,4);
+						if(error_num==1){
+							var $dushu= 1125;
+						}else if(error_num==2){
+							var $dushu= 1215;
+						}else if(error_num==3){
+							var $dushu= 1305;
+						}else if(error_num==4){
+							var $dushu= 1395;
+						}
+						
+						break;   
+					default: 		
+			}
+		
+		
+		
+		
+	    var zhuan=setInterval(function(){
+				angle+=15;
+				$("#img").rotate(angle);
+				if(angle >= $dushu){
+					clearInterval(zhuan);
+					switch(json_error){ 
+					
+						case "win_1":   
+							alert("恭喜您获得一等奖!");
+							break;
+						case "win_2":   
+							alert("恭喜您获得二等奖!");
+							break;
+						case "win_3":   
+							alert("恭喜您获得三等奖!");
+							break;
+						case "win_4":   
+							alert("恭喜您获得四等奖!");
+							break;
+						case "error_2":
+						
+							if(error_num==1){
+								alert("很抱歉，请再接再厉，完成任务可获得更多抽奖机会哦!");
+							}else if(error_num==2){
+								alert("不要灰心，说不定下把就中了，完成任务可获得更多抽奖机会哦!");
+							}else if(error_num==3){
+								alert("就差一点点啦，完成任务可获得更多抽奖机会哦!");
+							}else if(error_num==4){
+								alert("加勒个油哦，亲!");
+							}   
+							
+							break;
+						default:
+					}
+					
+					$(".coud_num").html($(".coud_num").html()-1);
+					$("#tip").bind("click",roll	);
+					
+					$("#tip").attr("src","images/four1.gif");
+					$("#tip").hover(
+						function () {
+							$(this).attr("src","images/four1.gif");
+						},
+						function () {
+							$(this).attr("src","images/four2.gif");
+						}
+					); 
+
+					
+				}				
+			},50);				
+			
+		
+	}
+	
+	
+		$("#tip").bind("click",roll	);
+	
+	
+	
+});
+document.onselectstart=new Function("event.returnValue=false;");
+document.oncontextmenu=new Function("event.returnValue=false;");
+</script>
+
+</head>
+<body>
+
+<div id="mian">
+
+	<div class="youhave">您还有<span class="coud_num">10</span>次抽奖机会</div>
+	
+	<div id="zhuanpan">
+		<img id="img" src="images/four_zhuanpan.gif" width="526" height="526">
+		<img id="tip" src="images/four1.gif" width="122" height="187">
+	</div>
+
+</div>
+
+
+</body>
+</html>

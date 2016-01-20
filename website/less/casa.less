@@ -1,0 +1,161 @@
+@import url(base.less);
+@import url(color.less);
+body{
+    background: @casa_bgc;
+}
+// for bootstrap
+.col-md-8{
+    padding: 0;
+}
+@media (min-width:1200px){
+    .col-md-6{
+        margin-left: 100px;
+    }
+    .col-md-8{
+        padding-left: 100px;
+    }
+}
+//end for 
+
+.main{
+    padding-left: 10px;
+    padding-right: 10px;
+    background: @main_bgc;
+    .message{
+        .full_div;
+        .contents{
+            margin: 0;
+            .full_div;
+            background: @contents_bgc;
+            margin-top: 23px;
+            margin-bottom: 20px;
+        }
+        .pic{
+            margin-top: 20px;
+        }
+    }
+}
+
+.casa-title{
+    background: @casa_head_bgc;
+    .full_div;
+    text-align: center;
+    border-top: 1px solid #eee;
+    h3{
+        color: #000;
+    }
+}
+
+.author-message{
+    .full_div;
+    .author{
+        float: left;
+        margin-left: 10px;
+        line-height: 40px;
+    }
+    .time{
+        float: right;
+        line-height: 40px;
+        margin-right: 10px;
+    }
+}
+
+.contents-main{
+    .full_div;
+}
+
+.main-message{
+    .full_div;
+}
+
+.contents-title{
+    h3{
+        margin-left: 15px;
+        line-height: 30px;
+        font-weight: 600;
+    }
+}
+
+.contents-img{
+    .full_div;
+    img{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+.contents-text{
+    p{
+        font-size: 15px;
+        font-weight: 100;
+    }
+} 
+// 右侧导航部分
+.page_nav{
+    a{
+        text-decoration: none;
+        outline: none;
+    }
+    &:visited{
+        color: #123;
+        text-decoration: none;
+        outline: none;
+    }
+}
+
+.col-md-4{
+    .nav{
+        position: fixed;
+        top: 140px;
+        left: 940px;
+        margin: 0;
+        list-style: none;
+    }
+} 
+
+.change-nav{
+    position: fixed;
+    bottom: 210px;
+    left: 940px;
+    margin: 0;
+    list-style: none;
+}
+
+.nav_circle{
+    float: left;
+    margin-top: 28px;
+    margin-left: 20px;
+    width: 20px;
+    height: 300px;
+}
+
+.circle{
+    .base_radius(50px);
+    background-color: #9aafce;
+    margin: 0 auto;
+    width: 10px;
+    height: 10px;
+    border: 1px solid;
+}
+
+.circle_activ{
+    background-color: #ff8c00;
+}
+
+.line{
+    margin: 0 auto;
+    width: 2px;
+    height: 49px;
+    background-color: #9aafce;
+}
+
+.page_nav{
+    height: 60px;
+    line-height: 60px;
+}
+
+.nav_line{
+    width: 100%;
+}
+
+/*end详情页*/

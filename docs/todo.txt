@@ -1,0 +1,2 @@
+1.table modification: area_dictionary, dictionary_id
+2.

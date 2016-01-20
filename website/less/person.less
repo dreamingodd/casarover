@@ -1,0 +1,134 @@
+@import url(base.less);
+@import url(color.less);
+/*个人主页*/
+.person-main{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.head-pic{
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    margin-top: 30px;
+    .base_radius(150px);
+    background: #ffffff;
+    img{
+        width: 150px;
+        height: 150px;
+        border-radius: 150px;
+        border: 6px solid #ffffff;
+    }
+}
+.name{
+    font-weight: normal;
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    input{
+        display: none;
+    }
+}
+.name-change{
+    span{
+        display: none;
+    }
+    input{
+        display: block;
+    }
+    .form-control{
+        width: 200px;
+        margin:0 auto;
+        margin-bottom: 5px;
+    }
+}
+.person-message{
+    background: #ffffff;
+    border-bottom: 1px solid #d7d7d7;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.05);
+    .list{
+        line-height: 50px;
+        font-size: 20px;
+        height: 50px;
+        border-bottom: 1px solid #eee;
+
+    }
+}
+.phone{
+    #num{
+        color: @orange;
+    }
+    #get-code{
+        display: none;
+    }
+    .form-control{
+        display: none;
+        float: left;
+        margin-top: 11px;
+        width: 150px;
+    }
+}
+.phone-change{
+    #num{
+        display: none;
+    }
+    #get-code{
+        display:inline-block;
+    }
+    #change-phone{
+        display: none;
+    }
+    .form-control{
+        display: block;
+        float: left;
+        margin-top: 11px;
+        width: 150px;
+    }
+}
+.message-main{
+    width: 80%;
+    margin: 0 auto;
+    padding-left: 60px;
+    .save{
+        margin-top: 20px;
+        width: 70px;
+        margin-bottom: 50px;
+    }
+}
+.card{
+    width: 300px;
+    height: 150px;
+    overflow: hidden;
+    float: left;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #d7d7d7;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.05);
+    background: #ffffff;
+    p{
+        font-size: 20px;
+        color: #ffffff;
+        font-weight: normal;
+        text-align: center;
+        line-height: 150px;
+    }
+}
+/*头像选择控件*/
+.head-pic{
+    a{
+            position:relative;
+            display:inline-block;
+            overflow:hidden;
+            width:150px;
+            height:150px; 
+            border-radius: 150px;
+            input{
+                position:absolute;
+                top:0;
+                right:0;
+                font-size:100px;
+                opacity:0;
+                filter:alpha(opacity=0);
+            }
+    }
+}
