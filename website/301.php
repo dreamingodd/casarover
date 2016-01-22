@@ -17,7 +17,8 @@ if($the_url=="/index.php")//判断是不是首页
 }
 //如果域名不是带www的网址那么进行下面的301跳转
 if($the_host !== 'www.casarover.com' && $the_host !== 'localhost'
-        && !strstr($the_host, '172.16') &&  !strstr($the_host, '192.168')) {
+        && !strstr($the_host, '172.16') && !strstr($the_host, '192.168')
+        && !strstr($the_host, 'http://casarover-dreamingodd.myalauda.cn')) {
     header('HTTP/1.1 301 Moved Permanently');//发出301头部
 
     header('Location:http://www.casarover.com'.$the_url);//跳转到带www的网址
