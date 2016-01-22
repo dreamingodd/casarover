@@ -24,7 +24,6 @@ pwd=$1
 #cd /home/git
 #git clone https://github.com/dreamingodd/casarover.git
 cd /var/www/html/
-cp /home/git/casarover ./casarover
 mkdir photo
 mkdir cache
 chmod 777 photo
@@ -32,10 +31,11 @@ chmod 777 cache
 cp /home/git/casarover/docs/linux/cache/*.json ./cache/
 cd /var/www/html/cache/
 chmod 777 ./*
-cd /var/www/html/
-cp /home/git/casarover/application/ ./
-cp /home/git/casarover/website/ ./
-cp /home/git/casarover/doc/config/index.html ./
+mkdir casarover
+cd casarover
+cp /home/git/casarover/application/ ./application
+cp /home/git/casarover/website/ ./website
+cp /home/git/casarover/docs/config/index.html ./
 #Change DB password
 mv /home/git/casarover/application/models/constant.php /home/git/casarover/application/models/constant.php.back
 echo "<?php" >> /home/git/casarover/application/models/constant.php
