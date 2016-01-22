@@ -37,7 +37,7 @@ cp /home/git/casarover/application/ ./application
 cp /home/git/casarover/website/ ./website
 cp /home/git/casarover/docs/config/index.html ./
 #Change DB password
-mv /home/git/casarover/application/models/constant.php /home/git/casarover/application/models/constant.php.back
+mv /var/www/html/casarover/application/models/constant.php /var/www/html/casarover/application/models/constant.php.back
 echo "<?php" >> /home/git/casarover/application/models/constant.php
 echo "define('DB_HOST','localhost');" >> /home/git/casarover/application/models/constant.php
 echo "define('DB_USER','root');" >> /home/git/casarover/application/models/constant.php
