@@ -35,7 +35,7 @@ mkdir casarover
 cd casarover
 cp /home/git/casarover/application/ ./application
 cp /home/git/casarover/website/ ./website
-cp /home/git/casarover/docs/config/index.html ./
+cp /home/git/casarover/docs/config/index.html ./index.html
 #Change DB password
 mv /home/git/casarover/application/models/constant.php /home/git/casarover/application/models/constant.php.back
 echo "<?php" >> /home/git/casarover/application/models/constant.php
