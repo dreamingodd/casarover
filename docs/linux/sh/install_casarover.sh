@@ -41,7 +41,7 @@ mv /home/git/casarover/application/models/constant.php /home/git/casarover/appli
 echo "<?php" >> /home/git/casarover/application/models/constant.php
 echo "define('DB_HOST','localhost');" >> /home/git/casarover/application/models/constant.php
 echo "define('DB_USER','root');" >> /home/git/casarover/application/models/constant.php
-echo "define('DB_PWD','24');" >> /home/git/casarover/application/models/constant.php
+echo "define('DB_PWD','"$1"');" >> /home/git/casarover/application/models/constant.php
 echo "define('DB_NAME','casarover');" >> /home/git/casarover/application/models/constant.php
 echo "?>" >> /home/git/casarover/application/models/constant.php
 
