@@ -1,6 +1,6 @@
 #!/bin/bash
 #--------------------------------------------------------------------------------------------------
-#@auther dreamingodd(YeWenda)
+#@auther dreamingodd(Ye, Wenda)
 #@20151202
 #This sh is used for casarover project deployment on Aliyun linux server.
 #--------------------------------------------------------------------------------------------------
