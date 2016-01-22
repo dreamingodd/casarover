@@ -31,11 +31,12 @@ chmod 777 cache
 cp /home/git/casarover/docs/linux/cache/*.json ./cache/
 cd /var/www/html/cache/
 chmod 777 ./*
+cd /var/www/html/
 mkdir casarover
 cd casarover
-cp /home/git/casarover/application/ ./application
-cp /home/git/casarover/website/ ./website
-cp /home/git/casarover/docs/config/index.html ./index.html
+cp -r /home/git/casarover/application/ ./application
+cp -r /home/git/casarover/website/ ./website
+cp /home/git/casarover/docs/linux/config/index.html /var/www/html/index.html
 #Change DB password
 mv /home/git/casarover/application/models/constant.php /home/git/casarover/application/models/constant.php.back
 echo "<?php" >> /home/git/casarover/application/models/constant.php
