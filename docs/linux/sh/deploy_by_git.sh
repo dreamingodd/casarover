@@ -9,16 +9,11 @@ sys_time=`date "+%Y%m%d_%H%M%S"`
 #Check input
 if [ "$1"X == ""X ]
 then
-    echo "Error: Please input DB password, e.g. ./casarover_install.sh P@$$W0RD"
-    exit 1
+    echo "Warning: Please input DB password, e.g. ./casarover_install.sh P@$$W0RD"
 else
     echo "The password you input is "$1", if it's wrong, you have to change it in /var/www/html/casarover/application/model/constant.php"
 fi
 pwd=$1
-if [ $1 == "null" ]
-then
-    pwd=""
-fi
 #refresh git folder
 if [ -d /home/git ]
 then
