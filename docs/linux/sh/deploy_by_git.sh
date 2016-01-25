@@ -38,6 +38,7 @@ then
         mkdir /home/back
     fi
     mv /var/www/html/casarover /home/back/casarover_${sys_time}
+    mkdir /var/www/html/casarover
 else
     mkdir photo
     mkdir cache
