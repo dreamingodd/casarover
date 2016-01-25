@@ -14,7 +14,7 @@ yum -y install httpd-manual mod_ssl mod_perl mod_auth_mysql
 #MySQL
 yum -y install mysql mysql-server mysql-devel
 ##MySQL start
-###若出现/etc/sysconfig/network不存在，/etc/sysconfig/network  => /etc/sysconfig/network-scripts/ifcfg-XXX文件
+###若出现/etc/sysconfig/network不存在，修改/etc/init.d/mysqld : /etc/sysconfig/network  => /etc/sysconfig/network-scripts/ifcfg-XXX文件 (ifcfg-lo)
 service mysqld start
 #PHP
 yum -y install php php-mysql

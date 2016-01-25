@@ -14,5 +14,6 @@ echo substr($k, 18,28); */
 $result = stripos("https://sdbsefsdfs", "http");
 echo $result == 0;
 echo '<br/>';
-
+echo strstr("http://casarover-dreamingodd.myalauda.cn", "http://casarover-dreamingodd.myalauda.cn");
+echo '<br/>';
 ?>

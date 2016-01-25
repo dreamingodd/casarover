@@ -5,14 +5,8 @@
 #Uninstall LAMP, Git enviroment.
 #--------------------------------------------------------------------------------------------------
 
-#Git
-yum -y remove git-core
-yum -y remove curl-devel expat-devel gettext-devel openssl-devel zlib-devel
-
-#LAMP
-yum -y remove mysql
-yum -y remove php
-yum -y remove httpd
+#Git&LAMP
+yum -y remove curl-devel expat-devel gettext-devel openssl-devel zlib-devel git-core mysql php httpd
 
 #列出相关包
 #rpm -qa | grep mysql/php/httpd
