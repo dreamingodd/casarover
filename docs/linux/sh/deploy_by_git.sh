@@ -15,6 +15,10 @@ else
     echo "The password you input is "$1", if it's wrong, you have to change it in /var/www/html/casarover/application/model/constant.php"
 fi
 pwd=$1
+if [ $1 == "null" ]
+then
+    pwd=""
+fi
 #refresh git folder
 if [ -d /home/git ]
 then
