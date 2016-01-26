@@ -23,6 +23,9 @@ yum -y install gd php-gd gd-devel php-xml php-common php-mbstring php-ldap php-p
 service httpd restart
 echo "LAMP installation completed!"
 
+#TODO: LAMP config change for casarover
+
+
 
 
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 #--------------------------------------------------------------------------------------------------
 #@auther dreamingodd(Ye, Wenda)
-#@20160121
+#@20160121~28
 #Install/deploy casarover project, based on LAMP and Git.
 #--------------------------------------------------------------------------------------------------
 
@@ -14,7 +14,8 @@ else
     echo "The password you input is "$1", if it's wrong, you have to change it in /var/www/html/casarover/application/model/constant.php"
 fi
 pwd=$1
-#refresh git folder
+
+#Refresh git folder
 if [ -d /home/git ]
 then
     echo "Git folder exists."
@@ -26,7 +27,8 @@ else
     cd /home/git
     git clone https://github.com/dreamingodd/casarover.git
 fi
-#deploy casarover
+
+#Deploy casarover
 cd /var/www/html/
 if [ -d /var/www/html/casarover ]
 then
@@ -40,13 +42,19 @@ then
     mv /var/www/html/casarover /home/back/casarover_${sys_time}
     mkdir /var/www/html/casarover
 else
-    mkdir photo
-    mkdir cache
-    chmod 777 photo
-    chmod 777 cache
-    cp /home/git/casarover/docs/linux/cache/*.json ./cache/
-    cd /var/www/html/cache/
-    chmod 777 ./*
+    if [ ! -d "/photo" ]
+    then
+        mkdir photo
+        chmod 777 photo
+    fi
+    if [ ! -d "/cache" ]
+    then
+        mkdir cache
+        chmod 777 cache
+        cp /home/git/casarover/docs/linux/cache/*.json ./cache/
+        cd /var/www/html/cache/
+        chmod 777 ./*
+    fi
     cd /var/www/html/
     mkdir casarover
     cp /home/git/casarover/docs/linux/config/index.html /var/www/html/index.html
@@ -63,4 +71,7 @@ echo "define('DB_USER','root');" >> /var/www/html/casarover/application/models/c
 echo "define('DB_PWD','"$1"');" >> /var/www/html/casarover/application/models/constant.php
 echo "define('DB_NAME','casarover');" >> /var/www/html/casarover/application/models/constant.php
 echo "?>" >> /var/www/html/casarover/application/models/constant.php
+
+#TODO: Mysql script deployment
+
 
