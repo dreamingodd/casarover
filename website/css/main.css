@@ -369,7 +369,7 @@ a:hover {
   width: 320px;
   margin: 0 auto;
   margin-bottom: 15px;
-  background: #ffffff;
+  background-color: #cedeee;
   border: 1px solid #d7d7d7;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
   cursor: pointer;
