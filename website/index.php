@@ -131,7 +131,7 @@ $picdir = '../../photo/';
            <div class="col-md-3 col-sm-6">
                <div class="house-message">
                    <div class="top" onclick="goto_casa(246)">
-                       <img src="image/theme_tmp/246_20-1.png" alt="">
+                       <img src="../../photo/casa_201512101048002562.jpg" alt="">
                    </div>
                    <div class="bottom">萌宠</div>
                    <div class="bottom">喵，汪星人求陪睡，约么</div>
@@ -149,7 +149,7 @@ $picdir = '../../photo/';
            <div class="col-md-3 col-sm-6">
                <div class="house-message">
                    <div class="top" onclick="goto_casa(246)">
-                       <img src="image/theme_tmp/246_20-1.png" alt="">
+                       <img src="../../photo/casa_201511301926137676.jpg" alt="">
                    </div>
                    <div class="bottom">亲子</div>
                    <div class="bottom">带上孩子旅行去</div>
@@ -158,7 +158,7 @@ $picdir = '../../photo/';
            <div class="col-md-3 col-sm-6">
                <div class="house-message">
                    <div class="top" onclick="goto_casa(246)">
-                       <img src="image/theme_tmp/246_20-1.png" alt="">
+                       <img src="../../photo/201512171450330099793721.jpg" alt="">
                    </div>
                    <div class="bottom">星座</div>
                    <div class="bottom">12星座的专属民宿</div>
