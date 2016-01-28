@@ -11,7 +11,7 @@
 <title>探庐者-后台管理</title>
 </head>
 <body>
-<?php include '301.php';?>
+<?php include '../301.php';?>
 <div id="container" style="width:400px; color: #777777">
     <h1>Casarover Management</h1>
     <form action="../../application/controllers/login_admin_action.php" class="login_form" method="post">
