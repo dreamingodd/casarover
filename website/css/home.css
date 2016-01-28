@@ -12,11 +12,25 @@
   .theme-two {
     display: none;
   }
+  .house-message {
+    background-color: #cedeee;
+    width: 240px;
+  }
+  .house-message .top {
+    width: 240px;
+    height: 150px;
+  }
+  .house-message img {
+    height: 150px;
+  }
 }
 .theme-two {
   overflow: hidden;
   width: 100%;
   height: 100%;
+}
+.theme-two .col-md-3 {
+  margin-top: 20px;
 }
 .theme-two .col-md-4 {
   margin-top: 20px;
