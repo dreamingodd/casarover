@@ -40,6 +40,7 @@
     </div>
     <table class="table table-hover">
         <tr>
+            <th>序号</th>
             <th>标题</th>
             <th>简介</th>
             <th>操作</th>
@@ -52,9 +53,11 @@
     if ($_GET['deleted']) {
         $article_rows = $dao->getAll($_GET['deleted']);
     }
+    $number = 1;
     while ($row = mysql_fetch_array($article_rows)) {
     ?>
         <tr>
+            <td><?php echo $number++?></td>
             <td><?php echo $row['title']?></td>
             <td class="brief"><?php echo $row['brief']?></td>
             <td>

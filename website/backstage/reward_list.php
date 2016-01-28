@@ -37,17 +37,20 @@ $rewards_received = $rewardDao->getAll(1);
 
     <table class="table table-hover unreceived">
         <tr>
+            <th>序号</th>
             <th>手机号码</th>
             <th>奖项</th>
             <th>中奖时间</th>
             <th>操作</th>
         </tr>
         <?php
+        $number = 0;
         while ($row = mysql_fetch_array($rewards_unreceived)) {
             $cellphone = "用户未填写";
             if (!empty($row['cellphone'])) $cellphone = $row['cellphone'];
         ?>
         <tr>
+            <td><?php echo $number++;?></td>
             <td><?php echo $cellphone;?></td>
             <td><?php echo $row['reward_level']?>等奖</td>
             <td><?php echo $row['update_time']?></td>
@@ -69,17 +72,20 @@ $rewards_received = $rewardDao->getAll(1);
 
     <table class="table table-hover received" style="display: none;">
         <tr>
+            <th>序号</th>
             <th>手机号码</th>
             <th>奖项</th>
             <th>中奖时间</th>
             <th>操作</th>
         </tr>
         <?php
+        $number = 1;
         while ($row = mysql_fetch_array($rewards_received)) {
             $cellphone = "用户未填写";
             if (!empty($row['cellphone'])) $cellphone = $row['cellphone'];
         ?>
         <tr>
+            <td><?php echo $number++;?></td>
             <td><?php echo $cellphone;?></td>
             <td><?php echo $row['reward_level']?>等奖</td>
             <td><?php echo $row['update_time']?></td>

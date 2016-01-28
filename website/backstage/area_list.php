@@ -18,6 +18,7 @@
     <input type="hidden" id="page" value="area"/>
     <table class="table table-hover">
         <tr>
+            <th>序号</th>
             <th>ID</th>
             <th>名称</th>
             <th>操作</th>
@@ -28,18 +29,22 @@
     $result = $casaDao->getAllArea();
     ?>
     <?php
+    $number = 1;
     foreach ($result as $value) {
+        if ($value['name'] != "其他") {
     ?>
-	<tr>
-        <td><?php echo $value['id']?></td>
-        <td><?php echo $value['name']?></td>
-        <td>
-            <a id="casa_continue" href='area_edit.php?area_id=<?php echo $value["id"]?>'>
-                <button type="button" class="btn btn-xs btn-info">编辑</button>
-            </a>
-        </td>
-    </tr>
+        <tr>
+            <td><?php echo $number++;?></td>
+            <td><?php echo $value['id']?></td>
+            <td><?php echo $value['name']?></td>
+            <td>
+                <a id="casa_continue" href='area_edit.php?area_id=<?php echo $value["id"]?>'>
+                    <button type="button" class="btn btn-xs btn-info">编辑</button>
+                </a>
+            </td>
+        </tr>
     <?php
+        }
     }
     ?>
     </table>

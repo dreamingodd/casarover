@@ -9,7 +9,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li><a class="not_complete" href="<?php echo getBaseUrl()?>website/backstage/huge_pics_edit.php">轮播图</a></li>
-                    <li><a class="not_complete" href="<?php echo getBaseUrl()?>website/backstage/recommend.php" >推荐</a></li>
+                    <li><a href="<?php echo getBaseUrl()?>website/backstage/theme_list.php" >主题推荐</a></li>
                 </ul>
             </li>
             <li role="presentation" class="area">

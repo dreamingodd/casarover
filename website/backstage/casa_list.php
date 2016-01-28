@@ -36,6 +36,7 @@
     </div>
     <table class="table table-hover">
         <tr>
+            <th>序号</th>
             <th>编码</th>
             <th>名称</th>
             <th>地区</th>
@@ -52,9 +53,11 @@
     // The compareCasaByCode method is in common_tools.php
     // TODO 需要修改成通用的方法。
     usort($casas, 'compareCasaByCode');
+    $number = 1;
     foreach ($casas as $casa) {
     ?>
         <tr>
+            <td><?php echo $number++?></td>
             <td><?php echo $casa->code?></td>
             <td><?php echo $casa->name?></td>
             <td><?php echo $areaService->getLeafFullName($casa->area->id)?></td>

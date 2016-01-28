@@ -10,7 +10,7 @@
 <script src="../js/integration/json2.js"></script>
 <script src="js/all.js"></script>
 <script src="js/theme_edit.js"></script>
-<title>探庐者后台-添加/编辑主题</title>
+<title>探庐者后台-编辑主题</title>
 </head>
 
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/controllers/check_admin_login_action.php';?>
@@ -30,6 +30,7 @@ if (!empty($id)) {
     <input type="hidden" id="page" value="home"/>
     <!-- nav bar end -->
 
+    <h3>主题编辑</h3>
     <form id="theme_form" method="post" action="../../application/controllers/theme_action.php?action=edit">
         <input type="hidden" id="id" name="id" value="<?php echo $id?>"/>
         <input type="hidden" id="attachment_id" name="attachment_id" value="<?php echo $wa->attachment_id;?>"/>
