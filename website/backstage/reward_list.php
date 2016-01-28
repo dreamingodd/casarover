@@ -85,11 +85,11 @@ $rewards_received = $rewardDao->getAll(1);
             <td><?php echo $row['update_time']?></td>
             <td>
                 <a href='../../application/controllers/reward_action.php?id=<?php echo $row["id"]?>&action=unreceive'>
-                    <button type="button" class="btn btn-info">恢复</button>
+                    <button type="button" class="btn btn-xs btn-info">恢复</button>
                 </a>
                 <!-- 
                 <a href='#'>
-                    <button type="button" class="btn btn-danger btn_del" data-id="<?php echo $row["id"]?>">删除</button>
+                    <button type="button" class="btn btn-xs btn-danger btn_del" data-id="<?php echo $row["id"]?>">删除</button>
                 </a>
                 -->
             </td>

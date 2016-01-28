@@ -28,11 +28,11 @@
         <a href="wechat_article_edit.php?type=<?php echo $_GET['type']?>">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加微信文章
         </a>
-        <a href="wechat_article_list.php?type=1">
-            <span class="glyphicon glyphicon-list" aria-hidden="true"></span>民宿推荐
-        </a>
         <a href="wechat_article_list.php?type=2">
-            <span class="glyphicon glyphicon-list" aria-hidden="true"></span>民宿杂谈
+            <span class="glyphicon glyphicon-list" aria-hidden="true"></span>民宿风采
+        </a>
+        <a href="wechat_article_list.php?type=1">
+            <span class="glyphicon glyphicon-list" aria-hidden="true"></span>探庐系列
         </a>
         <a href="wechat_article_list.php?deleted=1">
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>回收站
@@ -62,16 +62,16 @@
                 if ($_GET['deleted']) {
                 ?>
                 <a href='wechat_article_recycle_action.php?option=recover&type=<?php echo $_GET['type'];?>&id=<?php echo $row["id"]?>&deleted=<?php echo $_GET['deleted']?>'>
-                    <button type="button" class="btn btn-warning">还原</button>
+                    <button type="button" class="btn btn-xs btn-warning">还原</button>
                 </a>
                 <?php 
                 } else {
                 ?>
                 <a href='wechat_article_edit.php?type=<?php echo $_GET['type'];?>&id=<?php echo $row["id"]?>'>
-                    <button type="button" class="btn btn-info">编辑</button>
+                    <button type="button" class="btn btn-xs btn-info">编辑</button>
                 </a>
                 <a href='wechat_article_recycle_action.php?option=recycle&type=<?php echo $_GET['type'];?>&id=<?php echo $row["id"]?>'>
-                    <button type="button" class="btn btn-danger">删除</button>
+                    <button type="button" class="btn btn-xs btn-danger">删除</button>
                 </a>
                 <?php }?>
             </td>
