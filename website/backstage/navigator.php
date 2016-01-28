@@ -24,8 +24,8 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li><a class="not_complete" href="<?php echo getBaseUrl()?>website/wechat/wechat_huge_pics_edit.php">轮播图</a></li>
-                    <li><a href="<?php echo getBaseUrl()?>website/wechat/wechat_article_list.php?type=1">民宿推荐</a></li>
-                    <li><a href="<?php echo getBaseUrl()?>website/wechat/wechat_article_list.php?type=2">民宿杂谈</a></li>
+                    <li><a href="<?php echo getBaseUrl()?>website/wechat/wechat_article_list.php?type=2">民宿风采</a></li>
+                    <li><a href="<?php echo getBaseUrl()?>website/wechat/wechat_article_list.php?type=1">探庐系列</a></li>
                 </ul>
             </li>
             <!-- 

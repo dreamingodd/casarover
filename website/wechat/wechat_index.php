@@ -37,11 +37,11 @@ $article_rows_2 = $waDao->getByType(2);
     <div class="navbar">
         <div class="navbar-inner">
             <ul class="nav nav-justified">
-                <li role="presentation" class="type1 active">
-                    <a href="#">民宿推荐</a>
+                <li role="presentation" class="type2 active">
+                    <a href="#">民宿风采</a>
                 </li>
-                <li role="presentation" class="type2">
-                    <a href="#">民宿杂谈</a>
+                <li role="presentation" class="type1">
+                    <a href="#">探庐系列</a>
                 </li>
                 <li role="presentation">
                     <a href="../">探庐者网站</a> 
@@ -50,7 +50,7 @@ $article_rows_2 = $waDao->getByType(2);
         </div>
     </div>
 
-    <div id="list1" class="article_list">
+    <div id="list1" class="article_list" style="display: none;">
     <?php 
     while ($row = mysql_fetch_array($article_rows_1)) {
         $wa = new WechatArticle($row);
@@ -74,7 +74,7 @@ $article_rows_2 = $waDao->getByType(2);
     ?>
     </div>
 
-    <div id="list2" class="article_list" style="display: none;">
+    <div id="list2" class="article_list">
     <?php 
     while ($row = mysql_fetch_array($article_rows_2)) {
         $wa = new WechatArticle($row);
