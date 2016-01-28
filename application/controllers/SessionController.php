@@ -9,6 +9,11 @@ class SessionController {
     function getUserJson() {
         return $_SESSION['user_json'];
     }
+    function getUsername() {
+        $user_json = $this->getUserJson();
+        $user = json_decode($user_json);
+        return $user->username;
+    }
     function destroyUser() {
         unset($_SESSION['user_json']);
     }
