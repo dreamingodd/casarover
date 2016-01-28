@@ -15,11 +15,10 @@ class ThemeDao extends BaseDao {
                     ."values($name, $description, $attachment_id, $update_by, now())";
             $result = mysql_query ($sql);
             $id = mysql_insert_id();
-        }
-        // Update
-        else {
+        } else {
+            // Update
             $this->check_input($id);
-            $sql = "update casa set name=$name, "
+            $sql = "update theme set name=$name, "
                     ."description=$description, "
                     ."attachment_id=$attachment_id, "
                     ."update_by=$update_by, "

@@ -32,7 +32,7 @@ class ThemeService {
         }
         // Add a simple theme object
         $a_id = $this->aDao->addSimple($filepath);
-        $id = $this->themeDao->addOrUpdate($name, $description, $a_id, $update_by);
+        $id = $this->themeDao->addOrUpdate($name, $description, $a_id, $update_by, $id);
         if (!$id) $this->rollback();
         // Add reference objects: theme_item, theme_area
         foreach ($theme_items as $theme_item) {
