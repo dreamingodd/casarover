@@ -11,7 +11,7 @@
 <title>探庐者后台-民宿列表</title>
 </head>
 <body>
-<?php include '301.php';?>
+<?php include '../301.php';?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/controllers/check_admin_login_action.php';?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/common/common_tools.php';?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/models/CasaDao.php';?>
@@ -63,19 +63,19 @@
                 if ($_GET['deleted']) {
                 ?>
                 <a id="casa_recover" href='../../application/controllers/casa_recycle_action.php?id=<?php echo $casa->id?>&option=recover&deleted=1'>
-                    <button type="button" class="btn btn-warning">还原</button>
+                    <button type="button" class="btn btn-xs btn-warning">还原</button>
                 </a>
                 <?php 
                 } else {
                 ?>
                 <a id="casa_continue" href='casa_edit.php?casa_id=<?php echo $casa->id?>'>
-                    <button type="button" class="btn btn-info">编辑</button>
+                    <button type="button" class="btn btn-xs btn-info">编辑</button>
                 </a>
                 <a id="casa_effect" target="_blank" href='../casa.php?casa_id=<?php echo $casa->id?>'>
-                    <button type="button" class="btn btn-info">查看效果</button>
+                    <button type="button" class="btn btn-xs btn-info">查看效果</button>
                 </a>
                 <a id="casa_recycle" href='../../application/controllers/casa_recycle_action.php?id=<?php echo $casa->id?>&option=recycle&deleted=0'>
-                    <button type="button" class="btn btn-danger">删除</button>
+                    <button type="button" class="btn btn-xs btn-danger">删除</button>
                 </a>
                 <?php }?>
             </td>

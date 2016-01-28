@@ -11,7 +11,7 @@
 <title>探庐者后台-民宿列表</title>
 </head>
 <body>
-<?php include '301.php';?>
+<?php include '../301.php';?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/controllers/check_admin_login_action.php';?>
 <div id="container">
     <?php include 'navigator.php';?>
@@ -35,7 +35,7 @@
         <td><?php echo $value['name']?></td>
         <td>
             <a id="casa_continue" href='area_edit.php?area_id=<?php echo $value["id"]?>'>
-                <button type="button" class="btn btn-info">编辑</button>
+                <button type="button" class="btn btn-xs btn-info">编辑</button>
             </a>
         </td>
     </tr>

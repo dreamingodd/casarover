@@ -62,16 +62,16 @@
                 if ($_GET['deleted']) {
                 ?>
                 <a href='wechat_article_recycle_action.php?option=recover&type=<?php echo $_GET['type'];?>&id=<?php echo $row["id"]?>&deleted=<?php echo $_GET['deleted']?>'>
-                    <button type="button" class="btn btn-warning">还原</button>
+                    <button type="button" class="btn btn-xs btn-warning">还原</button>
                 </a>
                 <?php 
                 } else {
                 ?>
                 <a href='wechat_article_edit.php?type=<?php echo $_GET['type'];?>&id=<?php echo $row["id"]?>'>
-                    <button type="button" class="btn btn-info">编辑</button>
+                    <button type="button" class="btn btn-xs btn-info">编辑</button>
                 </a>
                 <a href='wechat_article_recycle_action.php?option=recycle&type=<?php echo $_GET['type'];?>&id=<?php echo $row["id"]?>'>
-                    <button type="button" class="btn btn-danger">删除</button>
+                    <button type="button" class="btn btn-xs btn-danger">删除</button>
                 </a>
                 <?php }?>
             </td>
