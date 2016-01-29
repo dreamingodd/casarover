@@ -130,8 +130,8 @@ $picdir = '../../photo/';
         <?php endforeach; ?>
            <div class="col-md-3 col-sm-6">
                <div class="house-message">
-                   <div class="top" onclick="goto_casa(246)">
-                       <img src="../../photo/casa_201512101048002562.jpg" alt="">
+                   <div class="top" onclick="goto_casa(248)">
+                       <img src="image/theme_tmp/248_20-3.png" alt="">
                    </div>
                    <div class="bottom">萌宠</div>
                    <div class="bottom">喵，汪星人求陪睡，约么</div>
@@ -148,8 +148,8 @@ $picdir = '../../photo/';
            </div>
            <div class="col-md-3 col-sm-6">
                <div class="house-message">
-                   <div class="top" onclick="goto_casa(246)">
-                       <img src="../../photo/casa_201511301926137676.jpg" alt="">
+                   <div class="top" onclick="goto_casa(249)">
+                       <img src="image/theme_tmp/249_20-4.png" alt="">
                    </div>
                    <div class="bottom">亲子</div>
                    <div class="bottom">带上孩子旅行去</div>
@@ -157,8 +157,8 @@ $picdir = '../../photo/';
            </div>
            <div class="col-md-3 col-sm-6">
                <div class="house-message">
-                   <div class="top" onclick="goto_casa(246)">
-                       <img src="../../photo/201512171450330099793721.jpg" alt="">
+                   <div class="top" onclick="goto_casa(247)">
+                       <img src="image/theme_tmp/247_20-2.png" alt="">
                    </div>
                    <div class="bottom">星座</div>
                    <div class="bottom">12星座的专属民宿</div>
