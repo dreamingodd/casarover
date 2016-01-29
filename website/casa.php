@@ -70,12 +70,12 @@ $picdir = '../../photo/';
                             <?php  endforeach;  ?>
                         </div>
                         <div class="contents-text">
-                            <p><?php  echo $casa->contents[$i]->text  ?></p>
+                            <p><?php  echo $casa->contents[$i]->text?></p>
                         </div>
                     </div>
                 </div>
                 <?php endfor;
-                if (isset($casa->link)) :
+                if (!empty($casa->link)) :
                 ?>
                 <div style="margin:2px auto; width:90px;">
                     <a href="<?php echo $casa->link?>" target="_blank">
