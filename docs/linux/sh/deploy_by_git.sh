@@ -11,7 +11,7 @@ if [ "$1"X == ""X ]
 then
     echo "Warning: Please input DB password, e.g. ./casarover_install.sh P@$$W0RD"
 else
-    echo "The password you input is "$1", if it's wrong, you have to change it in /var/www/html/casarover/application/model/constant.php"
+    echo "If the MySQL password is wrong, you have to change it in /var/www/html/casarover/application/model/constant.php"
 fi
 pwd=$1
 
@@ -68,10 +68,17 @@ mv /var/www/html/casarover/application/models/constant.php /var/www/html/casarov
 echo "<?php" >> /var/www/html/casarover/application/models/constant.php
 echo "define('DB_HOST','localhost');" >> /var/www/html/casarover/application/models/constant.php
 echo "define('DB_USER','root');" >> /var/www/html/casarover/application/models/constant.php
-echo "define('DB_PWD','"$1"');" >> /var/www/html/casarover/application/models/constant.php
+echo "define('DB_PWD','"${pwd}"');" >> /var/www/html/casarover/application/models/constant.php
 echo "define('DB_NAME','casarover');" >> /var/www/html/casarover/application/models/constant.php
 echo "?>" >> /var/www/html/casarover/application/models/constant.php
 
-#TODO: Mysql script deployment
+#Mysql script deployment
+if [ -f /home/git/casarover/docs/sql/deployment/*.sql ]
+then
+    for FILE in /home/git/casarover/docs/sql/deployment/*.sql
+    do
+       mysql -uroot -p${pwd} -e "source $FILE" | tee /tmp/mysql_tmp.sql
+    done
+fi
 
 
