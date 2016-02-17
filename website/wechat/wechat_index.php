@@ -26,29 +26,8 @@ $article_rows_1 = $waDao->getByType(1);
 $article_rows_2 = $waDao->getByType(2);
 ?>
 <div class="wechat_container">
-    <div class="flexslider">
-        <ul class="slides">
-            <li onclick="goto_link1()"
-                    style="background:url('http://7xp9p2.com1.z0.glb.clouddn.com/banner-01.jpg') ; background-size:100% 100%; "></li>
-            <li onclick="goto_link2()"
-                    style="background:url('http://7xp9p2.com1.z0.glb.clouddn.com/banner-02.jpg') ; background-size:100% 100%; "></li>
-        </ul>
-    </div>
-    <div class="navbar">
-        <div class="navbar-inner">
-            <ul class="nav nav-justified">
-                <li role="presentation" class="type2 active">
-                    <a href="#">民宿风采</a>
-                </li>
-                <li role="presentation" class="type1">
-                    <a href="#">探庐系列</a>
-                </li>
-                <li role="presentation">
-                    <a href="../">探庐者网站</a> 
-                </li>
-            </ul>
-        </div>
-    </div>
+    <?php include_once 'navigator.php';?>
+    <input type="hidden" id="type" value="<?php echo $_GET['type']?>"/>
 
     <div id="list1" class="article_list" style="display: none;">
     <?php 
