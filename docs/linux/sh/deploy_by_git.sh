@@ -77,7 +77,7 @@ if [ -f /home/git/casarover/docs/sql/deployment/*.sql ]
 then
     for FILE in /home/git/casarover/docs/sql/deployment/*.sql
     do
-       mysql -uroot -p${pwd} -e "source $FILE" | tee /tmp/mysql_tmp.sql
+       mysql -uroot -p${pwd} -e "source $FILE" | tee /tmp/mysql_${sys_time}.sql
     done
 fi
 

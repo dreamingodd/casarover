@@ -4,7 +4,7 @@
 #container {
     margin: 0 auto;
     border: 1px solid grey;
-    width: 400px;
+    width: 500px;
     padding: 15px;
     margin-top: 100px;
 }
@@ -37,7 +37,7 @@ if (empty($pwd)) {
 <?php 
 } else if (md5(md5($pwd)) == "65ddcae2800cbd732369e8fe7d1461d2") {
     $command = "sudo /home/git/casarover/docs/linux/sh/deploy_by_git.sh $pwd";
-    $logFileName = "/tmp/deploy_".date('Y-m-d_H:i:s').".log";
+    $logFileName = "/tmp/deploy_".date('Ymd_His').".log";
     $logFile = fopen($logFileName, 'w') or die('File: '.$logFileName.' open failed!');;
     exec($command, $outputArray, $returnVal);
     foreach ($outputArray as $line) {
@@ -46,9 +46,9 @@ if (empty($pwd)) {
     }
     fclose($logFile);
     if ($returnVal) {
-        echo '<br/><span style="color:red;">执行失败！<br/>Details refer to /etc/httpd/logs/error_log.</span>';
+        echo '<br/><span style="color:red;">执行失败！<br/>Details refer to /etc/httpd/logs/error_log</span>';
     } else {
-        echo '<br/><span style="color:green;">执行完毕！<br/>Logs save in /tmp/'.$logFileName.'.</span>';
+        echo '<br/><span style="color:green;">执行完毕！<br/>Logs save in '.$logFileName.'</span>';
     }
 } else {
 ?>
