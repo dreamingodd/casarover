@@ -84,6 +84,9 @@
   .city-slider {
     height: 233px !important ;
   }
+  .slides li {
+    height: 182px;
+  }
   .flex-prev {
     display: none;
   }

@@ -19,16 +19,6 @@ $(function(){
         $('.nav_one').removeClass('active');
         $('.theme').addClass('active');
     }
-    $('.wechat_container ul li').click(function(){
-        $('.wechat_container ul li').removeClass('active');
-        $(this).addClass('active');
-        $('.article_list').hide();
-        if ($(this).hasClass('type1')) {
-            $('#list1').show();
-        } else if ($(this).hasClass('type2')) {
-            $('#list2').show();
-        }
-    });
 });
 
 /**

@@ -22,40 +22,29 @@
 <?php 
 $waDao = new WechatArticleDao();
 $aDao = new AttachmentDao();
-$article_rows_1 = $waDao->getByType(1);
-$article_rows_2 = $waDao->getByType(2);
+$type = $_GET['type'];
+$series = $_GET['series'];
+if (empty($type)) {
+    // Default display list is 民宿风采
+    $type = 2;
+}
+if (empty($series)) {
+    // Now just "探庐系列 " has submenu.
+    if ($type == 1) {
+        $series = 1;
+    } else {
+        $series = 0;
+    }
+}
+$article_rows = $waDao->getByType($type, $series);
 ?>
 <div class="wechat_container">
     <?php include_once 'navigator.php';?>
-    <input type="hidden" id="type" value="<?php echo $_GET['type']?>"/>
+    <input type="hidden" id="type" value="<?php echo $type?>"/>
 
-    <div id="list1" class="article_list" style="display: none;">
+    <div id="list" class="article_list">
     <?php 
-    while ($row = mysql_fetch_array($article_rows_1)) {
-        $wa = new WechatArticle($row);
-        $a_row = $aDao->getById($wa->attachment_id);
-    ?>
-        <a href="<?php echo $wa->address; ?>">
-            <div class="article clearfix">
-                <div class="left">
-                    <img src="../../../photo/<?php echo $a_row['filepath']; ?>"/>
-                </div>
-                <div class="right">
-                    <span class="title"><?php echo $wa->title?></span>
-                    <br/>
-                    <span class="content"><?php echo $wa->brief?></span>
-                </div>
-            </div>
-        </a>
-        <hr/>
-    <?php 
-    }
-    ?>
-    </div>
-
-    <div id="list2" class="article_list">
-    <?php 
-    while ($row = mysql_fetch_array($article_rows_2)) {
+    while ($row = mysql_fetch_array($article_rows)) {
         $wa = new WechatArticle($row);
         $a_row = $aDao->getById($wa->attachment_id);
     ?>

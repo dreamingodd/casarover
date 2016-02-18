@@ -31,6 +31,11 @@
             <button type="button" class="btn btn-info">返回列表</button>
         </a>
     </div>
+    <div id="wechat_article_3_btns" class="btns">
+        <a href='../wechat/wechat_article_list.php?type=3'>
+            <button type="button" class="btn btn-info">返回列表</button>
+        </a>
+    </div>
     <div id="casa_btns" class="btns">
         <a id="casa_list" href='casa_list.php'>
             <button type="button" class="btn btn-info">返回列表</button>
