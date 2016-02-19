@@ -27,4 +27,4 @@ echo "database backup success"
 #据说这个占用cpu 如果有问题可以换用tar -cvf /home/back/ph.tar ./*
 zip -r ./$File.zip /var/www/html/photo/
 echo "photo backup success"
-echo "backup file name is  "$File
+echo "backup file name is  "$File".sql"

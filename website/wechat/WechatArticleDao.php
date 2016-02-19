@@ -7,8 +7,9 @@ class WechatArticleDao extends BaseDao{
         $this->checkAttrs($wa);
         if (empty($wa->id)) {
             // Add
-            $sql = "insert into wechat_article (attachment_id, title, brief, address, type, deleted) "
-                    ."values ($wa->attachment_id, $wa->title, $wa->brief, $wa->address, $wa->type, $wa->deleted)";
+            $sql = "insert into wechat_article (attachment_id, title, brief, address, type, series, deleted) "
+                    ."values ($wa->attachment_id, $wa->title, $wa->brief, $wa->address,"
+                    ."$wa->type, $wa->series, $wa->deleted)";
             if (mysql_query($sql)) {
                 return mysql_insert_id();
             } else {
@@ -22,6 +23,7 @@ class WechatArticleDao extends BaseDao{
                     ."brief=$wa->brief, "
                     ."address=$wa->address, "
                     ."type=$wa->type, "
+                    ."series=$wa->series, "
                     ."deleted=$wa->deleted "
                     ."where id=$wa->id ";
             if (mysql_query($sql)) {
@@ -73,6 +75,7 @@ class WechatArticleDao extends BaseDao{
         if (empty($wa->deleted)) $wa->deleted = 0;
         if (empty($wa->title)) $wa->title = '未填写';
         if (empty($wa->type)) $wa->type = 1;
+        if (empty($wa->series)) $wa->series = 0;
         $wa->address = $this->check_input($wa->address);
         $wa->attachment_id = $this->check_input($wa->attachment_id);
         $wa->brief = $this->check_input($wa->brief);
@@ -80,5 +83,6 @@ class WechatArticleDao extends BaseDao{
         $wa->id = $this->check_input(intval($wa->id));
         $wa->title = $this->check_input($wa->title);
         $wa->type = $this->check_input(intval($wa->type));
+        $wa->series = $this->check_input($wa->series);
     }
 }

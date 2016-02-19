@@ -7,9 +7,11 @@ $aDao = new AttachmentDao();
 $a_id = $_POST['attachment_id'];
 $wa_id = $_POST['id'];
 $type = $_POST['type'];
+$series = $_POST['series'];
+if (empty($series)) $series = 0;
 $filepath = $_GET['filepath'];
 $wa = new WechatArticle($wa_id, $a_id, $_POST['title'], $_POST['brief'],
-        $_POST['address'], $type, $_POST['deleted']);
+        $_POST['address'], $type, $series, $_POST['deleted']);
 $update_attachemnt = false;
 if ($a_id) {
     $attachment_row = $aDao->getById($a_id);

@@ -7,6 +7,7 @@ class WechatArticle {
     public $address;
     /**1：民宿推荐，2：民宿杂谈*/
     public $type;
+    public $series;
     public $deleted;
     /**
      * 只能处理参数数量不同的重载。
@@ -29,15 +30,17 @@ class WechatArticle {
         $this->brief = $row['brief'];
         $this->address = $row['address'];
         $this->type = $row['type'];
+        $this->series = $row['series'];
         $this->deleted = $row['deleted'];
     }
-    public function __construct7($id, $attachment_id, $title, $brief, $address, $type, $deleted) {
+    public function __construct8($id, $attachment_id, $title, $brief, $address, $type, $series, $deleted) {
         $this->id = $id;
         $this->attachment_id = $attachment_id;
         $this->title = $title;
         $this->brief = $brief;
         $this->address = $address;
         $this->type = $type;
+        $this->series = $series;
         $this->deleted = $deleted;
     }
 }

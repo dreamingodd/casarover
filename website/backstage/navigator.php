@@ -9,7 +9,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li><a class="not_complete" href="<?php echo getBaseUrl()?>website/backstage/huge_pics_edit.php">轮播图</a></li>
-                    <li><a href="<?php echo getBaseUrl()?>website/backstage/theme_list.php" >主题推荐</a></li>
+                    <li><a class="not_complete" href="<?php echo getBaseUrl()?>website/backstage/theme_list.php" >主题推荐</a></li>
                 </ul>
             </li>
             <li role="presentation" class="area">
@@ -24,8 +24,10 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li><a class="not_complete" href="<?php echo getBaseUrl()?>website/wechat/wechat_huge_pics_edit.php">轮播图</a></li>
-                    <li><a href="<?php echo getBaseUrl()?>website/wechat/wechat_article_list.php?type=2">民宿风采</a></li>
+                    <li><a href="<?php echo getBaseUrl()?>website/wechat/wechat_series_list.php">探庐系列-子标题</a></li>
                     <li><a href="<?php echo getBaseUrl()?>website/wechat/wechat_article_list.php?type=1">探庐系列</a></li>
+                    <li><a href="<?php echo getBaseUrl()?>website/wechat/wechat_article_list.php?type=2">民宿风采</a></li>
+                    <li><a href="<?php echo getBaseUrl()?>website/wechat/wechat_article_list.php?type=3">主题民宿</a></li>
                 </ul>
             </li>
             <!-- 

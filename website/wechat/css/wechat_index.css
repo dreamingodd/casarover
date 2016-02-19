@@ -15,17 +15,20 @@
     font-weight: bold;
     color: #444444;
 }
+.slides li {
+    height: 182px;
+}
 /*Ð¡ÆÁÄ»ÏÔÊ¾**/
 @media screen and (max-width:768px) {
     hr {
         margin-top: 5px;
         margin-bottom: 5px;
     }
-    .navbar li {
+    .nav-justified>li {
         float: left;
         width: 32%;
     }
-    .navbar li a {
+    .nav-justified>li>a {
         padding-left: 5px;
         padding-right: 5px;
     }

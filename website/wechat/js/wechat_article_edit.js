@@ -11,16 +11,42 @@ $(function(){
             $(this).after(newTemplateUploadForm());
         }
     });
-    // 分类选择 Choose Type.
+    // 一级标题选择 Choose Type.
+    //// Collect series from html doms.
+    var series_list = collectSeriesList();
     $('.type_li').click(function() {
         $('.type_text').html($(this).html());
         $('#type').val($(this).attr('db_id'));
+        fillSeriesUl(series_list, $(this).attr('db_id'));
     });
     $('.type_li').each(function(){
         var type_id = $('#type').val();
         if (type_id == $(this).attr('db_id')) {
             $('.type_text').html($(this).html());
         }
+    });
+    // 二级标题选择 Choose series
+    //// 根据type确定series, show series list which belongs to the pre-selected type.
+    if ($('#type').val()) {
+        fillSeriesUl(series_list, $('#type').val());
+    }
+    //// Pre-selected series.
+    if ($('#series').val()) {
+        var series = null;
+        for (var i = 0; i < series_list.length; i++) {
+            if ($('#series').val() == series_list[i].id) {
+                series = series_list[i];
+            }
+        }
+        if (series) {
+            $('.series_text').html(series.name);
+            $('#series').val(series.id);
+        }
+    }
+    //// Select series.
+    $('.series_li').click(function(){
+        $('.series_text').html($(this).html());
+        $('#series').val($(this).attr('db_id'));
     });
     // 点击图片删除事件，click image remove div(button).
     $('body').on('click', '.img-remove', function() {
@@ -68,3 +94,27 @@ $(function(){
         }
     });
 });
+
+function collectSeriesList() {
+    var series_list = [];
+    $('#series_list').children().each(function(){
+        var series = {};
+        series.id = $(this).attr('db_id');
+        series.name = $(this).attr('name');
+        series.type = $(this).attr('type');
+        series_list.push(series);
+    });
+    return series_list;
+}
+function fillSeriesUl(series_list, type) {
+    $('#series_ul').children().remove();
+    for (var i = 0; i < series_list.length; i++) {
+        var series = series_list[i];
+        if (type == series.type) {
+            var li = $('<li class="series_li"></li>');
+            li.html(series.name);
+            li.attr('db_id', series.id);
+            $('#series_ul').append(li);
+        }
+    }
+}

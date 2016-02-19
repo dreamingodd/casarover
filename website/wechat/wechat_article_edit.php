@@ -11,23 +11,27 @@
 <script src="../js/integration/jquery.form.js"></script>
 <script src="../js/integration/json2.js"></script>
 <script src="../backstage/js/all.js?rand=<?php echo $rand;?>"></script>
-<script src="js/wechat_article_edit.js?rand=<?php echo $rand?>"></script>
+<script src="js/wechat_article_edit.js"></script>
 </head>
 <body>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/controllers/check_admin_login_action.php';?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/models/AttachmentDao.php';?>
 <?php include_once 'WechatArticle.php';?>
 <?php include_once 'WechatArticleDao.php';?>
+<?php include_once 'WechatSeriesDao.php';?>
 <?php 
 $wa = new WechatArticle();
 $dao = new WechatArticleDao();
 $aDao = new AttachmentDao();
+$seriesDao = new WechatSeriesDao();
 $filepath = "";
-if ($_GET['id']) {
+$id = $_GET['id'];
+if ($id) {
     $wa = new WechatArticle($dao->getById($id));
     $a_row = $aDao->getById($wa->attachment_id);
     $filepath = $a_row['filepath'];
 }
+$series_rows = $seriesDao->getAll();
 ?>
 <div id="container">
     <!-- nav bar start -->
@@ -37,18 +41,40 @@ if ($_GET['id']) {
 
     <div class="col-lg-12">
         <div class="dropdown col-lg-12 vertical5">
-            <div id="provinces">
+            <div id="" style="float:left;">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    <span class="type_text">分类</span> <span class="caret"></span>
+                    <span class="type_text">一级标题</span> <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li class="type_li" db_id="1">民宿推荐</li>
-                    <li class="type_li" db_id="2">民宿杂谈</li>
+                    <li class="type_li" db_id="1">探庐系列</li>
+                    <li class="type_li" db_id="2">民宿推荐</li>
+                    <li class="type_li" db_id="3">主题民宿</li>
+                </ul>
+            </div>
+            <div id="" style="float:left; margin-left:5px">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <span class="series_text">二级标题</span> <span class="caret"></span>
+                </button>
+                <ul id="series_ul" class="dropdown-menu" aria-labelledby="dropdownMenu2"
+                        style="margin-left:115px;">
                 </ul>
             </div>
         </div>
     </div>
+    <!-- Here's the list of WechatSeries items. -->
+    <div id="series_list" style="display: none;">
+        <?php
+        while ($row = mysql_fetch_array($series_rows)) {
+        ?>
+            <span db_id="<?php echo $row['id']?>" name="<?php echo $row['name']?>"
+                    type="<?php echo $row['type']?>"></span>
+        <?php
+        }
+        ?>
+    </div>
+    <!-- WechatSeries list ENDs. -->
     <div class="small-photo col-lg-12">
         <h4>上传文章缩略图</h4>
         <div class="input-group input-group-sm col-lg-10
@@ -59,6 +85,7 @@ if ($_GET['id']) {
         <input type="hidden" id="id" name="id" value="<?php echo $wa->id?>"/>
         <input type="hidden" id="attachment_id" name="attachment_id" value="<?php echo $wa->attachment_id;?>"/>
         <input type="hidden" id="type" name="type" value="<?php echo $_GET['type'];?>"/>
+        <input type="hidden" id="series" name="series" value="<?php echo $wa->series;?>"/>
         <input type="hidden" id="deleted" name="deleted" value="<?php echo $wa->deleted;?>"/>
         <div class="col-lg-12" style="margin-top: 30px;">
             <div class="input-group input-group-sm col-lg-10">

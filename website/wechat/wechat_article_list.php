@@ -28,11 +28,14 @@
         <a href="wechat_article_edit.php?type=<?php echo $_GET['type']?>">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加微信文章
         </a>
+        <a href="wechat_article_list.php?type=1">
+            <span class="glyphicon glyphicon-list" aria-hidden="true"></span>探庐系列
+        </a>
         <a href="wechat_article_list.php?type=2">
             <span class="glyphicon glyphicon-list" aria-hidden="true"></span>民宿风采
         </a>
-        <a href="wechat_article_list.php?type=1">
-            <span class="glyphicon glyphicon-list" aria-hidden="true"></span>探庐系列
+        <a href="wechat_article_list.php?type=3">
+            <span class="glyphicon glyphicon-list" aria-hidden="true"></span>主题民宿
         </a>
         <a href="wechat_article_list.php?deleted=1">
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>回收站
@@ -45,8 +48,6 @@
             <th>简介</th>
             <th>操作</th>
         </tr>
-        <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/models/CasaDao.php';?>
-        <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/services/AreaService.php';?>
     <?php
     $dao = new WechatArticleDao();
     $article_rows = $dao->getByType($_GET['type']);

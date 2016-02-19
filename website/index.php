@@ -116,6 +116,7 @@ $picdir = '../../photo/';
     <div class="theme-two visible-xs-12" >
         <div class="nav-or hidden-md hidden-lg">热门主题</div>
         <?php foreach ($themes as $value): ?>
+        <!-- 
            <div class="col-md-4 col-sm-6">
                <div class="house-message">
                    <div class="top" onclick="goto_casa(<?php echo $value['id'] ?>)">
@@ -125,12 +126,49 @@ $picdir = '../../photo/';
                    <div class="bottom"><?php echo $value['short_mess']; ?></div>
                </div>
            </div>
+         -->
         <?php endforeach; ?>
+           <div class="col-md-3 col-sm-6">
+               <div class="house-message">
+                   <div class="top" onclick="goto_casa(248)">
+                       <img src="image/theme_tmp/248_20-3.png" alt="">
+                   </div>
+                   <div class="bottom">萌宠</div>
+                   <div class="bottom">喵，汪星人求陪睡，约么</div>
+               </div>
+           </div>
+           <div class="col-md-3 col-sm-6">
+               <div class="house-message">
+                   <div class="top" onclick="goto_casa(246)">
+                       <img src="image/theme_tmp/246_20-1.png" alt="">
+                   </div>
+                   <div class="bottom">情侣</div>
+                   <div class="bottom">天南海北，伴你入眠</div>
+               </div>
+           </div>
+           <div class="col-md-3 col-sm-6">
+               <div class="house-message">
+                   <div class="top" onclick="goto_casa(249)">
+                       <img src="image/theme_tmp/249_20-4.png" alt="">
+                   </div>
+                   <div class="bottom">亲子</div>
+                   <div class="bottom">带上孩子旅行去</div>
+               </div>
+           </div>
+           <div class="col-md-3 col-sm-6">
+               <div class="house-message">
+                   <div class="top" onclick="goto_casa(247)">
+                       <img src="image/theme_tmp/247_20-2.png" alt="">
+                   </div>
+                   <div class="bottom">星座</div>
+                   <div class="bottom">12星座的专属民宿</div>
+               </div>
+           </div>
     </div>
 
-   <div class="footer-logo hidden-xs">
+    <div class="footer-logo hidden-xs">
         <img src="image/logo.png" alt="">
-   </div>
+    </div>
 <?php include 'footer.php';?>
 </div>
 </body>
