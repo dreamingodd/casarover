@@ -23,13 +23,13 @@
         <div class="col-lg-12">
             <h4>类别</h4>
             <div class="text vertical5 col-lg-2">
-                <input disabled id="title" name="type" type="text" class="form-control" value="探庐系列" aria-describedby="sizing-addon3"/>
+                <input disabled id="type" name="type" type="text" class="form-control" value="探庐系列" aria-describedby="sizing-addon3"/>
             </div>
         </div>
         <div class="col-lg-12">
             <h4>名称</h4>
             <div class="name vertical5 col-lg-2">
-                <input id="title" name="name" type="text" class="form-control" value="" aria-describedby="sizing-addon3" />
+                <input id="name" name="name" type="text" class="form-control" value="" aria-describedby="sizing-addon3" />
             </div>
         </div>
         <div class="col-lg-12">
