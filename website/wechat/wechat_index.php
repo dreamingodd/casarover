@@ -39,29 +39,34 @@ if (empty($series)) {
 $article_rows = $waDao->getByType($type, $series);
 ?>
 <div class="wechat_container">
+
+    <!-- Navigator Starts. -->
     <?php include_once 'navigator.php';?>
     <input type="hidden" id="type" value="<?php echo $type?>"/>
+    <!-- Navigator Ends. -->
 
     <div id="list" class="article_list">
     <?php 
     while ($row = mysql_fetch_array($article_rows)) {
         $wa = new WechatArticle($row);
         $a_row = $aDao->getById($wa->attachment_id);
+        if (empty($series) || $series == $wa->series) {
     ?>
-        <a href="<?php echo $wa->address; ?>">
-            <div class="article clearfix">
-                <div class="left">
-                    <img src="../../../photo/<?php echo $a_row['filepath']; ?>"/>
+            <a href="<?php echo $wa->address; ?>">
+                <div class="article clearfix">
+                    <div class="left">
+                        <img src="../../../photo/<?php echo $a_row['filepath']; ?>"/>
+                    </div>
+                    <div class="right">
+                        <span class="title"><?php echo $wa->title?></span>
+                        <br/>
+                        <span class="content"><?php echo $wa->brief?></span>
+                    </div>
                 </div>
-                <div class="right">
-                    <span class="title"><?php echo $wa->title?></span>
-                    <br/>
-                    <span class="content"><?php echo $wa->brief?></span>
-                </div>
-            </div>
-        </a>
-        <hr/>
+            </a>
+            <hr/>
     <?php 
+        }
     }
     ?>
     </div>

@@ -1,4 +1,4 @@
-
+<?php include_once 'WechatSeriesDao.php';?>
 <div class="flexslider">
     <ul class="slides">
         <li onclick="goto_link1()"
@@ -19,10 +19,18 @@
                 </a>
                 <ul class="dropdown-menu">
                     <?php 
-                    
+                    $seriesDao = new WechatSeriesDao();
+                    $series_list = $seriesDao->getAll();
+                    while ($row = mysql_fetch_array($series_list)) {
+                        if ($row['type'] == 1) {
                     ?>
-                    <li><a href="wechat_index.php?type=1&series=">探庐·临安</a></li>
-                    <li><a href="wechat_index.php?type=1&series=">探庐·莫干山</a></li>
+                            <li><a href="wechat_index.php?type=1&series=<?php echo $row['id']?>">
+                                <?php echo $row['name']?>
+                            </a></li>
+                    <?php
+                        }
+                    }
+                    ?>
                 </ul>
             </li>
             <li role="presentation" class="theme nav_one">
