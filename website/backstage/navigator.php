@@ -35,8 +35,8 @@
                 <a href="reward_list.php">领奖操作</a>
             </li>
              -->
-            <li role="presentation" class="clean not_complete">
-                <a href="<?php echo getBaseUrl()?>website/backstage/clean_cache.php">清空缓存</a>
+            <li role="presentation" class="system">
+                <a href="<?php echo getBaseUrl()?>website/backstage/system.php">系统功能</a>
             </li>
             <li role="presentation" class="logout">
                 <a href="<?php echo getBaseUrl()?>application/controllers/logout_action.php?location=backstage">退出</a>
