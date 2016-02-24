@@ -36,10 +36,7 @@
                 $user = json_decode($user_json);
             ?>
                 <div class="header-right-nav">
-                    <img alt="" src="">
-                    <a href="person.php">
-                        <?php echo $user->username?>
-                    </a>
+                    <a href="person.php"><?php echo $user->username?></a>
                 </div>
                 <div class="header-right-nav">
                     <a href="#" id="logout">退出</a>

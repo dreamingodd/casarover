@@ -153,5 +153,6 @@ class CasaService {
         if (!$this->attachmentDao->del($a_id)) return false;
         return true;
     }
+
 }
 ?>

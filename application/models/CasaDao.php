@@ -68,6 +68,11 @@ class CasaDao extends BaseDao {
         $sql = "select * from casa where id=$id";
         return mysql_fetch_array ( mysql_query ( $sql ) );
     }
+    public function getByAreaId($area_id) {
+        $area_id = $this->check_input($area_id);
+        $sql = "select * from casa where dictionary_id=$area_id";
+        return mysql_query($sql);
+    }
     public function getByParentAreaId($city_id,$page) {
         $page_num = self::pageNum;
         $start_num = $page*$page_num;
