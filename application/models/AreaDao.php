@@ -292,12 +292,13 @@ class AreaDao extends BaseDao{
      * @param int $area_id
      * @return rows
      */
-    public function getCasas($area_id) {
+    public function getRecommendCasas($area_id) {
         $area_id = $this->check_input($area_id);
-        $sql = "select c.id, c.name from casa c, area_casa ac "
+        $sql = "select c.id, c.code, c.name from casa c, area_casa ac "
                 ."where ac.casa_id=c.id "
                 ."  and ac.area_id=$area_id";
-        return mysql_query($sql);
+        $result = mysql_query($sql);
+        return $result;
     }
     /**
      * Add rows in area_casa, used for 区域民宿推荐
