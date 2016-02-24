@@ -52,8 +52,8 @@ $(document).ready(function(){
        };
    };
    // 轮播图比例问题
-   setTimeout(adjust_height($('.slides li'), 2.2), 50);
-   $(window).resize(adjust_height($('.slides li'), 2.2));
+   setTimeout(adjust_height($('.slides li'), 3), 50);
+   $(window).resize(adjust_height($('.slides li'), 3));
    // 主题推荐的图片比例
    // adjust_casa_thumbnail();
 });

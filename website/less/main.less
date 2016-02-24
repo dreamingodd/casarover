@@ -80,36 +80,40 @@ body{
 }
 // 辅助类
 .head_height{
-    height: 94px;
+    height: 50px;
     float: left;
 }
 .font_h2{
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 94px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 50px;
 }
 // end辅助类
 
 /*header*/
 .header{
-    width: 1280px;
+    width: 100%;
     margin: 0 auto;
-    height: 94px;
     overflow: hidden;
 }
 
 .header-left{
-    width: @header_left;
+    width: 100%;
     .head_height;
-    background: url("../image/left_bg.png");
+    background: #A1B6D6;
     a{
         margin-left: 30px;
     }
+    img {
+        .head_height;
+        margin-left: 20px;
+    }
 }
 .header-right{
-    width: (@container - @header_left);
+    width: 400px;
     .head_height;
     background: #ff8c00;
+    float: right;
 }
 .header-right-nav{
     .head_height;
@@ -134,7 +138,7 @@ body{
 /*微信图片定位*/
 #wxImg{
     position:absolute;
-    top:85px;
+    top:50px;
     right:220px;
     z-index: 15;
     display:none;
@@ -199,12 +203,11 @@ body{
 /*搜索选择框*/
 .search-place{
     width: 100%;
-    height: 75px;
     overflow: hidden;
 }
 .search-place-left{
     width: 50%;
-    height: 85px;
+    height: 50px;
     overflow: hidden;
     background: #ff8c00;
     font-size: 0;
@@ -213,11 +216,11 @@ body{
     background: url("../image/place.png");
     padding-left: 45px;
     background-repeat:no-repeat;
-    margin-top: 14px;
     margin-left: 140px;
-    height: 47px;
-    width: 320px;
+    margin-top: 5px;
     font-size: 18px;
+    height: 40px;
+    width: 320px;
     border: 1px solid #ccc;
     .base_radius;
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);

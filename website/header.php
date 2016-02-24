@@ -14,40 +14,40 @@
         <a class="" href="<?php echo getUrl()?>">
             <img src="image/logo.png" alt="logo">
         </a>
-    </div>
-    <div class="header-right">
-        <div class="header-right-nav">
-            <span id="wx">关注微信</span>
+        <div class="header-right">
+            <div class="header-right-nav">
+                <span id="wx">关注微信</span>
+            </div>
+    
+            <!-- check whether user login or not. -->
+            <?php 
+            $sessionController = new SessionController();
+            $user_json = $sessionController->getUserJson();
+            if (empty($user_json)) {
+            ?>
+                <div class="header-right-nav">
+                    <a href="" id="login_btn" data-toggle="modal" data-target="#mModal">登录</a>
+                </div>
+                <div class="header-right-nav">
+                    <a href="register.php">注册</a>
+                </div>
+            <?php 
+            } else {
+                $user = json_decode($user_json);
+            ?>
+                <div class="header-right-nav">
+                    <img alt="" src="">
+                    <a href="person.php">
+                        <?php echo $user->username?>
+                    </a>
+                </div>
+                <div class="header-right-nav">
+                    <a href="#" id="logout">退出</a>
+                </div>
+            <?php
+            }
+            ?>
         </div>
-
-        <!-- check whether user login or not. -->
-        <?php 
-        $sessionController = new SessionController();
-        $user_json = $sessionController->getUserJson();
-        if (empty($user_json)) {
-        ?>
-            <div class="header-right-nav">
-                <a href="" id="login_btn" data-toggle="modal" data-target="#mModal">登录</a>
-            </div>
-            <div class="header-right-nav">
-                <a href="register.php">注册</a>
-            </div>
-        <?php 
-        } else {
-            $user = json_decode($user_json);
-        ?>
-            <div class="header-right-nav">
-                <img alt="" src="">
-                <a href="person.php">
-                    <?php echo $user->username?>
-                </a>
-            </div>
-            <div class="header-right-nav">
-                <a href="#" id="logout">退出</a>
-            </div>
-        <?php
-        }
-        ?>
     </div>
     <div class="clear"></div>
     <div id="wxImg" style="">
