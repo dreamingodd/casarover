@@ -43,7 +43,7 @@ $themes = $data['themes'];
       <img src="<?php echo $picdir.$message->title_img ?>" width="100%" alt="">
       </div>
   </div>
-
+<!-- 测试上传 -->
   <div class="section">
     <div class="col-md-8">
       <div class="top">
