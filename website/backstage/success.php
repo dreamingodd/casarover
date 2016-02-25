@@ -52,6 +52,17 @@
             <button type="button" class="btn btn-info">返回列表</button>
         </a>
     </div>
+    <div id="area_btns" class="btns">
+        <a id="casa_list" href='area_list.php'>
+            <button type="button" class="btn btn-info">返回列表</button>
+        </a>
+        <a id="casa_effect" target="_blank" href='../area_guide.php?area_id=<?php echo $_GET["id"]?>'>
+            <button type="button" class="btn btn-info">查看效果</button>
+        </a>
+        <a id="casa_continue" href='area_edit.php?area_id=<?php echo $_GET["id"]?>'>
+            <button type="button" class="btn btn-info">继续编辑</button>
+        </a>
+    </div>
 </div>
 </body>
 </html>

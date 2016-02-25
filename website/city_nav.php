@@ -2,7 +2,7 @@
 <script type="text/javascript" src="js/integration/hzw-city-picker.min.js"></script>
 <script src="js/city_nav.js" type="text/javascript"></script>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/cache/AreaCache.php';?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/services/AreaService.php';?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/models/AreaDao.php';?>
 <?php
 // var_dump($_SERVER['HTTP_USER_AGENT']);
 $areaCache = new AreaCache();
@@ -10,7 +10,8 @@ $baseurl = getBaseUrl();
 $provincesWithSub_json = $areaCache->getProvincesWithSub_json();
 $cities_json = $areaCache->getCities_json();
 $citydata = $areaCache->getCities();
-// var_dump($citydata);
+$areaDao = new AreaDao();
+$area = $areaDao->getAreaMess($_GET['area_id']);
 ?>
 <input id="provincesWithSub_json" type="hidden" value='<?php echo $provincesWithSub_json?>'/>
 <input id="cities_json" type="hidden" value='<?php echo $cities_json?>'/>

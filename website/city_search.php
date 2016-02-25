@@ -76,9 +76,10 @@ $message = $area->simpleMess();
                         </div>
                         <div class="show-mess">
                             <div class="main">
-                            <?php echo $value->contents[0] ; ?>
+                                <div style="font-size:24px; text-indent:center;"><?php echo $value->name;?>简介</div>
+                                <?php echo $value->contents[0] ; ?>
                             </div>
-                        </div> 
+                        </div>
                     </li>
                     <?php endif ?>
                 <?php endforeach; ?>

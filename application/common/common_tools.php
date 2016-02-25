@@ -36,10 +36,19 @@ function getBaseUrl() {
 }
 function encodeIdComma(Array $ids) {
     $ids_str = "";
+    for ($i = 0; $i < count($ids); $i++) {
+        if ($i == 0) {
+            $ids_str = $ids[i];
+        }
+        $ids_str += "," + $ids[i];
+    }
     return $ids_str;
 }
 function decodeIdComma($ids_str) {
     $idArray = array();
+    if (!empty($ids_str)) {
+        $idArray = split(",", $ids_str);
+    }
     return $idArray;
 }
 /**

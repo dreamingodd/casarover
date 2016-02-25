@@ -19,12 +19,15 @@
     <script src="js/main.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=y8Vn362WKNbfoqOMF9fXLsWF"></script>
 </head>
+<?php include_once '../application/models/AreaDao.php';?>
+<?php include_once '../application/services/CasaService.php';?>
 <body>
 <?php include '301.php';?>
 <?php
 
 require_once '../application/controllers/AreaController.php';
 $area = new AreaController();
+$area_id = $_GET['area_id'];
 $message = $area->index();
 $picdir = PIC_DIR;
 
@@ -43,7 +46,6 @@ $themes = $data['themes'];
       <img src="<?php echo $picdir.$message->title_img ?>" width="100%" alt="">
       </div>
   </div>
-
   <div class="section">
     <div class="col-md-8">
       <div class="top">
@@ -65,7 +67,7 @@ $themes = $data['themes'];
       <div class="bottom">
         <div class="col-md-6">
           <div class="content four">
-            <p><?php  echo $message->contents[0];  ?></p>
+            <p ><?php  echo $message->contents[0];  ?></p>
           </div>
         </div>
         <div class="col-md-6">
@@ -77,14 +79,14 @@ $themes = $data['themes'];
     </div>
 
     <div class="col-md-4">
-      <div class="content four" style="margin-left:20px">
-        <?php echo $message->contents[1]; ?>
+      <div class="content four">
+        <p><?php echo $message->contents[1]; ?></p>
       </div>
       <div class="pic">
         <img src="<?php echo $picdir.$message->content_img[3]  ?>" width="100%" alt="">
       </div>
       <div class="content four">
-        <?php echo $message->contents[2];?>
+        <p><?php echo $message->contents[2];?></p>
       </div>
     </div>
   </div>
@@ -117,21 +119,52 @@ $themes = $data['themes'];
       <h4>推荐民宿</h4>
     </div>
     <div class="col-md-9 recom-main">
-    <?php foreach ($themes as $value):?>
-     <div class="col-md-6" onclick="goto_casa(4)">
-       <div class="recom-content" >
-         <div class="top-pic">
-           <img src="<?php echo $picdir.$value['pic']?>" width="100%" alt="">
+    <?php 
+    $casaService = new CasaService();
+    $areaDao = new AreaDao();
+    $casas = array();
+    $casaSimpleRows = $areaDao->getRecommendCasas($area_id);
+    while ($row = mysql_fetch_array($casaSimpleRows)) {
+        array_push($casas, $casaService->getCasaWithAttachment($row['id']));
+    }
+    if (count($casas) == 0) {
+    ?>
+        <?php foreach ($themes as $value):?>
+         <div class="col-md-6" onclick="goto_casa(4)">
+           <div class="recom-content" >
+             <div class="top-pic">
+               <img src="<?php echo $picdir.$value['pic']?>" width="100%" alt="">
+             </div>
+             <div class="content">
+               <h3><?php echo $value['short_mess']?></h3>
+               <p>
+                 <span>杭州</span>
+               </p>
+             </div>
+           </div>
          </div>
-         <div class="content">
-           <h3><?php echo $value['short_mess']?></h3>
-           <p>
-             <span>杭州</span>
-           </p>
+        <?php endforeach ?>
+    <?php 
+    } else {
+        foreach ($casas as $casa):
+        ?>
+         <div class="col-md-6" onclick="goto_casa(4)">
+           <div class="recom-content" >
+             <div class="top-pic">
+               <img src="<?php echo '../../photo/'.$casa->attachment->filepath?>" width="100%" alt="">
+             </div>
+             <div class="content">
+               <h3><?php echo $casa->name?></h3>
+               <p>
+                 <span>杭州</span>
+               </p>
+             </div>
+           </div>
          </div>
-       </div>
-     </div>
-    <?php endforeach ?>
+    <?php
+        endforeach;
+        }
+    ?>
 
     </div>
   </div>

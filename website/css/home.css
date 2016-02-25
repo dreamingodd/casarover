@@ -130,12 +130,12 @@
 }
 .content_right_top {
   width: 100%;
-  height: 196px;
+  height: 130px;
   cursor: pointer;
   background: #123;
 }
 .content_right_top img {
-  height: 196px;
+  height: 130px;
   overflow: hidden;
 }
 .content_right_down {
@@ -146,7 +146,7 @@
 }
 .content_map {
   overflow: hidden;
-  max-height: 159px;
+  max-height: 130px;
   width: 30%;
   float: left;
   cursor: pointer;
@@ -154,7 +154,7 @@
 .content_map_right {
   width: 70%;
   overflow: hidden;
-  max-height: 159px;
+  max-height: 130px;
   height: 250px;
   float: right;
 }

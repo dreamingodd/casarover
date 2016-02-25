@@ -91,7 +91,7 @@ class AreaDao extends BaseDao{
             }
             
         }
-        echo "提交成功";
+        return true;
     }
 
     /**
@@ -133,9 +133,8 @@ class AreaDao extends BaseDao{
                 $pic_id = $this -> addPhoto($value);
                 $contentAttachmentDao->add($content_id, $pic_id);
             }
-            
         }
-        echo "更新成功";
+        return true;
     }
 
     // 添加基础区域信息
@@ -285,6 +284,46 @@ class AreaDao extends BaseDao{
         }
         return $result;
         
+    }
+
+    /**
+     * Get the simple casas' information according to area_id.
+     * @param int $area_id
+     * @return rows
+     */
+    public function getRecommendCasas($area_id) {
+        $area_id = $this->check_input($area_id);
+        $sql = "select c.id, c.code, c.name from casa c, area_casa ac "
+                ."where ac.casa_id=c.id "
+                ."  and ac.area_id=$area_id";
+        $result = mysql_query($sql);
+        return $result;
+    }
+    /**
+     * Add rows in area_casa, used for 区域民宿推荐
+     * @param Array $casa_ids
+     */
+    public function addAreaCasas($area_id, Array $casa_ids) {
+        foreach ($casa_ids as $casa_id) {
+            if ($this->addAreaCasa($area_id, $casa_id) == 0) {
+                return false;
+            }
+        }
+    }
+    public function addAreaCasa($area_id, $casa_id) {
+        $area_id = $this->check_input($area_id);
+        $casa_id = $this->check_input($casa_id);
+        $sql = "insert into area_casa values (null, $area_id, $casa_id)";
+        if (mysql_query($sql)) {
+            return mysql_insert_id();
+        } else {
+            return 0;
+        }
+    }
+    public function delAreaCasasByAreaId($area_id) {
+        $area_id = $this->check_input($area_id);
+        $sql = "delete from area_casa where area_id=$area_id";
+        return mysql_query($sql);
     }
 }
 

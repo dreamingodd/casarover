@@ -1,24 +1,30 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/controllers/check_admin_login_action.php';?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>探庐者后台-景点编辑</title>
-    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/all.css" />
-    <link rel="stylesheet" href="css/edit.css" />
-    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
-    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="//cdn.bootcss.com/jquery.form/3.51/jquery.form.min.js"></script>
-    <script src="js/jquery.wallform.js"></script>
-    <script src="js/area_edit.js"></script>
-    </head>
-    <?php
-        require_once '../../application/controllers/AreaController.php';
-        $area = new AreaController();
-        $message = $area->index();
-        $picdir = PIC_DIR;
-    ?>
+<head>
+<?php 
+$rand = rand(100, 999);
+?>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>探庐者后台-景点编辑</title>
+<link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/all.css" />
+<link rel="stylesheet" href="css/edit.css" />
+<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/jquery.form/3.51/jquery.form.min.js"></script>
+<script src="js/jquery.wallform.js"></script>
+<script src="js/area_edit.js?rand=<?php echo $rand;?>"></script>
+</head>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/controllers/check_admin_login_action.php';?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/models/AreaDao.php';?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/models/CasaDao.php';?>
+<?php
+    require_once '../../application/controllers/AreaController.php';
+    $area = new AreaController();
+    $message = $area->index();
+    $picdir = PIC_DIR;
+    $area_id = $_GET['area_id'];
+?>
 <body>
 
 <div id="container" class="container">
@@ -29,7 +35,7 @@
         <h3>后台管理-景点介绍</h3>
         <div class="photo">
             <h3>标题大图</h3>
-            <span class="reminder">上传一张图(图片宽高比必须在2:1以上，不得超过2.2:1)</span>
+            <span class="reminder">上传一张图(图片宽高比必须在3:1以上)</span>
             <div class="uppic">
                 <form id="imageform-head" method="post" enctype="multipart/form-data" action="upload.php">
                     <div id="up_btn-head" class="btn">
@@ -56,6 +62,7 @@
     </div>
     <h3>区域介绍图片</h3>
     <p>上传四张图片</p>
+    <p>最佳尺寸520*325</p>
     <div class="uppic">
         <form id="imageform" method="post" enctype="multipart/form-data" action="upload.php">
             <div id="up_btn" class="btn">
@@ -74,6 +81,7 @@
             <?php endif?>
         </div>
     </div>
+    <p style="color:red">每段最佳字数230</p>
     <!-- start -->
     <form action="../../application/controllers/AreaController.php?c=create" method="post">
         <input type="hidden" value="<?php echo $area_id; ?>" name="area_id">
@@ -107,8 +115,42 @@
             <input type="text" class="form-control" id="tier" name="tier" placeholder="显示层级" value="<?php echo $message->tier; ?>" />
         </div>
         <br/>
+        <div id="casa_select" class="vertical5 col-lg-12">
+            <input type="hidden" name="recommendCasas" id="recommendCasas" value=""/>
+            <div id="casa_select_left" class="col-lg-4">
+                <select multiple class="form-control" style="height:180px">
+                <?php 
+                // all areas
+                $casaDao = new CasaDao();
+                $all_rows = $casaDao->getByAreaId($area_id);
+                while ($row = mysql_fetch_array($all_rows)) {
+                    echo '<option value="'.$row['id'].'">'.$row['name'].'('.$row['code'].')'.'</option>';
+                }
+                ?>
+                </select>
+            </div>
+            <div id="casa_select_middle" class="col-lg-1">
+                <br/><br/>
+                <span id="casa_move_right" class="glyphicon glyphicon-arrow-right"
+                        style="font-size:50px; cursor:pointer; margin-left:10px;"></span>
+                <span id="casa_move_left"  class="glyphicon glyphicon-arrow-left"
+                        style="font-size:48px; cursor:pointer; margin-left:10px;"></span>
+            </div>
+            <div id="casa_select_right" class="col-lg-4">
+                <select multiple class="form-control" style="height:180px;">
+                <?php 
+                // selected areas
+                $areaDao = new AreaDao();
+                $selected_rows = $areaDao->getRecommendCasas($area_id);
+                while ($row = mysql_fetch_array($selected_rows)) {
+                    echo '<option value="'.$row['id'].'">'.$row['name'].'('.$row['code'].')'.'</option>';
+                }
+                ?>
+                </select>
+            </div>
+        </div>
         <div class="sub">
-        <button id="submit_btn" class="btn btn-primary">更新</button>
+            <button id="submit_btn" class="btn btn-primary">更新</button>
         </div>
     </form>
 </div>

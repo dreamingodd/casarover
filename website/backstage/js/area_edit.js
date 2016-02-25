@@ -14,6 +14,8 @@ $(function () {
             picdata = picdata + data + ';';
         });
         $("#true-somepic").val(picdata);
+        var recommendCasas = getRecommendCasaIdsAsStr();
+        $("#recommendCasas").val(recommendCasas);
     });
     $('body').on('click','.del', function() {
         $(this).next().remove();
@@ -45,21 +47,53 @@ $(function () {
 
     // 首图
     $('#photoimghead').off('click').on('change', function(){
-            var btn = $("#up_btn-head");
-            $("#imageform-head").ajaxForm({
-                target: '#preview-head', 
-                beforeSubmit:function(){
-                    $("#preview-head").children().remove();
-                    btn.hide();
-                }, 
-                success:function(){
-                    $(".done").css("display","none");
-                    var pic_name = $("#preview-head").children().attr("name");
-                    $("#true-headpic").val(pic_name);
-                    btn.show();
-                }, 
-                error:function(){
-                    btn.show();
-            } }).submit();
+        var btn = $("#up_btn-head");
+        $("#imageform-head").ajaxForm({
+            target: '#preview-head', 
+            beforeSubmit:function(){
+                $("#preview-head").children().remove();
+                btn.hide();
+            }, 
+            success:function(){
+                $(".done").css("display","none");
+                var pic_name = $("#preview-head").children().attr("name");
+                $("#true-headpic").val(pic_name);
+                btn.show();
+            }, 
+            error:function(){
+                btn.show();
+        } }).submit();
+    });
+
+    // Selection add and remove
+    $('body').on('click', '#casa_move_right', function(){
+        $('#casa_select_left select option').each(function(){
+            if ($(this).prop('selected')) {
+                $('#casa_select_right select').append($(this));
+            }
         });
+    });
+    $('body').on('click', '#casa_move_left', function(){
+        $('#casa_select_right select option').each(function(){
+            if ($(this).prop('selected')) {
+                $('#casa_select_left select').append($(this));
+            }
+        });
+    });
 });
+/**
+ * Collect casa ids in casa_select_right as string.
+ * return eg. 1,4,15 etc.
+ */
+function getRecommendCasaIdsAsStr() {
+    var select_casa_ids_str = "";
+    var select_casa_ids = [];
+    $('#casa_select_right select option').each(function(){
+        select_casa_ids.push($(this).val());
+    });
+    for (var i=0; i<select_casa_ids.length; i++) {
+        select_casa_ids_str += "," + select_casa_ids[i];
+    }
+    if (select_casa_ids_str) select_casa_ids_str = select_casa_ids_str.substring(1);
+    return select_casa_ids_str;
+}
