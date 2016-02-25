@@ -35,7 +35,7 @@ $rand = rand(100, 999);
         <h3>后台管理-景点介绍</h3>
         <div class="photo">
             <h3>标题大图</h3>
-            <span class="reminder">上传一张图(图片宽高比必须在2:1以上，不得超过2.2:1)</span>
+            <span class="reminder">上传一张图(图片宽高比必须在3:1以上)</span>
             <div class="uppic">
                 <form id="imageform-head" method="post" enctype="multipart/form-data" action="upload.php">
                     <div id="up_btn-head" class="btn">

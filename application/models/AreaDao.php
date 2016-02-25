@@ -91,7 +91,7 @@ class AreaDao extends BaseDao{
             }
             
         }
-        echo "提交成功";
+        return true;
     }
 
     /**
@@ -133,9 +133,8 @@ class AreaDao extends BaseDao{
                 $pic_id = $this -> addPhoto($value);
                 $contentAttachmentDao->add($content_id, $pic_id);
             }
-            
         }
-        echo "更新成功";
+        return true;
     }
 
     // 添加基础区域信息

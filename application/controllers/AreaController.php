@@ -80,7 +80,9 @@ class AreaController{
         $result = $areaDao->update($area_id,$name,$titlepic,$some_pics,$content_arr,$raiders_content,$position,$tier);
         // recommend casas
         $this->updateRecommendCasas($area_id, $_POST['recommendCasas']);
-        return $result;
+        if ($result) {
+            header("Location:../../website/backstage/success.php?info=Success(Pseudo)&id=$area_id&type=area");
+        }
 
     }
 
