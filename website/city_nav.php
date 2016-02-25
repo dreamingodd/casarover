@@ -10,8 +10,11 @@ $baseurl = getBaseUrl();
 $provincesWithSub_json = $areaCache->getProvincesWithSub_json();
 $cities_json = $areaCache->getCities_json();
 $citydata = $areaCache->getCities();
-$areaDao = new AreaDao();
-$area = $areaDao->getAreaMess($_GET['area_id']);
+$area = new stdClass();
+if (isset($_GET['area_id'])) {
+    $areaDao = new AreaDao();
+    $area = $areaDao->getAreaMess($_GET['area_id']);
+}
 ?>
 <input id="provincesWithSub_json" type="hidden" value='<?php echo $provincesWithSub_json?>'/>
 <input id="cities_json" type="hidden" value='<?php echo $cities_json?>'/>
