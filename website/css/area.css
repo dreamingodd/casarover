@@ -6,11 +6,19 @@
   padding-right: 0;
   padding-left: 0;
 }
+.content {
+  padding-right: 15px;
+  padding-left: 15px;
+}
 .content p {
   margin-left: 10px;
+  display: table-cell;
+  vertical-align: middle;
 }
 .four {
-  min-height: 230px;
+  height: 240px;
+  display: table;
+  overflow: hidden;
 }
 .head .pic {
   width: 100%;
@@ -38,7 +46,7 @@
   float: left;
 }
 .top .pic {
-  max-height: 234px;
+  max-height: 240px;
   overflow: hidden;
 }
 @media screen and (max-width: 400px) {
@@ -117,7 +125,6 @@
   margin: 0 auto;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
-  background: #CEDEEE;
   padding: 15px;
 }
 .radius p {
