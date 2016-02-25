@@ -321,6 +321,11 @@ class AreaDao extends BaseDao{
             return 0;
         }
     }
+    public function delAreaCasasByAreaId($area_id) {
+        $area_id = $this->check_input($area_id);
+        $sql = "delete from area_casa where area_id=$area_id";
+        return mysql_query($sql);
+    }
 }
 
 ?>

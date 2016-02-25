@@ -1,6 +1,6 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/models/AreaDao.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/common/common_tools.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/models/AreaDao.php';
 ?>
 <?php
 
@@ -78,6 +78,8 @@ class AreaController{
         $content_arr = array($content_first , $content_second , $content_third );
         $areaDao = new AreaDao();
         $result = $areaDao->update($area_id,$name,$titlepic,$some_pics,$content_arr,$raiders_content,$position,$tier);
+        // recommend casas
+        $this->updateRecommendCasas($area_id, $_POST['recommendCasas']);
         return $result;
 
     }
@@ -91,6 +93,14 @@ class AreaController{
         $area_id = $_GET['area_id'];
         $result = $areaDao -> getSimpleMess($area_id);
         return $result;
+    }
+
+    // Update recommended casas
+    private function updateRecommendCasas($area_id, $casa_ids_str) {
+        $areaDao = new AreaDao();
+        $areaDao->delAreaCasasByAreaId($area_id);
+        $casa_ids = decodeIdComma($casa_ids_str);
+        $areaDao->addAreaCasas($area_id, $casa_ids);
     }
 }
 

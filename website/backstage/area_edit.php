@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php 
+$rand = rand(100, 999);
+?>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>探庐者后台-景点编辑</title>
 <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -10,7 +13,7 @@
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="//cdn.bootcss.com/jquery.form/3.51/jquery.form.min.js"></script>
 <script src="js/jquery.wallform.js"></script>
-<script src="js/area_edit.js"></script>
+<script src="js/area_edit.js?rand=<?php echo $rand;?>"></script>
 </head>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/controllers/check_admin_login_action.php';?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/models/AreaDao.php';?>
@@ -111,6 +114,7 @@
         </div>
         <br/>
         <div id="casa_select" class="vertical5 col-lg-12">
+            <input type="hidden" name="recommendCasas" id="recommendCasas" value=""/>
             <div id="casa_select_left" class="col-lg-4">
                 <select multiple class="form-control" style="height:180px">
                 <?php 
@@ -118,7 +122,7 @@
                 $casaDao = new CasaDao();
                 $all_rows = $casaDao->getByAreaId($area_id);
                 while ($row = mysql_fetch_array($all_rows)) {
-                    echo '<option>'.$row['name'].'</option>';
+                    echo '<option value="'.$row['id'].'">'.$row['name'].'('.$row['code'].')'.'</option>';
                 }
                 ?>
                 </select>
@@ -126,18 +130,18 @@
             <div id="casa_select_middle" class="col-lg-1">
                 <br/><br/>
                 <span id="casa_move_right" class="glyphicon glyphicon-arrow-right"
-                        style="font-size:50px; cursor:pointer;"></span>
+                        style="font-size:50px; cursor:pointer; margin-left:10px;"></span>
                 <span id="casa_move_left"  class="glyphicon glyphicon-arrow-left"
-                        style="font-size:48px; cursor:pointer;"></span>
+                        style="font-size:48px; cursor:pointer; margin-left:10px;"></span>
             </div>
             <div id="casa_select_right" class="col-lg-4">
-                <select multiple name="" class="form-control" style="height:180px;">
+                <select multiple class="form-control" style="height:180px;">
                 <?php 
                 // selected areas
                 $areaDao = new AreaDao();
                 $selected_rows = $areaDao->getRecommendCasas($area_id);
                 while ($row = mysql_fetch_array($selected_rows)) {
-                    echo '<option>'.$row['name'].'</option>';
+                    echo '<option value="'.$row['id'].'">'.$row['name'].'('.$row['code'].')'.'</option>';
                 }
                 ?>
                 </select>

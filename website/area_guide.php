@@ -19,12 +19,15 @@
     <script src="js/main.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=y8Vn362WKNbfoqOMF9fXLsWF"></script>
 </head>
+<?php include_once '../application/models/AreaDao.php';?>
+<?php include_once '../application/services/CasaService.php';?>
 <body>
 <?php include '301.php';?>
 <?php
 
 require_once '../application/controllers/AreaController.php';
 $area = new AreaController();
+$area_id = $_GET['area_id'];
 $message = $area->index();
 $picdir = PIC_DIR;
 
@@ -117,14 +120,23 @@ $themes = $data['themes'];
       <h4>推荐民宿</h4>
     </div>
     <div class="col-md-9 recom-main">
-    <?php foreach ($themes as $value):?>
+    <?php 
+    $casaService = new CasaService();
+    $areaDao = new AreaDao();
+    $casas = array();
+    $casaSimpleRows = $areaDao->getRecommendCasas($area_id);
+    while ($row = mysql_fetch_array($casaSimpleRows)) {
+        array_push($casas, $casaService->getCasaWithAttachment($row['id']));
+    }
+    foreach ($casas as $casa):
+    ?>
      <div class="col-md-6" onclick="goto_casa(4)">
        <div class="recom-content" >
          <div class="top-pic">
-           <img src="<?php echo $picdir.$value['pic']?>" width="100%" alt="">
+           <img src="<?php echo '../../photo/'.$casa->attachment->filepath?>" width="100%" alt="">
          </div>
          <div class="content">
-           <h3><?php echo $value['short_mess']?></h3>
+           <h3><?php echo $casa->name?></h3>
            <p>
              <span>杭州</span>
            </p>
