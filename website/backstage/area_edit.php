@@ -131,7 +131,7 @@
                         style="font-size:68px; cursor:pointer;"></span>
             </div>
             <div id="casa_select_right" class="col-lg-4">
-                <select multiple class="form-control" style="height:250px;">
+                <select multiple name="" class="form-control" style="height:250px;">
                 <?php 
                 // selected areas
                 $areaDao = new AreaDao();
