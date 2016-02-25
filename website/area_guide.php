@@ -43,7 +43,6 @@ $themes = $data['themes'];
       <img src="<?php echo $picdir.$message->title_img ?>" width="100%" alt="">
       </div>
   </div>
-<!-- 测试上传 -->
   <div class="section">
     <div class="col-md-8">
       <div class="top">
@@ -77,7 +76,7 @@ $themes = $data['themes'];
     </div>
 
     <div class="col-md-4">
-      <div class="content four" style="margin-left:20px">
+      <div class="content four">
         <?php echo $message->contents[1]; ?>
       </div>
       <div class="pic">

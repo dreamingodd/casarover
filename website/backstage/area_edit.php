@@ -59,6 +59,7 @@
     </div>
     <h3>区域介绍图片</h3>
     <p>上传四张图片</p>
+    <p>最佳尺寸520*325</p>
     <div class="uppic">
         <form id="imageform" method="post" enctype="multipart/form-data" action="upload.php">
             <div id="up_btn" class="btn">
@@ -77,6 +78,7 @@
             <?php endif?>
         </div>
     </div>
+    <p style="color:red">每段最佳字数230</p>
     <!-- start -->
     <form action="../../application/controllers/AreaController.php?c=create" method="post">
         <input type="hidden" value="<?php echo $area_id; ?>" name="area_id">
