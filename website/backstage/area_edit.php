@@ -114,7 +114,7 @@
         <br/>
         <div id="casa_select" class="vertical5 col-lg-12">
             <div id="casa_select_left" class="col-lg-4">
-                <select multiple class="form-control" style="height:250px">
+                <select multiple class="form-control" style="height:180px">
                 <?php 
                 // all areas
                 $casaDao = new CasaDao();
@@ -128,12 +128,12 @@
             <div id="casa_select_middle" class="col-lg-1">
                 <br/><br/>
                 <span id="casa_move_right" class="glyphicon glyphicon-arrow-right"
-                        style="font-size:68px; cursor:pointer;"></span>
+                        style="font-size:50px; cursor:pointer;"></span>
                 <span id="casa_move_left"  class="glyphicon glyphicon-arrow-left"
-                        style="font-size:68px; cursor:pointer;"></span>
+                        style="font-size:48px; cursor:pointer;"></span>
             </div>
             <div id="casa_select_right" class="col-lg-4">
-                <select multiple class="form-control" style="height:250px;">
+                <select multiple name="" class="form-control" style="height:180px;">
                 <?php 
                 // selected areas
                 $areaDao = new AreaDao();
