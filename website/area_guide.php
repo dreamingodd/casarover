@@ -64,7 +64,7 @@ $themes = $data['themes'];
       <div class="bottom">
         <div class="col-md-6">
           <div class="content four">
-            <p><?php  echo $message->contents[0];  ?></p>
+            <p ><?php  echo $message->contents[0];  ?></p>
           </div>
         </div>
         <div class="col-md-6">
@@ -77,13 +77,13 @@ $themes = $data['themes'];
 
     <div class="col-md-4">
       <div class="content four">
-        <?php echo $message->contents[1]; ?>
+        <p><?php echo $message->contents[1]; ?></p>
       </div>
       <div class="pic">
         <img src="<?php echo $picdir.$message->content_img[3]  ?>" width="100%" alt="">
       </div>
       <div class="content four">
-        <?php echo $message->contents[2];?>
+        <p><?php echo $message->contents[2];?></p>
       </div>
     </div>
   </div>

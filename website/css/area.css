@@ -7,13 +7,17 @@
   padding-left: 0;
 }
 .content {
-  padding: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 .content p {
   margin-left: 10px;
+  display: table-cell;
+  vertical-align: middle;
 }
 .four {
   height: 240px;
+  display: table;
   overflow: hidden;
 }
 .head .pic {
@@ -121,7 +125,6 @@
   margin: 0 auto;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
-  background: #CEDEEE;
   padding: 15px;
 }
 .radius p {
