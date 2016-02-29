@@ -19,7 +19,6 @@ class AreaDao extends BaseDao{
         $name = $area['value'];
         $position = $area['position'];
         $tier = $area['tier'];
-
         // 获取area_content表中的关联数据
         $content_id_arr = $this->getContentId($area_id);
 
