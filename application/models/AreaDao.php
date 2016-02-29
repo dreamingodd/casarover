@@ -90,7 +90,7 @@ class AreaDao extends BaseDao{
             }
             
         }
-        echo "提交成功";
+        return true;
     }
 
     /**
@@ -132,9 +132,8 @@ class AreaDao extends BaseDao{
                 $pic_id = $this -> addPhoto($value);
                 $contentAttachmentDao->add($content_id, $pic_id);
             }
-            
         }
-        echo "更新成功";
+        return true;
     }
 
     // 添加基础区域信息
@@ -319,6 +318,11 @@ class AreaDao extends BaseDao{
         } else {
             return 0;
         }
+    }
+    public function delAreaCasasByAreaId($area_id) {
+        $area_id = $this->check_input($area_id);
+        $sql = "delete from area_casa where area_id=$area_id";
+        return mysql_query($sql);
     }
 }
 

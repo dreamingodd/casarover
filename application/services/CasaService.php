@@ -31,6 +31,11 @@ class CasaService {
         $this->caDao = new ContentAttachmentDao();
     }
 
+    /**
+     * 
+     * @param integer $casa_id
+     * @return Casa Object
+     */
     public function getCasaWithAttachment($casa_id) {
         $casa = new Casa($this->casaDao->getById($casa_id));
         $a_row = $this->attachmentDao->getById($casa->attachment->id);
