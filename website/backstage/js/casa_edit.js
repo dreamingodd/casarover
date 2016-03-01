@@ -59,10 +59,10 @@ $(function() {
     });
 
     /* 添加和删除内容功能 */
-    $('.add_content').click(function(){
+    $('body').on('click', '.add_content', function(){
         $(this).parent().parent().after($(html_content));
     });
-    $('.del_content').click(function(){
+    $('body').on('click', '.del_content', function(){
         $(this).parent().parent().remove();
     });
 

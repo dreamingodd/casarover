@@ -47,6 +47,11 @@
             <button type="button" class="btn btn-info">继续编辑</button>
         </a>
     </div>
+    <div id="theme_btns" class="btns">
+        <a id="casa_list" href='theme_list.php'>
+            <button type="button" class="btn btn-info">返回列表</button>
+        </a>
+    </div>
     <div id="area_btns" class="btns">
         <a id="casa_list" href='area_list.php'>
             <button type="button" class="btn btn-info">返回列表</button>
