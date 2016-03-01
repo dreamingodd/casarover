@@ -16,7 +16,7 @@ if ($action == 'edit') {
     $theme_items = array();
     $area_ids = array();
     $service->addOrUpdate($_POST['name'], $_POST['description'], $_POST['filepath'], $sc->getUsername(),
-            $theme_items, $area_ids);
+            $theme_items, $area_ids, $id);
     header("Location:../../website/backstage/success.php?info=添加或更新主题成功！&type=theme");
 } else if ($action == 'recycle') {
     $service->recycleTheme($id);

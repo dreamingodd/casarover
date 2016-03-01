@@ -19,5 +19,10 @@ class AttachmentDao extends BaseDao {
         $sql = "select * from attachment where id=" . $id;
         return mysql_fetch_array ( mysql_query ( $sql ) );
     }
+    public function getByFile($file) {
+        $file = $this->check_input($file);
+        $sql = "select * from attachment where filepath=$file";
+        return mysql_query($sql);
+    }
 }
 ?>

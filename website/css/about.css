@@ -17,7 +17,7 @@
   width: 50%;
   height: 72px;
   float: left;
-  background: url('../image/about_left.png');
+  background: url('http://casarover.oss-cn-hangzhou.aliyuncs.com/about_left.png');
 }
 .nav-title .right {
   float: left;
