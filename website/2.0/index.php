@@ -15,6 +15,7 @@
     <script src="//cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <script src="js/integration/jquery.flexslider-min.js" type="text/javascript"></script>
     <script src="js/home.js" type="text/javascript"></script>
+    <script src="js/vue.js" type="text/javascript"></script>
 </head>
 <body>
 <header>
@@ -42,7 +43,7 @@
 <ul class="slides">
     <li style="background:url(images/head.png) ; background-size:100% 100%;">
         <div class="slide-mess">
-            什么桥
+            {{ 什么桥 }}
         </div>
     </li>
     <li style="background:url(images/head2.png) ; background-size:100% 100%;">
@@ -125,29 +126,24 @@
 
         </section>
         <!-- 精选主题 -->
-        <section id="theme">
-            <h2>精选主题</h2>
-            <?php 
-            for($i=0;$i<6;$i++):
-            ?>
-            <div class="item">
+        <section id="theme" >
+            <h2 id="test" >精选主题</h2>
+            <div class="item" v-for="item in items">
                 <div class="item-b">
                 <a href="">
                     <img src="images/fang.jpg" height="100%">
                     <div class="card">
-                        <h3>花千谷</h3>
+                        <h3>{{ item.message }}</h3>
                     </div>
                     <div class="info">
                         <div class="middle">
-                        <h3>花千谷</h3>
-                        <p>位于云南省西部，这里冬天依旧温暖<br>
-                        这是多民族聚集区，可以吃到众多的云南小吃；丰富的热带水果；欣赏美丽的孔雀舞</p>
+                        <h3>{{ item.message }}</h3>
+                        <p>{{ item.short }}</p>
                         </div>
                     </div>
                 </a>
                 </div>
             </div>
-            <?php endfor ?>
         </section>
         <!-- 探庐系列 -->
         <section id="series">
