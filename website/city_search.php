@@ -29,7 +29,7 @@
 $area_id = $_GET['area_id'];
 $areaService = new AreaService();
 
-$picdir = '../../photo/';
+$picdir = 'http://casarover.oss-cn-hangzhou.aliyuncs.com/casa/';
 
 $city_ids = $areaService->getCityIdsIncludeDirect();
 if (!empty($area_id) && in_array($area_id, $city_ids)) {

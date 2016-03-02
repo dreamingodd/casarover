@@ -19,7 +19,7 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/common/common_tools.php';?>
 <input type="hidden" id="web_url" value="<?php echo getUrl()?>"/>
 <div style="position:absolute; width:100%; height:100%; z-index:-1">
-    <img src="image/bg3.jpg" height="100%" width="100%"/>
+    <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/bg3.jpg" height="100%" width="100%"/>
 </div>
 <div class="container">
     <div class="regist-main">

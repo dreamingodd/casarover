@@ -35,7 +35,7 @@ if(!$casa){
     header("Location:error.php?info=".$info);
     exit();
 }
-$picdir = '../../photo/';
+$picdir = '';
 ?>
 <?php include 'header.php';?>
 <div class="container">
@@ -55,7 +55,7 @@ $picdir = '../../photo/';
             <div class="message">
                 <!-- head pic -->
                 <div class="pic">
-                    <img src="<?php echo $picdir.$casa->main_photo_name?>" width="100%" alt="">
+                    <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/casa/<?php echo $picdir.$casa->main_photo_name?>" width="100%" alt="">
                 </div>
                 <!-- 文章列表 -->
                 <?php for ($i=0; $i < count($casa->contents); $i++): ?>
@@ -66,7 +66,7 @@ $picdir = '../../photo/';
                         </div>
                         <div class="contents-img">
                             <?php foreach ($casa->contents[$i]->photos as $value):  ?>
-                            <img src="<?php echo $picdir.$value ?>" width="100%"  alt="pic">
+                            <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/casa/<?php echo $picdir.$value ?>" width="100%"  alt="pic">
                             <?php  endforeach;  ?>
                         </div>
                         <div class="contents-text">

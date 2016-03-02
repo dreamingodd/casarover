@@ -9,7 +9,7 @@
     <link href="//cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/area.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="icon" href="image/favicon.ico">
+    <link rel="icon" href="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/favicon.ico">
     <!--[if lt IE 9]>
     <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -29,7 +29,7 @@ require_once '../application/controllers/AreaController.php';
 $area = new AreaController();
 $area_id = $_GET['area_id'];
 $message = $area->index();
-$picdir = PIC_DIR;
+$picdir = "http://casarover.oss-cn-hangzhou.aliyuncs.com/casa/";
 
 $data = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'].'/cache/home.json'),true);
 $themes = $data['themes'];
@@ -50,7 +50,7 @@ $themes = $data['themes'];
     <div class="col-md-8">
       <div class="top">
         <div class="col-md-4 hidden-sm hidden-xs">
-          <img src="image/areaguide/tuijian.png" width="100%" alt="">
+          <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/tuijian.png" width="100%" alt="">
         </div>
         <div class="col-md-8 pic">
           <img src="<?php  echo $picdir.$message->content_img[0]  ?>" width="100%" alt="">
@@ -94,7 +94,7 @@ $themes = $data['themes'];
   <!-- 攻略部分 -->
   <div class="section">
     <div class="col-md-3 hidden-sm hidden-xs">
-      <img src="image/areaguide/tj_gl_img.png" width="100%" alt="">
+      <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/tj_gl_img.png" width="100%" alt="">
     </div>
     <div class="m-radius-title visible-sm visible-xs">
       <h4>行程攻略</h4>
@@ -113,7 +113,7 @@ $themes = $data['themes'];
 
   <div class="section">
     <div class="col-md-3 hidden-sm hidden-xs">
-      <img src="image/areaguide/tj_mx.png" width="100%" alt="">
+      <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/tj_mx.png" width="100%" alt="">
     </div>
     <div class="m-radius-title visible-sm visible-xs">
       <h4>推荐民宿</h4>
@@ -151,7 +151,7 @@ $themes = $data['themes'];
          <div class="col-md-6" onclick="goto_casa(4)">
            <div class="recom-content" >
              <div class="top-pic">
-               <img src="<?php echo '../../photo/'.$casa->attachment->filepath?>" width="100%" alt="">
+               <img src="<?php echo 'http://casarover.oss-cn-hangzhou.aliyuncs.com/casa/'.$casa->attachment->filepath?>" width="100%" alt="">
              </div>
              <div class="content">
                <h3><?php echo $casa->name?></h3>

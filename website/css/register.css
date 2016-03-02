@@ -1,0 +1,55 @@
+.btn-default {
+  background: #ff8c00;
+  color: #ffffff;
+}
+.regist-main {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin-top: 100px;
+}
+.regist {
+  width: 492px;
+  margin: 0 auto;
+  z-index: 99;
+  background: #ffffff;
+}
+.regist-input {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.regist-header {
+  height: 54px;
+  background: url("http://casarover.oss-cn-hangzhou.aliyuncs.com/image/regist.png");
+  margin-bottom: 20px;
+}
+.regist-form {
+  width: 80%;
+  margin: 0 auto;
+}
+.form-code {
+  width: 77%;
+  float: left;
+}
+.slogan h1 {
+  text-align: center;
+}
+.slogan h4 {
+  text-align: center;
+}
+.get-code {
+  display: inline-block;
+  width: 20%;
+  height: 50px;
+  line-height: 50px;
+  color: #000;
+  background-color: #F7F7F6;
+  vertical-align: middle;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  margin-left: 10px;
+  text-transform: none;
+  text-align: center;
+  cursor: pointer;
+}
