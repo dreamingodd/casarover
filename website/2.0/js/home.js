@@ -1,24 +1,33 @@
 $(document).ready(function(){
-	$('.flexslider').flexslider({
-	    directionNav: true,
-	    pauseOnAction: false
-	});
-	$('.search-input input').click(function(){
-		$('.search-place').css('display','block');
-	})
-	$('.search-input input').blur(function(){
-		$('.search-place').css('display','none');
-	})
-	$("#test").click(function(){
-		var items = [
-			          { message: '第一个',short:"这个是介绍" },
-			          { message: '第二个',short:"这个是第二个介绍" }
-			        ];
-		new Vue({
-			  el: '#theme',
-			  data: {
-			    items:items 
-			  }
-			})
-	})
+    $('.flexslider').flexslider({
+        directionNav: true,
+        pauseOnAction: false
+    });
+    $('.search-input input').click(function(){
+        $('.search-place').css('display','block');
+    })
+    $('.search-input input').blur(function(){
+        $('.search-place').css('display','none');
+    })
+    new Vue({
+        el: '#theme',
+        data: function () {
+            return {
+                items:[{message:'1',short:'qwe'}]
+            };
+        },
+
+        created: function () {
+            vm = this;
+            console.log(this.items);
+            $("#test").click(function () {
+                $.getJSON('http://localhost/casarover/website/2.0/api/test.php',function (tests) {
+                    // console.log(tests);
+                    vm.items = tests;
+                    // console.log(vm.items);
+                }.bind(vm));
+            })
+
+        }
+    })
 })
