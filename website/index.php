@@ -40,7 +40,7 @@ $data = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'].'/cache/home.jso
 $hot_left = $data['left'];
 $hot_right = $data['right'];
 $themes = $data['themes'];
-$picdir = '../../photo/';
+$picdir = 'http://casarover.oss-cn-hangzhou.aliyuncs.com/casa/';
 ?>
 
 <!-- body起始位置 -->
