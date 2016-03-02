@@ -8,7 +8,7 @@
 $url = getCurrentUrl();
 $sc = new SessionController();
 $uis = json_decode($sc->getUserJson());
-if (!$uis || $uis->type != "NoWay") {//UserDao::TYPE_ADMIN) {
+if (!$uis || $uis->type != UserDao::TYPE_ADMIN) {
     header('Location:'.getBaseUrl().'website/backstage/admin_login.php?redirect_url='.$url);
 }
 ?>

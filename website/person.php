@@ -10,7 +10,7 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/person.css">
-<link rel="icon" href="image/favicon.ico">
+<link rel="icon" href="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/favicon.ico">
 
 <!--[if lt IE 9]>
   <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -35,7 +35,7 @@
             <div class="head-pic">
             <a href="">
                 <input type="file">
-                <img src="image/weixin.jpg" alt="">
+                <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/weixin.jpg" alt="">
             </a>
             </div>
             <?php 
@@ -80,10 +80,10 @@
             </div>
             <div class="card-main">
                 <h3>我的收藏</h3>
-                <div class="card" style="background-image: url('image/person/cs.png'); ">
+                <div class="card" style="background-image: url('http://casarover.oss-cn-hangzhou.aliyuncs.com/image/cs.png'); ">
                     <p>旅行者漫步主题民宿</p>
                 </div>
-                <div class="card" style="background-image: url('image/person/cs.png'); ">
+                <div class="card" style="background-image: url('http://casarover.oss-cn-hangzhou.aliyuncs.com/image/cs.png'); ">
                     <p>旅行者漫步主题民宿</p>
                 </div>
             </div>

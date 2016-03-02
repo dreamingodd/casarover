@@ -12,20 +12,33 @@
 </head>
 <body>
 <?php include '../301.php';?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/common/PropertyManager.php';?>
+<?php 
+$pm = new PropertyManager();
+$shutdown = $pm->getProperty("backstage_shutdown");
+?>
 <div id="container" style="width:400px; color: #777777">
     <h1>Casarover Management</h1>
     <form action="../../application/controllers/login_admin_action.php" class="login_form" method="post">
         <input id="redirect_url" name="redirect_url" type="hidden" value="<?php echo $_GET['redirect_url']?>"/>
         <div class="form-group login-input-m">
-            <input id="cellphone_number" name="cellphone_number" type="text" class="form-control" placeholder="Username"/>
+            <input id="cellphone_number" name="cellphone_number" type="text" class="form-control"
+                <?php if ($shutdown) echo "disabled";?>
+             placeholder="Username"/>
         </div>
         <div class="form-group login-input-m">
-            <input id="password" name="password" type="password" class="form-control" placeholder="Password"/>
+            <input id="password" name="password" type="password" class="form-control"
+                <?php if ($shutdown) echo "disabled";?>
+             placeholder="Password"/>
         </div>
         <div id="error_msg" class="checkbox login-checkbox-m"
-                style="text-align:center;color:red;">Backstage is temperarily shutdown for data migration！</div>
+                style="text-align:center;color:red;">&nbsp;
+            <?php if ($shutdown) echo "Backstage is temperarily shutdown for data migration！";?>
+        </div>
         <div class="logn_sub">
-            <input id="login" type="submit" class="btn btn-default btn-block btn-bgc" value="Login"/>
+            <input id="login" type="submit" class="btn btn-default btn-block btn-bgc"
+                <?php if ($shutdown) echo "disabled";?>
+             value="Login"/>
         </div>
     </form>
 </div>

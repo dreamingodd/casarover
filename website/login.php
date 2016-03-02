@@ -24,11 +24,11 @@
                     <div class="login-more">更多方式登录</div>
                     <div class="content-qq">
                         <span id="qqLoginBtn"></span>
-                        <!-- <a href=""><img src="image/login/qq.png" alt=""></a> -->
+                        <!-- <a href=""><img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/qq.png" alt=""></a> -->
                     </div>
                     <!-- 
                     <div class="content-weixin">
-                        <a href=""><img src="image/login/weixin.png" alt=""></a>
+                        <a href=""><img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/weixin.png" alt=""></a>
                     </div>
                      -->
                 </div>

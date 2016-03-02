@@ -21,7 +21,11 @@
 }
 .regist-header {
   height: 54px;
+<<<<<<< HEAD
   background: url("../image/login/regist.png");
+=======
+  background: url("http://casarover.oss-cn-hangzhou.aliyuncs.com/image/regist.png");
+>>>>>>> oss
   margin-bottom: 20px;
 }
 .regist-form {

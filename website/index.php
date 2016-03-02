@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/home.css">
 <link rel="stylesheet" href="css/flexslider.css">
-<link rel="icon" href="image/favicon.ico">
+<link rel="icon" href="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/favicon.ico">
 
 <!--[if lt IE 9]>
 <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -33,8 +33,8 @@
 <?php 
 
 // 配置
-$head_pic1 = 'http://7xp9p2.com1.z0.glb.clouddn.com/banner-01.jpg';
-$head_pic2 = 'http://7xp9p2.com1.z0.glb.clouddn.com/banner-02.jpg';
+$head_pic1 = 'http://casarover.oss-cn-hangzhou.aliyuncs.com/tmp/banner-01.jpg';
+$head_pic2 = 'http://casarover.oss-cn-hangzhou.aliyuncs.com/tmp/banner-02.jpg';
 
 $data = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'].'/cache/home.json'),true);
 $hot_left = $data['left'];
@@ -59,7 +59,7 @@ $picdir = '../../photo/';
     <?php include 'city_nav.php';?>
     <div class="map-img hidden-xs hidden-sm">
         <svg width="1280" height="372" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <image x="1.25" y="0" width="1280" height="372" xlink:href="image/nmap.png" transform="matrix(1,0,0,1,-1.25,0)" fill="#66FF33" xmlns:xlink="http://www.w3.org/1999/xlink" />
+        <image x="1.25" y="0" width="1280" height="372" xlink:href="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/nmap.png" transform="matrix(1,0,0,1,-1.25,0)" fill="#66FF33" xmlns:xlink="http://www.w3.org/1999/xlink" />
         <path id="31" d="M217 224L311 222L346 271L351 309L292 327L256 335L191 305L182 255C182 255 218 219 217 224Z" fill="#66FF33" stroke="none" stroke-opacity="0" fill-opacity="0"/>
         <path id="64" d="M350 94L394 134L397 164L364 175L314 185L270 164L252 112L300 82L350 94Z" fill="#000000" stroke="none" stroke-opacity="0" fill-opacity="0" />
         <path id="25" d="M609 50L599 111L537 124L492 101L461 70L467 30L524 15L600 21C600 21 607 48 609 50Z" fill="#66FF33" stroke="none" fill-opacity="0" stroke-opacity="0" xmlns="http://www.w3.org/2000/svg" />
@@ -104,7 +104,7 @@ $picdir = '../../photo/';
             </div>
             <div class="content_right_down">
                 <div class="content_map">
-                    <img src="image/hz_map.jpg" width="100%" alt="" onclick="goto_city(7)">
+                    <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/hz_map.jpg" width="100%" alt="" onclick="goto_city(7)">
                 </div>
                 <div class="content_map_right" onclick="goto_casa(<?php echo $hot_right[0]['id'] ?>)">
                     <img src="<?php echo $picdir.$hot_right[1]['pic'];?>" width="100%" alt="">
@@ -131,7 +131,7 @@ $picdir = '../../photo/';
            <div class="col-md-3 col-sm-6">
                <div class="house-message">
                    <div class="top" onclick="goto_casa(248)">
-                       <img src="image/theme_tmp/248_20-3.png" alt="">
+                       <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/tmp/248_20-3.png" alt="">
                    </div>
                    <div class="bottom">萌宠</div>
                    <div class="bottom">喵，汪星人求陪睡，约么</div>
@@ -140,7 +140,7 @@ $picdir = '../../photo/';
            <div class="col-md-3 col-sm-6">
                <div class="house-message">
                    <div class="top" onclick="goto_casa(246)">
-                       <img src="image/theme_tmp/246_20-1.png" alt="">
+                       <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/tmp/246_20-1.png" alt="">
                    </div>
                    <div class="bottom">情侣</div>
                    <div class="bottom">天南海北，伴你入眠</div>
@@ -149,7 +149,7 @@ $picdir = '../../photo/';
            <div class="col-md-3 col-sm-6">
                <div class="house-message">
                    <div class="top" onclick="goto_casa(249)">
-                       <img src="image/theme_tmp/249_20-4.png" alt="">
+                       <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/tmp/249_20-4.png" alt="">
                    </div>
                    <div class="bottom">亲子</div>
                    <div class="bottom">带上孩子旅行去</div>
@@ -158,7 +158,7 @@ $picdir = '../../photo/';
            <div class="col-md-3 col-sm-6">
                <div class="house-message">
                    <div class="top" onclick="goto_casa(247)">
-                       <img src="image/theme_tmp/247_20-2.png" alt="">
+                       <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/tmp/247_20-2.png" alt="">
                    </div>
                    <div class="bottom">星座</div>
                    <div class="bottom">12星座的专属民宿</div>
@@ -167,7 +167,7 @@ $picdir = '../../photo/';
     </div>
 
     <div class="footer-logo hidden-xs">
-        <img src="image/logo.png" alt="">
+        <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/logo.png" alt="">
     </div>
 <?php include 'footer.php';?>
 </div>
