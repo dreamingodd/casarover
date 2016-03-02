@@ -2,9 +2,9 @@
 <div class="flexslider">
     <ul class="slides">
         <li onclick="goto_link1()"
-                style="background:url('http://7xp9p2.com1.z0.glb.clouddn.com/banner-01.jpg') ; background-size:100% 100%; "></li>
+                style="background:url('http://casarover.oss-cn-hangzhou.aliyuncs.com/tmp/banner-01.jpg') ; background-size:100% 100%; "></li>
         <li onclick="goto_link2()"
-                style="background:url('http://7xp9p2.com1.z0.glb.clouddn.com/banner-02.jpg') ; background-size:100% 100%; "></li>
+                style="background:url('http://casarover.oss-cn-hangzhou.aliyuncs.com/tmp/banner-02.jpg') ; background-size:100% 100%; "></li>
     </ul>
 </div>
 <div class="navbar">

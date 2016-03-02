@@ -55,7 +55,7 @@ $article_rows = $waDao->getByType($type, $series);
             <a href="<?php echo $wa->address; ?>">
                 <div class="article clearfix">
                     <div class="left">
-                        <img src="../../../photo/<?php echo $a_row['filepath']; ?>"/>
+                        <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/casa/<?php echo $a_row['filepath']; ?>"/>
                     </div>
                     <div class="right">
                         <span class="title"><?php echo $wa->title?></span>
