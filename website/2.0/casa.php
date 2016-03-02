@@ -36,14 +36,17 @@
             <a href="">登录</a>
             <a href="">注册</a>
         </div>
-    </nav> 
+    </nav>
+    <!-- 民宿大图  -->
     <div class="casa-head">
         <div class="cover-photo">
             <img src="images/head.png" width="100%" alt="">
         </div>
         <div class="show-mess">
-            <div class="mark">浏览233</div>
-            <div class="title">杭州青逸假日民宿</div>
+            <!-- <div class="mark">浏览233</div> -->
+            <div class="title">
+                <h1>杭州青逸假日民宿</h1>
+            </div>
         </div>
 
     </div>
@@ -53,6 +56,11 @@
             成都，是一座让人感到幸福的城市，也是莲安遇到Curt的城市。莲安，成都莲公馆的主人，在开民宿之前，做过金融做过贸易，也曾经在这个行业很有抱负。直到她遇到了Curt，生活轨迹便由此改变。Curt，标准的美国理工男，是一名化学工程师，常常在世界各地跑。两人一个热爱文学、音乐和摄影，一个是理性宅男，但他们共同的爱好就是一起旅行，寻找生活之美。
         </div>
     </article>
+    <div class="casa-mess">
+        <div class="tag-list">
+            <a href=""></a>
+        </div>
+    </div>
 <?php include 'footer.php' ?>
 </body>
 </html>
