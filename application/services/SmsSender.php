@@ -1,3 +1,4 @@
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/common/PropertyManager.php';?>
 <?php
 /**
  * 百度Api Store 凯信通 短信服务商.
@@ -5,6 +6,10 @@
  * @2015-12-19
  */
 class SmsSender {
+    private $pm;
+    public function __construct() {
+        $this->pm = new PropertyManager();
+    }
     /**
      * Send verify code to user's cellphone.
      * e.g.【探庐者】感谢您使用我们的服务！您的验证码是000000。
@@ -22,7 +27,7 @@ class SmsSender {
                 .$verify_code
                 .'%E3%80%82';
         $header = array(
-                'apikey:9738609b08c0bd3746f63b4edb16d193',
+                'apikey:'.$this->pm->getProperty("sms_key"),
         );
         // 添加apikey到header
         curl_setopt($ch, CURLOPT_HTTPHEADER  , $header);

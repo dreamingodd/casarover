@@ -1,4 +1,9 @@
 <?php 
+/**
+ * The properties of system level.
+ * @author Ye_WD
+ * @2016-3-1
+ */
 class PropertyManager {
     // No variables in const
 //     const FILE_PATH = $_SERVER['DOCUMENT_ROOT']."/casarover/application/configs/property.json";
@@ -17,17 +22,8 @@ class PropertyManager {
             throw new Exception("Property file doesn't exist! - ".$File_Path);
         }
     }
-    public function getSystem() {
-        return $this->properties->system;
-    }
-    public function getHost() {
-        return $this->properties->host;
-    }
-    public function getPhotoFolder() {
-        return $this->properties->photo_folder;
-    }
-    public function getDummyOpenid() {
-        return $this->properties->dummy_openid;
+    public function getProperty($propName) {
+        return $this->properties->$propName;
     }
 }
 ?>

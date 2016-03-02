@@ -12,7 +12,7 @@
 <div class="header hidden-xs">
     <div class="header-left">
         <a class="" href="<?php echo getUrl()?>">
-            <img src="image/logo.png" alt="logo">
+            <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/logo.png" alt="logo">
         </a>
         <div class="header-right">
             <div class="header-right-nav">
@@ -48,7 +48,7 @@
     </div>
     <div class="clear"></div>
     <div id="wxImg" style="">
-        <img src="image/qcode.jpg" width="100%" alt="">
+        <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/qcode.jpg" width="100%" alt="">
     </div>
 </div>
 <div class="m-full" id="full-search" style="display:none;">
@@ -73,7 +73,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo getUrl()?>"><img src="image/logo.png" height="100%" alt=""></a>
+            <a class="navbar-brand" href="<?php echo getUrl()?>"><img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/logo.png" height="100%" alt=""></a>
             <form action="" class="head-search" id="search">
                 <input type="text" placeholder="选择目的地" class="form-control" readonly="readonly">
             </form>

@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/about.css">
-<link rel="icon" href="image/favicon.ico">
+<link rel="icon" href="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/favicon.ico">
 <script src="js/integration/jquery.min.js"></script>
 <script src="js/integration/bootstrap.min.js"></script>
 <script src="js/integration/jquery.flexslider-min.js"></script>
@@ -75,9 +75,9 @@
                 <div class="about-bottom">
                     <div class="main">
                         <div class="about-content">
-                        <img src="image/tencent.png" style="width:100%"/>
-                        <img src="image/baidu.png" style="width:100%"/>
-                        <img src="image/zheda.png" style="width:100%"/>
+                        <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/tencent.png" style="width:100%"/>
+                        <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/baidu.png" style="width:100%"/>
+                        <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/zheda.png" style="width:100%"/>
                         </div>
                     </div>
                 </div>
@@ -220,7 +220,7 @@
                 <div class="about-bottom">
                     <div class="main">
                         <div class="about-content">
-                            <img src="image/qcode.jpg" style="width:100%"/>
+                            <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/qcode.jpg" style="width:100%"/>
                         </div>
                     </div>
                 </div>
@@ -229,7 +229,7 @@
         <div class="col-md-3 nav-right hidden-xs"></div>
     </div>
     <div class="footer-logo hidden-xs">
-         <img src="image/logo.png" alt="">
+         <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/logo.png" alt="">
     </div>
 <?php include 'footer.php';?>
 </div>

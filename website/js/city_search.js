@@ -40,7 +40,7 @@ $(function(){
                 };
             };
             for (var i = 0; i < long; i++) {
-                var room = '<div class="col-md-4 col-sm-6 room"> <div class="house-message"><div class="top"><a href="casa.php?casa_id='+data.result[i].id+'" target="_blank"><img src="../../photo/'+data.result[i].main_photo_name+'" alt=""></a></div><div class="bottom"><h4><a href="casa.php?casa_id='+data.result[i].id+'">'+data.result[i].name+'</a></h4></div></div></div>';
+                var room = '<div class="col-md-4 col-sm-6 room"> <div class="house-message"><div class="top"><a href="casa.php?casa_id='+data.result[i].id+'" target="_blank"><img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/casa/'+data.result[i].main_photo_name+'" alt=""></a></div><div class="bottom"><h4><a href="casa.php?casa_id='+data.result[i].id+'">'+data.result[i].name+'</a></h4></div></div></div>';
                 $(".show-result").append(room);
             };
             // 民宿缩略图显示调整
