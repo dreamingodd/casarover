@@ -53,6 +53,7 @@
 </ul>
 </div>
 <!-- endslider -->
+<!-- 搜索框 -->
 <div class="search">
     <div class="search-form">
         <form action="">
@@ -61,10 +62,15 @@
             </div>
         </form>
         <div class="search-place">
-            
+            <ul>
+                <?php for($i=0;$i<15;$i++): ?>
+                    <li><a href="">杭州</a></li>
+                <?php endfor ?>
+            </ul>
         </div>
     </div>
 </div>
+<!-- end 搜索框 -->
 </header>
 
     <div class="container">
@@ -141,7 +147,7 @@
                 </a>
                 </div>
             </div>
-            <?php endfor; ?>
+            <?php endfor ?>
         </section>
         <!-- 探庐系列 -->
         <section id="series">
