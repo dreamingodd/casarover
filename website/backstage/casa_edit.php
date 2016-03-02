@@ -8,6 +8,7 @@
 <script src="../js/integration/bootstrap.min.js"></script>
 <script src="../js/integration/jquery.form.js"></script>
 <script src="../js/integration/json2.js"></script>
+<script src="../js/integration/require.js"></script>
 <script src="js/all.js"></script>
 <script src="js/casa_edit.js"></script>
 <title>探庐者后台-添加民宿</title>

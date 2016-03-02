@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="top hidden-xs">
         <div class="pic">
-            <img src="image/qcode.jpg" width="100%" alt="">
+            <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/qcode.jpg" width="100%" alt="">
         </div>
         <div class="message">
             <h4>公司</h4>
