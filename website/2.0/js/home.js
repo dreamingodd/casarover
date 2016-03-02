@@ -9,25 +9,36 @@ $(document).ready(function(){
     $('.search-input input').blur(function(){
         $('.search-place').css('display','none');
     })
-    new Vue({
+    var theme = new Vue({
         el: '#theme',
         data: function () {
             return {
-                items:[{message:'1',short:'qwe'}]
+                items:[{message:'1',short:'qwe',pic:"images/fang.jpg"}]
             };
         },
 
         created: function () {
             vm = this;
-            console.log(this.items);
             $("#test").click(function () {
                 $.getJSON('http://localhost/casarover/website/2.0/api/test.php',function (tests) {
-                    // console.log(tests);
                     vm.items = tests;
-                    // console.log(vm.items);
                 }.bind(vm));
             })
 
+        }
+    })
+    var city = new Vue({
+        el: '#city',
+        data: function () {
+            return {
+                citys:[]
+            };
+        },
+
+        created: function () {
+            $.getJSON('http://localhost/casarover/website/2.0/api/city.php',function (data) {
+                this.citys = data;
+            }.bind(this));
         }
     })
 })

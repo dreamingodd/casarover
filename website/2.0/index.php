@@ -62,11 +62,9 @@
                 <input type="text" placeholder="找到好民宿">
             </div>
         </form>
-        <div class="search-place">
-            <ul>
-                <?php for($i=0;$i<15;$i++): ?>
-                    <li><a href="">杭州</a></li>
-                <?php endfor ?>
+        <div class="search-place" id="city">
+            <ul v-for="item in citys">
+                <li><a href="">{{ item }}</a></li>
             </ul>
         </div>
     </div>
@@ -131,7 +129,7 @@
             <div class="item" v-for="item in items">
                 <div class="item-b">
                 <a href="">
-                    <img src="images/fang.jpg" height="100%">
+                    <img :src="item.pic" height="100%">
                     <div class="card">
                         <h3>{{ item.message }}</h3>
                     </div>
