@@ -22,7 +22,8 @@
         <div class="form-group login-input-m">
             <input id="password" name="password" type="password" class="form-control" placeholder="Password"/>
         </div>
-        <div id="error_msg" class="checkbox login-checkbox-m" style="color:red;">&nbsp;</div>
+        <div id="error_msg" class="checkbox login-checkbox-m"
+                style="text-align:center;color:red;">Backstage is temperarily shutdown for data migration！</div>
         <div class="logn_sub">
             <input id="login" type="submit" class="btn btn-default btn-block btn-bgc" value="Login"/>
         </div>
