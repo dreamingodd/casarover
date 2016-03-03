@@ -146,7 +146,7 @@ body {
 /*endheader*/
 /*登录模态框*/
 .modal-header {
-  background: url("http://casarover.oss-cn-hangzhou.aliyuncs.com/image/login/login_head.png");
+  background: url("http://casarover.oss-cn-hangzhou.aliyuncs.com/image/login_head.png");
 }
 .login-modal {
   margin-top: 100px;
@@ -245,13 +245,13 @@ body {
   margin: 0;
   width: 40px;
   height: 40px;
-  background-image: url("http://casarover.oss-cn-hangzhou.aliyuncs.com/image/login/qq.png");
+  background-image: url("http://casarover.oss-cn-hangzhou.aliyuncs.com/image/qq.png");
 }
 .icon-weixin-hover {
   margin: 0;
   width: 40px;
   height: 40px;
-  background-image: url("http://casarover.oss-cn-hangzhou.aliyuncs.com/image/login/weixin.png");
+  background-image: url("http://casarover.oss-cn-hangzhou.aliyuncs.com/image/weixin.png");
 }
 .login {
   width: 500px;
