@@ -58,7 +58,8 @@
     </article>
     <div class="casa-mess">
         <div class="tag-list">
-            <a href=""></a>
+            <a href="">简约</a>
+            <a href="">古典</a>
         </div>
     </div>
 <?php include 'footer.php' ?>

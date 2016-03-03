@@ -85,7 +85,7 @@
             </div>
             <div class="item">
                 <div class="item-a">
-                    <a href="">
+                    <a href="casa.php">
                         <img src="images/fang.jpg" height="100%">
                         <div class="card">
                             <h3>花千谷</h3>
