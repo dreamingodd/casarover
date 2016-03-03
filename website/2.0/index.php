@@ -19,6 +19,9 @@
 </head>
 <body>
 <header>
+<div id="example">
+  a={{ a }}, b={{ b }}
+</div>
     <nav class="navbar navbar-default">
         <!-- logo -->
         <div class="nav-left">
@@ -125,7 +128,7 @@
         </section>
         <!-- 精选主题 -->
         <section id="theme" >
-            <h2 id="test" >精选主题</h2>
+            <h2 id="test" v-on:click="turn" >精选主题</h2>
             <div class="item" v-for="item in items">
                 <div class="item-b">
                 <a href="">
@@ -136,7 +139,7 @@
                     <div class="info">
                         <div class="middle">
                         <h3>{{ item.message }}</h3>
-                        <p>{{ item.short }}</p>
+                        <p>{{ $index+item.short }}</p>
                         </div>
                     </div>
                 </a>
