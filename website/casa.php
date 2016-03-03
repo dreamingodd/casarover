@@ -1,3 +1,4 @@
+<?php $ver= '20160303'; ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,13 +7,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>探庐者-民宿详情</title>
 <link href="//cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/casa.css">
+<link rel="stylesheet" href="css/main.css?ver=<?php echo $ver; ?>">
+<link rel="stylesheet" href="css/casa.css?ver=<?php echo $ver; ?>">
 <script src="//cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="js/integration/jquery.nav.js" type="text/javascript"></script>
-<script src="js/main.js" type="text/javascript"></script>
-<script src="js/casa.js" type="text/javascript"></script>
+<script src="js/main.js?ver=<?php echo $ver; ?>" type="text/javascript"></script>
+<script src="js/casa.js?ver=<?php echo $ver; ?>" type="text/javascript"></script>
 <!--[if lt IE 9]>
 <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
