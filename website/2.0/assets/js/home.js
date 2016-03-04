@@ -13,7 +13,7 @@ $(document).ready(function(){
         el: '#theme',
         data: function () {
             return {
-                items:[{message:'1',short:'qwe',pic:"images/fang.jpg"}]
+                items:[{message:'1',short:'qwe',pic:"assets/images/fang.jpg"}]
             };
         },
 
@@ -24,12 +24,17 @@ $(document).ready(function(){
             //         vm.items = tests;
             //     }.bind(vm));
             // })
+            // console.log($(document.body).outerHeight(true));
         },
 
         methods: {
             turn: function (event){
                 $.getJSON('http://localhost/casarover/website/2.0/api/test.php',function (tests) {
                     vm.items = tests;
+                    // window.scrollTo(0,document.body.clientHeight);
+                    // 这样 获取的值还是一样的
+                    // console.log($(document.body).outerHeight(true));
+                    $("html,body").animate({"scrollTop": "1700px"}, 1000); 
                 }.bind(this));
             }
         }
