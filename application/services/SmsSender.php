@@ -23,7 +23,7 @@ class SmsSender
         $req->setExtend("1010");
         $req->setSmsType("normal");
         $req->setSmsFreeSignName("注册验证");
-        $req->setSmsParam("{\"code\":\".$verify_code.\",\"product\":\"探庐者\"}");
+        $req->setSmsParam("{\"code\":\"$verify_code\",\"product\":\"探庐者\"}");
         $req->setRecNum($phone);
         $req->setSmsTemplateCode("SMS_5400651");
         $resp = $c->execute($req);
