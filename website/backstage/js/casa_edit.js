@@ -1,42 +1,62 @@
-// 图片路径
-var photo_path = '../../../photo/';
-// 图片上传from
-var html_photo_form =
-        '<form class="photo-form" id="photo_upload_form" action="../../application/controllers/photo_upload_action.php"'
-        + '    method="post" enctype="multipart/form-data">'
-        + '  <div class="col-lg-12 vertical5">'
-        // input's name will be the key of file object in FILES
-        + '    <input type="file" id="fileupload" name="photo">'
-        + '  </div>' + '</form>';
-var html_main_photo_form =
-        '<form class="photo-form" id="main_photo_upload_form" action="../../application/controllers/photo_upload_action.php" method="post" enctype="multipart/form-data">'
-        +    '<div class="col-lg-12 vertical5">'
-        +        '<input type="file" id="mainupload" name="photo">'
-        +    '</div>'
-        +'</form>';
-// 图片展示元素html
-var html_img =
-        '<div class="photo-wrapper" style="position:relative;float:left">'
-        + '  <img style="max-width:393px;" class="photo img-rounded">'
-        + '  <span class="img-remove glyphicon glyphicon-remove" style="position:absolute;z-index:2;opacity:0.7;top:0;font-size:40px;"></span>'
-        + '</div>';
-// content空的内容 元素div
-var html_content = 
-    '<div class="content">'
-    +   '<div class="name col-lg-2 vertical5">'
-    +      '<input type="text" class="form-control" aria-describedby="sizing-addon3" />'
-    +   '</div>'
-    +   '<div class="col-lg-10 vertical5">'
-    +       '<button type="button" class="btn btn-info add-photo">添加图片</button>&nbsp;'
-    +       '<button type="button" class="btn btn-info add_content">插入内容</button>&nbsp;'
-    +       '<button type="button" class="btn btn-info del_content">删除内容</button>'
-    +   '</div>'
-    +   '<div class="text col-lg-12 vertical5">'
-    +       '<textarea rows="3" cols="150"></textarea>'
-    +   '</div>'
-    +'</div>';
+require.config({
+    paths : {
+        "jquery" : "../../js/integration/jquery.min",
+        "bootstrap" : "../../js/integration/bootstrap.min",
+        "json2" : "../../js/integration/json2",
+        "domready" : "../../js/integration/domready",
+        "oss_uploader" : "../oss/lib/plupload-2.1.2/js/plupload.full.min",
+    },
+    shim : {
+        bootstrap : {  
+            deps : [ 'jquery' ],  
+            exports : 'bootstrap'  
+        },
+        OssPhotoTool : {
+            deps : ['oss_uploader', 'bootstrap'],
+            exprots : 'OssPhotoTool'
+        }
+    }
+});
+require(["domready!", "jquery", "bootstrap", "json2", "common", "oss_uploader", "OssPhotoUploader"],
+        function(domready, $, bootstrap, json2, common, oss_uploader, OssTool){
 
-$(function() {
+    // 图片路径
+    var photo_path = '../../../photo/';
+    // 图片上传from
+    var html_photo_form =
+            '<form class="photo-form" id="photo_upload_form" action="../../application/controllers/photo_upload_action.php"'
+            + '    method="post" enctype="multipart/form-data">'
+            + '  <div class="col-lg-12 vertical5">'
+            // input's name will be the key of file object in FILES
+            + '    <input type="file" id="fileupload" name="photo">'
+            + '  </div>' + '</form>';
+    var html_main_photo_form =
+            '<form class="photo-form" id="main_photo_upload_form" action="../../application/controllers/photo_upload_action.php" method="post" enctype="multipart/form-data">'
+            +    '<div class="col-lg-12 vertical5">'
+            +        '<input type="file" id="mainupload" name="photo">'
+            +    '</div>'
+            +'</form>';
+    // 图片展示元素html
+    var html_img =
+            '<div class="photo-wrapper" style="position:relative;float:left">'
+            + '  <img style="max-width:393px;" class="photo img-rounded">'
+            + '  <span class="img-remove glyphicon glyphicon-remove" style="position:absolute;z-index:2;opacity:0.7;top:0;font-size:40px;"></span>'
+            + '</div>';
+    // content空的内容 元素div
+    var html_content = 
+        '<div class="content">'
+        +   '<div class="name col-lg-2 vertical5">'
+        +      '<input type="text" class="form-control" aria-describedby="sizing-addon3" />'
+        +   '</div>'
+        +   '<div class="col-lg-10 vertical5">'
+        +       '<button type="button" class="btn btn-info add-photo">添加图片</button>&nbsp;'
+        +       '<button type="button" class="btn btn-info add_content">插入内容</button>&nbsp;'
+        +       '<button type="button" class="btn btn-info del_content">删除内容</button>'
+        +   '</div>'
+        +   '<div class="text col-lg-12 vertical5">'
+        +       '<textarea rows="3" cols="150"></textarea>'
+        +   '</div>'
+        +'</div>';
 
     /* Mode confirmation: ADD or EDIT */
     var casa_id = $('#casa_id').val();
@@ -55,7 +75,7 @@ $(function() {
 
     // content 显示设置 替换"<br/>"为"\n", 当然上传的时候也做了相反的替换
     $('textarea').each(function() {
-        $(this).html(BRtoLF($(this).html()));
+        $(this).html(common.BRtoLF($(this).html()));
     });
 
     /* 添加和删除内容功能 */
@@ -205,102 +225,102 @@ $(function() {
         $('#casa_JSON_str').val(JSON.stringify(casa));
         $('#casa_form').submit();
     });
-});
 
-/**
- * 将一个区域对象转换成一个li DOM节点.
- * 
- * @param area
- *            省/市/区
- * @returns
- */
-function createAreaLi(area) {
-    var li = $("<li></li>");
-    li.attr('db_id', area.id);
-    li.attr('islast', area.islast);
-    li.attr('parentid', area.parentid);
-    li.html(area.name);
-    return li;
-}
-
-/**
- * 创建民宿对象
- * @returns casa object
- */
-function createCasa() {
-    var casa = {};
-    casa.id = $('#casa_id').val();
-    casa.name = $.trim($('#name').val());
-    casa.code = $.trim($('#code').val());
-    casa.area = Number($.trim($('#area').val()));
-    casa.link = $('#link').val();
-    casa.main_photo = $('#main_img').attr('filename');
-    if (!casa.name || !casa.code || !casa.area || !casa.main_photo) {
-        alert('民宿名称、编码、地区、默认图片均不能为空！');
-        return;
+    /**
+     * 将一个区域对象转换成一个li DOM节点.
+     * 
+     * @param area
+     *            省/市/区
+     * @returns
+     */
+    function createAreaLi(area) {
+        var li = $("<li></li>");
+        li.attr('db_id', area.id);
+        li.attr('islast', area.islast);
+        li.attr('parentid', area.parentid);
+        li.html(area.name);
+        return li;
     }
-    return casa;
-}
-/**
- * 从页面收集被点击过的标签（蓝色）.
- * @returns 标签集合
- */
-function collectTags() {
-    tags = [];
-    $('.tags span').each(function() {
-        if ($(this).hasClass('label-info')) {
-            tags.push(Number($(this).attr('db_id')));
+    
+    /**
+     * 创建民宿对象
+     * @returns casa object
+     */
+    function createCasa() {
+        var casa = {};
+        casa.id = $('#casa_id').val();
+        casa.name = $.trim($('#name').val());
+        casa.code = $.trim($('#code').val());
+        casa.area = Number($.trim($('#area').val()));
+        casa.link = $('#link').val();
+        casa.main_photo = $('#main_img').attr('filename');
+        if (!casa.name || !casa.code || !casa.area || !casa.main_photo) {
+            alert('民宿名称、编码、地区、默认图片均不能为空！');
+            return;
         }
-    });
-    return tags;
-}
-/**
- * 转换text input's value to 自定义标签集合.
- * @returns 自定义标签集合
- */
-function collectUserTags() {
-    user_tags = [];
-    // 替换英文逗号
-    if ($('#user_tags').val()) {
-        user_tags_str = $('#user_tags').val().replace(new RegExp(',', 'gm'),
-                '，');
-        user_tags = user_tags_str.split('，');
-        for ( var i = 0; i < user_tags.length; i++) {
-            user_tags[i] = $.trim(user_tags[i]);
-        }
+        return casa;
     }
-    return user_tags;
-}
-function collectContents() {
-    contents = [];
-    $('.content').each(function() {
-        var content = {};
-        content.name = $(this).children('.name').children(0).val();
-        content.text = $(this).children('.text').children(0).val();
-        content.text = LFtoBR(content.text);
-        content.photos = [];
-        $(this).children('.photo-wrapper').each(function() {
-            content.photos.push($(this).children('.photo').attr('filename'));
+    /**
+     * 从页面收集被点击过的标签（蓝色）.
+     * @returns 标签集合
+     */
+    function collectTags() {
+        tags = [];
+        $('.tags span').each(function() {
+            if ($(this).hasClass('label-info')) {
+                tags.push(Number($(this).attr('db_id')));
+            }
         });
-        contents.push(content);
-    });
-    return contents;
-}
-/**
- * show the uploaded or existed image and hide the form DOM.
- * @filename String image name
- * @param Object form DOM
- * @isMain boolean either it is casa main image or not
- */
-function showImg(filename, dom, isMain) {
-    var dom_img = $(html_img);
-    dom_img.children(0).prop('src', photo_path + filename);
-    dom_img.children(0).attr('filename', filename);
-    if (isMain) dom_img.children(0).attr('id', 'main_img');
-    if (dom) {
-        // display image which is just uploaded
-        dom.after(dom_img); 
-        // remove upload img button(form)
-        dom.remove();
+        return tags;
     }
-}
+    /**
+     * 转换text input's value to 自定义标签集合.
+     * @returns 自定义标签集合
+     */
+    function collectUserTags() {
+        user_tags = [];
+        // 替换英文逗号
+        if ($('#user_tags').val()) {
+            user_tags_str = $('#user_tags').val().replace(new RegExp(',', 'gm'),
+                    '，');
+            user_tags = user_tags_str.split('，');
+            for ( var i = 0; i < user_tags.length; i++) {
+                user_tags[i] = $.trim(user_tags[i]);
+            }
+        }
+        return user_tags;
+    }
+    function collectContents() {
+        contents = [];
+        $('.content').each(function() {
+            var content = {};
+            content.name = $(this).children('.name').children(0).val();
+            content.text = $(this).children('.text').children(0).val();
+            content.text = common.LFtoBR(content.text);
+            content.photos = [];
+            $(this).children('.photo-wrapper').each(function() {
+                content.photos.push($(this).children('.photo').attr('filename'));
+            });
+            contents.push(content);
+        });
+        return contents;
+    }
+    /**
+     * show the uploaded or existed image and hide the form DOM.
+     * @filename String image name
+     * @param Object form DOM
+     * @isMain boolean either it is casa main image or not
+     */
+    function showImg(filename, dom, isMain) {
+        var dom_img = $(html_img);
+        dom_img.children(0).prop('src', photo_path + filename);
+        dom_img.children(0).attr('filename', filename);
+        if (isMain) dom_img.children(0).attr('id', 'main_img');
+        if (dom) {
+            // display image which is just uploaded
+            dom.after(dom_img); 
+            // remove upload img button(form)
+            dom.remove();
+        }
+    }
+});

@@ -1,16 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<?php $rand=rand(100,999);?>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen" />
 <link href="css/all.css" rel="stylesheet" />
-<script src="../js/integration/jquery.min.js"></script>
-<script src="../js/integration/bootstrap.min.js"></script>
-<script src="../js/integration/jquery.form.js"></script>
-<script src="../js/integration/json2.js"></script>
-<script src="../js/integration/require.js"></script>
-<script src="js/all.js"></script>
-<script src="js/casa_edit.js"></script>
+<script src="../js/integration/require.min.js" data-main="js/casa_edit.js?rand=<?php echo $rand?>"></script>
 <title>探庐者后台-添加民宿</title>
 </head>
 
@@ -59,10 +54,19 @@
     <div class="main-photo">
         <h4>上传民宿缩略图</h4>
         <div class="input-group input-group-sm col-lg-10 reminder">最佳分辨率比例1.6：1，比如320：200。</div>
+        <div class="oss_photo_tool col-lg-12" >
+            <div class="oss_photo_button" class="vertical5">
+                <button class="btn btn-primary btn-sm">插入图片</button>
+            </div>
+            <div id="oss_photo_uploader" class="vertical5">
+                <a id="selectfiles" href="javascript:void(0);" class="btn btn-default btn-sm">选择文件</a>
+                <a id="postfiles" href="javascript:void(0);" class="btn btn-default btn-sm">开始上传</a>
+            </div>
+        </div>
         <?php
-        if (isset($casa)) {
-            echo '<input type="hidden" class="hidden_photo" value="'.$casa->main_photo_name.'"/>';
-        }
+//         if (isset($casa)) {
+//             echo '<input type="hidden" class="hidden_photo" value="'.$casa->main_photo_name.'"/>';
+//         }
         ?>
     </div>
     <div class="tags">
