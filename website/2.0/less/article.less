@@ -1,7 +1,7 @@
 article{
     float: left;
     width: 60%;
-    height: 300px;
+    height: 100%;
     overflow: hidden;
     margin: 30px;
     margin-left: 10%;
@@ -9,15 +9,48 @@ article{
 }
 .article-main{
     width: 95%;
-    margin: 0 auto;
     height: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
     color: #333;
 }
 .casa-mess{
     float: left;
     width: 25%;
-    height: 300px;
+    height: 100%;
     overflow: hidden;
+    margin-top: 30px;
     background: #fff;
+}
+.tag-list{
+    padding: 30px;
+    a{
+        background: #0099CC;
+        color: #fff;
+        padding: 5px 10px 5px 10px;
+    }
+}
+.casa-map{
+    width: 25%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    float: left;
+    height: 300px;
+    #allmap{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+.article-nav{
+    background: @article-nav;
+    line-height: 50px;
+    width: 200px;
+    border-radius: 3px;
+    text-align: center;
+    color: #fff;
 }
