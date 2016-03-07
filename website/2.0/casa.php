@@ -13,7 +13,8 @@
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="//cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-    <script src="js/home.js" type="text/javascript"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=y8Vn362WKNbfoqOMF9fXLsWF" type="text/javascript"></script>
+    <script src="js/map.js" type="text/javascript"></script>
 </head>
 <body>
 <header>
@@ -62,7 +63,7 @@
     </div>
     <div class="casa-map">
         <!-- 地图api显示位置 -->
-        <script></script>
+        <div id="allmap"></div>
     </div>
 <?php include 'footer.php' ?>
 </body>

@@ -13,7 +13,6 @@
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="//cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-    <script src="js/home.js" type="text/javascript"></script>
 </head>
 <body>
 <header>
