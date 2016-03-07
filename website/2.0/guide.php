@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <meta name="keywords" content="民宿,杭州,周末,去哪玩">
     <meta name="description" content="找到好民宿">
-    <title>{民宿的名字}-民宿</title>
+    <title>{区域的名字}-民宿</title>
     <link rel="stylesheet" href="css/main.css">
     <!--[if lt IE 9]>
     <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -41,29 +41,26 @@
         <div class="cover-photo">
             <img src="images/head.png" width="100%" alt="">
         </div>
-        <div class="show-mess">
-            <!-- <div class="mark">浏览233</div> -->
-            <h1>杭州青逸假日民宿</h1>
+        <div class="guide-mess">
+            <h1>白乐桥</h1>
         </div>
 
     </div>
 </header>
-    <!-- 民宿介绍内容 -->
-    <article>
-        <div class="article-main">
-            成都，是一座让人感到幸福的城市，也是莲安遇到Curt的城市。莲安，成都莲公馆的主人，在开民宿之前，做过金融做过贸易，也曾经在这个行业很有抱负。直到她遇到了Curt，生活轨迹便由此改变。Curt，标准的美国理工男，是一名化学工程师，常常在世界各地跑。两人一个热爱文学、音乐和摄影，一个是理性宅男，但他们共同的爱好就是一起旅行，寻找生活之美。
-        </div>
-    </article>
-    <div class="casa-mess">
-        <div class="tag-list">
-            <a href="">简约</a>
-            <a href="">古典</a>
-        </div>
-    </div>
-    <div class="casa-map">
-        <!-- 地图api显示位置 -->
-        <script></script>
-    </div>
+<div class="container">
+    <!-- 文字介绍 -->
+    <section>
+        
+    </section>
+    <!-- 附近景点 -->
+    <section>
+        
+    </section>
+    <!-- 附近民宿 -->
+    <section>
+        
+    </section>
+</div>
 <?php include 'footer.php' ?>
 </body>
 </html>
