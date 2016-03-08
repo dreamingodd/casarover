@@ -7,6 +7,11 @@ $userDao = new UserDao();
 $sessionController = new SessionController();
 // Check time interval 后台检查时间间隔
 $phone = $_GET['cellphone_number'];
+$user = $userDao->getByPhone($phone);
+if ($user) {
+    echo "手机号已被注册";
+    return;
+}
 if ($phone) {
     // put cellphone number into session, in case user use an different number to register.
     $sessionController->addCellphone($phone);
