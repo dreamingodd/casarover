@@ -3,23 +3,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>探庐者后台-微信文章编辑</title>
-<?php $rand = rand(0, 999);?>
 <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen" />
-<link href="../backstage/css/all.css?rand=<?php echo $rand?>" rel="stylesheet" />
+<link href="../backstage/css/all.css?v=1.1" rel="stylesheet" />
+<script src="../js/integration/require.min.js" data-main="js/OssPhotoUploader.js"></script>
 <script src="../js/integration/jquery.min.js"></script>
 <script src="../js/integration/bootstrap.min.js"></script>
-<script src="../js/integration/jquery.form.js"></script>
 <script src="../js/integration/json2.js"></script>
-<script src="../backstage/js/all.js?rand=<?php echo $rand;?>"></script>
-<script src="js/wechat_article_edit.js"></script>
+<script src="../backstage/js/all.js"></script>
+<script src="js/wechat_article_edit.js?v=1.1"></script>
 </head>
 <body>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/controllers/check_admin_login_action.php';?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/common/PropertyManager.php';?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/models/AttachmentDao.php';?>
 <?php include_once 'WechatArticle.php';?>
 <?php include_once 'WechatArticleDao.php';?>
 <?php include_once 'WechatSeriesDao.php';?>
 <?php 
+$pm = new PropertyManager();
 $wa = new WechatArticle();
 $dao = new WechatArticleDao();
 $aDao = new AttachmentDao();
@@ -79,7 +80,21 @@ $series_rows = $seriesDao->getAll();
         <h4>上传文章缩略图</h4>
         <div class="input-group input-group-sm col-lg-10
                 reminder">最佳分辨率比例1.6：1，比如96:60。考虑微信页加载速度，图片大小不超过36K！</div>
-        <input type="hidden" class="hidden_photo" value="<?php echo $filepath;?>"/>
+
+        <!-- OSS start -->
+        <div class="oss_photo_tool col-lg-12 clearfix" target_folder="casa" file_prefix="wechat" limit_size="36"
+                oss_address="<?php echo $pm->getProperty("oss_external")?>">
+            <div class="oss_button">
+                <button class="show_uploader btn btn-primary btn-sm">插入图片</button>
+            </div>
+            <div class="oss_hidden_input">
+                <?php  if (!empty($filepath)){ ?>
+                    <input type="hidden" class="hidden_photo" value="<?php echo $filepath;?>"/>
+                <?php }?>
+            </div>
+            <div class="oss_photo"></div>
+        </div>
+        <!-- OSS end -->
     </div>
     <form id="wechat_article_form" method="post" action="wechat_article_update_action.php">
         <input type="hidden" id="id" name="id" value="<?php echo $wa->id?>"/>

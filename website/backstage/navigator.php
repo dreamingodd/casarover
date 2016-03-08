@@ -13,7 +13,7 @@
                 </ul>
             </li>
             <li role="presentation" class="area">
-                <a href="<?php echo getBaseUrl()?>website/backstage/area_list.php">区域管理</a>
+                <a class="not_complete" href="<?php echo getBaseUrl()?>website/backstage/area_list.php">区域管理</a>
             </li>
             <li role="presentation" class="casa">
                 <a href="<?php echo getBaseUrl()?>website/backstage/casa_list.php">民宿管理</a>
