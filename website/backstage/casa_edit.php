@@ -4,20 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen" />
 <link href="css/all.css" rel="stylesheet" />
-<script src="../js/integration/jquery.min.js"></script>
-<script src="../js/integration/bootstrap.min.js"></script>
-<script src="../js/integration/jquery.form.js"></script>
-<script src="../js/integration/json2.js"></script>
-<script src="../js/integration/require.js"></script>
-<script src="js/all.js"></script>
-<script src="js/casa_edit.js"></script>
+<script src="../js/integration/require.min.js" data-main="js/OssPhotoUploader.js?v=1.1"></script>
+<script src="js/casa_edit.js" type="text/javascript"></script>
 <title>探庐者后台-添加民宿</title>
 </head>
 
 <body>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/controllers/check_admin_login_action.php';?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/common/PropertyManager.php';?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/services/CasaService.php';?>
 <?php
+    $pm = new PropertyManager();
     $casa_id = $_GET['casa_id'];
     $casaService = new CasaService();
     if (!empty($casa_id)) {
@@ -58,11 +55,30 @@
     </div>
     <div class="main-photo">
         <h4>上传民宿缩略图</h4>
+        <div class="input-group input-group-sm col-lg-10 reminder">插入多张无意义，只取一张</div>
         <div class="input-group input-group-sm col-lg-10 reminder">最佳分辨率比例1.6：1，比如320：200。</div>
+
+        <!-- OSS start -->
+        <div class="oss_photo_tool col-lg-12 clearfix" target_folder="casa" file_prefix="test" limit_size="1024"
+                oss_address="<?php echo $pm->getProperty("oss_external")?>">
+            <div class="oss_button">
+                <button class="show_uploader btn btn-primary btn-sm">插入图片</button>
+            </div>
+            <div class="oss_hidden_input">
+                <?php
+                if ($casa->main_photo_name) {
+                    echo '<input type="hidden" class="hidden_photo" value="'.$casa->main_photo_name.'"/>';
+                }
+                ?>
+            </div>
+            <div class="oss_photo"></div>
+        </div>
+        <!-- OSS end -->
+
         <?php
-        if (isset($casa)) {
-            echo '<input type="hidden" class="hidden_photo" value="'.$casa->main_photo_name.'"/>';
-        }
+//         if (isset($casa)) {
+//             echo '<input type="hidden" class="hidden_photo" value="'.$casa->main_photo_name.'"/>';
+//         }
         ?>
     </div>
     <div class="tags">
@@ -148,24 +164,36 @@
     if (isset($casa)) {
         foreach ($casa->contents as $content) {
     ?>
-    <div class="content">
-        <div class="name col-lg-2 vertical5">
-            <input type="text" class="form-control" value="<?php echo $content->name ?>" aria-describedby="sizing-addon3" />
+        <div class="content">
+            <div class="name col-lg-2 vertical5">
+                <input type="text" class="form-control" value="<?php echo $content->name ?>" aria-describedby="sizing-addon3" />
+            </div>
+            <div class="col-lg-10 vertical5">
+                <button type="button" class="btn btn-info add_content">插入内容</button>
+                <button type="button" class="btn btn-info del_content">删除内容</button>
+            </div>
+
+            <!-- OSS start -->
+            <div class="oss_photo_tool col-lg-12 clearfix" target_folder="casa" file_prefix="test" limit_size="1024"
+                    oss_address="<?php echo $pm->getProperty("oss_external")?>">
+                <div class="oss_button">
+                    <button class="show_uploader btn btn-primary btn-sm">插入图片</button>
+                </div>
+                <div class="oss_hidden_input">
+                    <?php
+                    foreach ($content->photos as $photo_name) {
+                        echo '<input type="hidden" class="hidden_photo" value="'.$photo_name.'"/>';
+                    }
+                    ?>
+                </div>
+                <div class="oss_photo"></div>
+            </div>
+            <!-- OSS end -->
+
+            <div class="text col-lg-12 vertical5">
+                <textarea rows="3" cols="150"><?php echo $content->text ?></textarea>
+            </div>
         </div>
-        <div class="col-lg-10 vertical5">
-            <button type="button" class="btn btn-info add-photo">添加图片</button>
-            <button type="button" class="btn btn-info add_content">插入内容</button>
-            <button type="button" class="btn btn-info del_content">删除内容</button>
-        </div>
-        <?php
-        foreach ($content->photos as $photo_name) {
-            echo '<input type="hidden" class="hidden_photo" value="'.$photo_name.'"/>';
-        }
-        ?>
-        <div class="text col-lg-12 vertical5">
-            <textarea rows="3" cols="150"><?php echo $content->text ?></textarea>
-        </div>
-    </div>
     <?php }} ?>
     <!-- Contents Template while adding casa -->
     <div id="casa_content_template">
