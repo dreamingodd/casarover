@@ -1,6 +1,5 @@
 section{
-    margin-top: 35px;
-    margin-bottom: 25px;
+    margin: 35px 15px 25px 15px;
     clear: both;
     height: 100%;
     width: 100%;
@@ -18,11 +17,12 @@ section{
 }
 .item{
     float: left;
-    margin: 10px;
     height: @item-height;
     overflow: hidden;
     cursor: pointer;
     position: relative;
+    background: #123;
+    margin: 15px 8px 0 8px;
     a{
         display: block;
         outline: none;
@@ -38,13 +38,23 @@ section{
 }
 // 横向显示
 .item-a{
-    width: 620px;
+    width: 615px;
     height: @item-height;
     overflow: hidden;
 }
 // 纵向显示
 .item-b{
     width: 300px;
+    height: @item-height;
+    overflow: hidden;
+}
+.item-c{
+    width: 400px;
+    height: @item-height;
+    overflow: hidden;
+}
+.item-d{
+    width: 515px;
     height: @item-height;
     overflow: hidden;
 }

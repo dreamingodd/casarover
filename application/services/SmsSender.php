@@ -1,4 +1,5 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/common/PropertyManager.php';?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/common/PropertyManager.php';
+?>
 <?php
     /**
     * alidayu api
@@ -16,9 +17,10 @@ class SmsSender
     */
     public function sendVerifyCode($phone, $verify_code)
     {
+        $pro = new PropertyManager;
         $c = new SmsServer;
-        $c->appkey = '23320039';
-        $c->secretKey = '3824e1fe3f224bb6a13ad39fe739976d';
+        $c->appkey = $pro->getProperty('sms_key');
+        $c->secretKey = $pro->getProperty('sms_secret');
         $req = new SendSms;
         $req->setExtend("1010");
         $req->setSmsType("normal");

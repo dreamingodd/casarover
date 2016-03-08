@@ -13,8 +13,8 @@
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="//cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-    <script src="js/integration/jquery.flexslider-min.js" type="text/javascript"></script>
-    <script src="js/home.js" type="text/javascript"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=y8Vn362WKNbfoqOMF9fXLsWF" type="text/javascript"></script>
+    <script src="js/map.js" type="text/javascript"></script>
 </head>
 <body>
 <header>
@@ -38,18 +38,17 @@
         </div>
     </nav>
     <!-- 民宿大图  -->
-    <div class="casa-head">
+    <div class="head-photo">
         <div class="cover-photo">
             <img src="images/head.png" width="100%" alt="">
         </div>
         <div class="show-mess">
             <!-- <div class="mark">浏览233</div> -->
-            <div class="title">
-                <h1>杭州青逸假日民宿</h1>
-            </div>
+            <h1>杭州青逸假日民宿</h1>
         </div>
 
     </div>
+</header>
     <!-- 民宿介绍内容 -->
     <article>
         <div class="article-main">
@@ -61,6 +60,10 @@
             <a href="">简约</a>
             <a href="">古典</a>
         </div>
+    </div>
+    <div class="casa-map">
+        <!-- 地图api显示位置 -->
+        <div id="allmap"></div>
     </div>
 <?php include 'footer.php' ?>
 </body>

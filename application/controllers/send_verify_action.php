@@ -1,6 +1,9 @@
 <?php include_once 'SessionController.php';?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/services/SmsSender.php';?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/models/UserDao.php';?>
+
 <?php 
+$userDao = new UserDao();
 $sessionController = new SessionController();
 // Check time interval 后台检查时间间隔
 $phone = $_GET['cellphone_number'];
@@ -18,6 +21,11 @@ if (!empty($last_time)) {
     }
 }
 
+$user = $userDao->getByPhone($phone);
+if ($user) {
+    echo "手机号已被注册";
+    return;
+}
 // Generate a 6-digits random number
 $random = rand(100000, 999999);
 
