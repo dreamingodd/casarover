@@ -1,4 +1,5 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/common/PropertyManager.php';?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/oss_uploader/PropertyManager.php';?>
+<?php include_once 'oss_php_sdk_20140625/sdk.class.php';?>
 <?php
     function gmt_iso8601($time) {
         $dtStr = date("c", $time);
@@ -9,7 +10,6 @@
         return $expiration."Z";
     }
 
-    require_once 'oss_php_sdk_20140625/sdk.class.php';
     $pm = new PropertyManager();
     $id= $pm->getProperty("oss_id");
     $key= $pm->getProperty("oss_secret");
@@ -20,15 +20,19 @@
     $expiration = gmt_iso8601($end);
 
     $oss_sdk_service = new alioss($id, $key, $host);
-    $dir = 'test/';
+    if(isset($_GET["target_folder"])) {
+        $dir .= $_GET["target_folder"]."/";
+    } else {
+        $dir .= "test/";
+    }
 
     //最大文件大小.用户可以自己设置
     $condition = array(0=>'content-length-range', 1=>0, 2=>1024000);
-    $conditions[] = $condition; 
+    $conditions[] = $condition;
 
     //表示用户上传的数据,必须是以$dir开始, 不然上传会失败,这一步不是必须项,只是为了安全起见,防止用户通过policy上传到别人的目录
     $start = array(0=>'starts-with', 1=>'$key', 2=>$dir);
-    $conditions[] = $start; 
+    $conditions[] = $start;
 
 
     //这里默认设置是２０２０年.注意了,可以根据自己的逻辑,设定expire 时间.达到让前端定时到后面取signature的逻辑
