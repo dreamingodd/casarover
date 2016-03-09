@@ -131,12 +131,12 @@
                 <a href="">
                     <img :src="item.pic" height="100%">
                     <div class="card">
-                        <h3>{{ item.message }}</h3>
+                        <h3>{{ item.title }}</h3>
                     </div>
                     <div class="info">
                         <div class="middle">
-                        <h3>{{ item.message }}</h3>
-                        <p>{{ $index+item.short }}</p>
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.shortMess }}</p>
                         </div>
                     </div>
                 </a>

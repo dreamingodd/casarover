@@ -1,0 +1,9 @@
+[
+  {
+    "openid":"123",
+    "phone":"18958142694",
+    "out_trade_no":"商户订单号",
+    "transaction_id":"购买订单号",
+    "trade_state":"交易状态"
+  }
+]

@@ -9,8 +9,9 @@ class AccessToken
 
     protected $appsecret;
 
+    protected $accesstoken='123';
     const API_TOKEN_GET = 'https://api.weixin.qq.com/cgi-bin/token';
-    function __construct($appid,$appsecret,$cache)
+    function __construct($appid,$appsecret)
     {
         $this->appid=$appid;
         $this->appsecret=$appsecret;
@@ -19,7 +20,7 @@ class AccessToken
     public function getToken()
     {
 //        判断缓存
-        
+
     }
 
     public function getFromServer()
@@ -34,5 +35,10 @@ class AccessToken
     public function getAppsecret()
     {
         return $this->appsecret;
+    }
+
+    public function getAccesstoken()
+    {
+        return $this->accesstoken;
     }
 }

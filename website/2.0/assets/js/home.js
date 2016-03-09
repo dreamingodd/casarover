@@ -9,6 +9,26 @@ $(document).ready(function(){
     $('.search-input input').blur(function(){
         $('.search-place').css('display','none');
     })
+
+    var recom = new Vue({
+        el:'#recom',
+        data: function(){
+            return null
+        },
+        created: function(){
+            this.getRecom;
+
+        },
+
+        methods: {
+            getRecom: function (event){
+                $.getJSON('api/home.php?c=recom',function (data) {
+                    vm.items = data;
+                }.bind(this));
+            }
+
+        }
+    })
     var theme = new Vue({
         el: '#theme',
         data: function () {
@@ -29,12 +49,13 @@ $(document).ready(function(){
 
         methods: {
             turn: function (event){
-                $.getJSON('http://localhost/casarover/website/2.0/api/test.php',function (tests) {
+                $.getJSON('api/home.php?c=recom',function (tests) {
                     vm.items = tests;
+                    //console.log(tests);
                     // window.scrollTo(0,document.body.clientHeight);
                     // 这样 获取的值还是一样的
                     // console.log($(document.body).outerHeight(true));
-                    $("html,body").animate({"scrollTop": "1700px"}, 1000); 
+                    $("html,body").animate({"scrollTop": "1700px"}, 1000);
                 }.bind(this));
             }
         }

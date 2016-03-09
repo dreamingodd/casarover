@@ -1,7 +1,26 @@
 <?php
 
+require 'AccessToken.php';
+
 class  WeiXin{
     //应该写在配置文件中
-    const appID = 'wx50091ef90a1cb4a9';
-    const appsecret = 'da9a38d3404d919ab32cf9ee7d257d94';
+
+
+    protected $accessToken;
+    function __construct(AccessToken $accessToken)
+    {
+    //var_dump($accessToken);
+        $this->setAccessToken($accessToken);
+        $accessToken->getAppid();
+    }
+
+    public function setAccessToken(AccessToken $accessToken)
+    {
+        $this->accessToken = $accessToken;
+        return $this;
+    }
+
 }
+
+$weixin = new WeiXin();
+var_dump($ewixin);
