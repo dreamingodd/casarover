@@ -68,7 +68,7 @@ echo "----3.deploying PHP."
 cd casarover
 cp -r /home/git/casarover/application/ ./application
 cp -r /home/git/casarover/website/ ./website
-cp -r /home/git/casarover/activity/ ./website
+cp -r /home/git/casarover/activity/ ./activity
 #Change DB password in PHP project
 echo "----4.Changing config in PHP project."
 mv /var/www/html/casarover/application/models/constant.php /var/www/html/casarover/application/models/constant.php.back
