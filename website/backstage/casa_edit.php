@@ -1,11 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen" />
 <link href="css/all.css" rel="stylesheet" />
-<script src="../js/integration/require.min.js" data-main="js/OssPhotoUploader.js?v=1.1"></script>
-<script src="js/casa_edit.js" type="text/javascript"></script>
+<script src="../js/integration/require.min.js" data-main="js/OssPhotoUploader.js"></script>
+<script src="../js/integration/jquery.min.js"></script>
+<script src="js/all.js"></script>
+<script src="js/casa_edit.js"></script>
 <title>探庐者后台-添加民宿</title>
 </head>
 
@@ -59,14 +61,14 @@
         <div class="input-group input-group-sm col-lg-10 reminder">最佳分辨率比例1.6：1，比如320：200。</div>
 
         <!-- OSS start -->
-        <div class="oss_photo_tool col-lg-12 clearfix" target_folder="casa" file_prefix="test" limit_size="1024"
+        <div class="oss_photo_tool col-lg-12 clearfix" target_folder="casa" file_prefix="casa" limit_size="1024"
                 oss_address="<?php echo $pm->getProperty("oss_external")?>">
             <div class="oss_button">
                 <button class="show_uploader btn btn-primary btn-sm">插入图片</button>
             </div>
             <div class="oss_hidden_input">
                 <?php
-                if ($casa->main_photo_name) {
+                if (!empty($casa->main_photo_name)) {
                     echo '<input type="hidden" class="hidden_photo" value="'.$casa->main_photo_name.'"/>';
                 }
                 ?>
@@ -174,7 +176,7 @@
             </div>
 
             <!-- OSS start -->
-            <div class="oss_photo_tool col-lg-12 clearfix" target_folder="casa" file_prefix="test" limit_size="1024"
+            <div class="oss_photo_tool col-lg-12 clearfix" target_folder="casa" file_prefix="casa" limit_size="1024"
                     oss_address="<?php echo $pm->getProperty("oss_external")?>">
                 <div class="oss_button">
                     <button class="show_uploader btn btn-primary btn-sm">插入图片</button>
@@ -202,10 +204,20 @@
                 <input type="text" class="form-control" value="探庐有感" aria-describedby="sizing-addon3" />
             </div>
             <div class="col-lg-10 vertical5">
-                <button type="button" class="btn btn-info add-photo">添加图片</button>
                 <button type="button" class="btn btn-info add_content">插入内容</button>
                 <button type="button" class="btn btn-info del_content">删除内容</button>
             </div>
+
+            <!-- OSS start -->
+            <div class="oss_photo_tool col-lg-12 clearfix" target_folder="casa" file_prefix="casa" limit_size="1024"
+                    oss_address="<?php echo $pm->getProperty("oss_external")?>">
+                <div class="oss_button">
+                    <button class="show_uploader btn btn-primary btn-sm">插入图片</button>
+                </div>
+                <div class="oss_hidden_input"></div>
+                <div class="oss_photo"></div>
+            </div>
+            <!-- OSS end -->
             <div class="text col-lg-12 vertical5">
                 <textarea rows="3" cols="150"></textarea>
             </div>
@@ -215,10 +227,20 @@
                 <input type="text" class="form-control" value="民宿主人" aria-describedby="sizing-addon3" />
             </div>
             <div class="col-lg-10 vertical5">
-                <button type="button" class="btn btn-info add-photo">添加图片</button>
                 <button type="button" class="btn btn-info add_content">插入内容</button>
                 <button type="button" class="btn btn-info del_content">删除内容</button>
             </div>
+
+            <!-- OSS start -->
+            <div class="oss_photo_tool col-lg-12 clearfix" target_folder="casa" file_prefix="casa" limit_size="1024"
+                    oss_address="<?php echo $pm->getProperty("oss_external")?>">
+                <div class="oss_button">
+                    <button class="show_uploader btn btn-primary btn-sm">插入图片</button>
+                </div>
+                <div class="oss_hidden_input"></div>
+                <div class="oss_photo"></div>
+            </div>
+            <!-- OSS end -->
             <div class="text col-lg-12 vertical5">
                 <textarea rows="3" cols="150"></textarea>
             </div>
@@ -228,10 +250,20 @@
                 <input type="text" class="form-control" value="民宿特写" aria-describedby="sizing-addon3" />
             </div>
             <div class="col-lg-10 vertical5">
-                <button type="button" class="btn btn-info add-photo">添加图片</button>
                 <button type="button" class="btn btn-info add_content">插入内容</button>
                 <button type="button" class="btn btn-info del_content">删除内容</button>
             </div>
+
+            <!-- OSS start -->
+            <div class="oss_photo_tool col-lg-12 clearfix" target_folder="casa" file_prefix="casa" limit_size="1024"
+                    oss_address="<?php echo $pm->getProperty("oss_external")?>">
+                <div class="oss_button">
+                    <button class="show_uploader btn btn-primary btn-sm">插入图片</button>
+                </div>
+                <div class="oss_hidden_input"></div>
+                <div class="oss_photo"></div>
+            </div>
+            <!-- OSS end -->
             <div class="text col-lg-12 vertical5">
                 <textarea rows="3" cols="150"></textarea>
             </div>
@@ -241,10 +273,20 @@
                 <input type="text" class="form-control" value="房间印象" aria-describedby="sizing-addon3" />
             </div>
             <div class="col-lg-10 vertical5">
-                <button type="button" class="btn btn-info add-photo">添加图片</button>
                 <button type="button" class="btn btn-info add_content">插入内容</button>
                 <button type="button" class="btn btn-info del_content">删除内容</button>
             </div>
+
+            <!-- OSS start -->
+            <div class="oss_photo_tool col-lg-12 clearfix" target_folder="casa" file_prefix="casa" limit_size="1024"
+                    oss_address="<?php echo $pm->getProperty("oss_external")?>">
+                <div class="oss_button">
+                    <button class="show_uploader btn btn-primary btn-sm">插入图片</button>
+                </div>
+                <div class="oss_hidden_input"></div>
+                <div class="oss_photo"></div>
+            </div>
+            <!-- OSS end -->
             <div class="text col-lg-12 vertical5">
                 <textarea rows="3" cols="150"></textarea>
             </div>
@@ -254,10 +296,20 @@
                 <input type="text" class="form-control" value="温馨提示" aria-describedby="sizing-addon3" />
             </div>
             <div class="col-lg-10 vertical5">
-                <button type="button" class="btn btn-info add-photo">添加图片</button>
                 <button type="button" class="btn btn-info add_content">插入内容</button>
                 <button type="button" class="btn btn-info del_content">删除内容</button>
             </div>
+
+            <!-- OSS start -->
+            <div class="oss_photo_tool col-lg-12 clearfix" target_folder="casa" file_prefix="casa" limit_size="1024"
+                    oss_address="<?php echo $pm->getProperty("oss_external")?>">
+                <div class="oss_button">
+                    <button class="show_uploader btn btn-primary btn-sm">插入图片</button>
+                </div>
+                <div class="oss_hidden_input"></div>
+                <div class="oss_photo"></div>
+            </div>
+            <!-- OSS end -->
             <div class="text col-lg-12 vertical5">
                 <textarea rows="3" cols="150"></textarea>
             </div>
@@ -267,10 +319,20 @@
                 <input type="text" class="form-control" value="联系方式" aria-describedby="sizing-addon3" />
             </div>
             <div class="col-lg-10 vertical5">
-                <button type="button" class="btn btn-info add-photo">添加图片</button>
                 <button type="button" class="btn btn-info add_content">插入内容</button>
                 <button type="button" class="btn btn-info del_content">删除内容</button>
             </div>
+
+            <!-- OSS start -->
+            <div class="oss_photo_tool col-lg-12 clearfix" target_folder="casa" file_prefix="casa" limit_size="1024"
+                    oss_address="<?php echo $pm->getProperty("oss_external")?>">
+                <div class="oss_button">
+                    <button class="show_uploader btn btn-primary btn-sm">插入图片</button>
+                </div>
+                <div class="oss_hidden_input"></div>
+                <div class="oss_photo"></div>
+            </div>
+            <!-- OSS end -->
             <div class="text col-lg-12 vertical5">
                 <textarea rows="3" cols="150"></textarea>
             </div>
