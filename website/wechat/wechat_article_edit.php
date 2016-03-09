@@ -7,7 +7,6 @@
 <link href="../backstage/css/all.css?v=1.1" rel="stylesheet" />
 <script src="../js/integration/require.min.js" data-main="js/OssPhotoUploader.js"></script>
 <script src="../js/integration/jquery.min.js"></script>
-<script src="../js/integration/bootstrap.min.js"></script>
 <script src="../js/integration/json2.js"></script>
 <script src="../backstage/js/all.js"></script>
 <script src="js/wechat_article_edit.js?v=1.1"></script>
