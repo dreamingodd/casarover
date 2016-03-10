@@ -1,3 +1,10 @@
+<?php
+
+require 'jssdk/jssdk.php';
+$jssdk = new JSSDK("wxeafd79d8fcbd74ee", "5db9a898bdd7f430bbc563476021f4b2");
+$signPackage = $jssdk->GetSignPackage();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +37,13 @@
         }
     </style>
     <script>
-        
+        function pay(){
+//            获取输入框的值，对手机号进行验证
+            doucumet.getElementById('number').value;
+
+//            调支付操作，这个页面是回调页面
+            window.location.href = 'result.php';
+        }
     </script>
 </head>
 <body>
@@ -56,14 +69,38 @@
 
     <div class="weui_cell">
     <div class="weui_cell_bd weui_cell_primary">
-        <input class="weui_input" type="number" pattern="[0-9]*" placeholder="请输入手机号">
+        <input class="weui_input" type="number" pattern="[0-9]*" placeholder="请输入手机号" id="number">
     </div>
     </div>
 
     <div class="weui_btn_area">
-        <a class="weui_btn weui_btn_primary" href="javascript:" id="showTooltips">微信支付</a>
+        <a class="weui_btn weui_btn_primary" href="javascript:" id="pay">微信支付</a>
     </div>
 </div>
-
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+  wx.config({
+    debug: true,
+    appId: '<?php echo $signPackage["appId"];?>',
+    timestamp: <?php echo $signPackage["timestamp"];?>,
+    nonceStr: '<?php echo $signPackage["nonceStr"];?>',
+    signature: '<?php echo $signPackage["signature"];?>',
+    jsApiList: [
+      // 所有要调用的 API 都要加到这个列表中
+      'checkJsApi'
+    ]
+  });
+  wx.ready(function () {
+    wx.checkJsApi({
+      jsApiList: [
+        'getNetworkType',
+        'previewImage'
+      ],
+      success: function (res) {
+        alert(JSON.stringify(res));
+      }
+    });
+  });
+</script>
 </body>
 </html>
