@@ -16,17 +16,15 @@ $json_obj = json_decode($res,true);
 $access_token = $json_obj['access_token'];
 $openid = $json_obj['openid'];
 
-echo $openid;
+// echo $openid;
 
 //通过openid在数据库查询如果已经购买过跳转到购买成功的页面
 
-//if($good)
-//{
-//    header('Location:result.php');
-//}
-//else
-//{
-//    header('Location:home.php');
-//}
-
-?>
+if($good)
+{
+   header("Location:result.php");
+}
+else
+{
+   header("Location:home.php");
+}
