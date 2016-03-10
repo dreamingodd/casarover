@@ -1,6 +1,11 @@
 <?php
-$appid= 'wxeafd79d8fcbd74ee';
+
+require 'wxapi.php';
+
+$wxapi = new WXapi();
+
+//进入之后进入微信的授权页面获取code
+//成功之后的跳转链接
 $redirect_uri = 'http://www.casarover.com/casarover/activity/oauth.php';
-$gourl = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='.$appid.
-         '&redirect_uri='.$redirect_uri.'&response_type=code&scope=snsapi_base&state=123#wechat_redirect';
-header("Location:".$gourl);
+$start_stup = $wxapi->start($redirect_uri);
+

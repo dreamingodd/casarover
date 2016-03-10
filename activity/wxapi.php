@@ -17,8 +17,6 @@ class WXapi{
     }
     public function getOpenid($code)
     {
-//        $get_token_url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid='.$appid.'&secret='
-//            .$secret.'&code='.$code.'&grant_type=authorization_code';
         $get_token_url = self::getTokenUrl.self::appid.'&secret='.self::secret.'&code='.$code.'&grant_type=authorization_code';
         $ch = curl_init();
         curl_setopt($ch,CURLOPT_URL,$get_token_url);
@@ -30,12 +28,11 @@ class WXapi{
         $json_obj = json_decode($res,true);
 //        $access_token = $json_obj['access_token'];
         $openid = $json_obj['openid'];
-
         return $openid;
     }
 
-    public function redirect($newurl)
+    public function redirect($newurl,$getdata=null)
     {
-        header("Location:".$newurl);
+        header("Location:".$newurl.'?'.$getdata);
     }
 }
