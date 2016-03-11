@@ -6,12 +6,8 @@ $openid = $_GET['openid'];
 $message = new Message();
 $good = $message->get($openid);
 
-$loc = $_GET["loc"];
-if($loc == null){
-    $page = 'http://mp.weixin.qq.com/s?__biz=MzI3MDA4NjAxNQ==&mid=401119888&idx=1&sn=b53c5bbbf6cf9117a78f4308c00af325#rd&ADUIN=744007114&ADSESSION=1451353714&ADTAG=CLIENT.QQ.5455_.0&ADPUBNO=26550';
-    header("Location:".$page);
-    exit();
-}
+//对用户是否关注账号进行判断
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
