@@ -50,12 +50,12 @@
 </head>
 <body>
 <div class="container">
-    <h3>请加小编为好友付款</h3>
+    <h3>请加小探为好友付款</h3>
     <div class="head-img">
-        <img src="http://7xp9p2.com1.z0.glb.clouddn.com/198505975053684935.jpg" width="100%" alt="">
+        <img src="http://7xp9p2.com1.z0.glb.clouddn.com/xt.jpg" width="100%" alt="">
     </div>
     <p>
-        小编确认后，在探庐者的公众号菜单中点击“者”查看你的组号
+        小探确认后，在探庐者的公众号菜单中点击“者”查看你的组号
     </p>
 </div>
 

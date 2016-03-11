@@ -8,7 +8,7 @@
 $openid = $_GET['openid'];
 
 if(empty($openid)){
-    header("Location:index.php");
+    //header("Location:index.php");
 };
 ?>
 <!DOCTYPE html>
@@ -105,12 +105,13 @@ if(empty($openid)){
     </div>
     
     <section>
-        <h3>电影券<span>（近期热映随你选）</span></h3>
-        <h3>餐厅券<span>（可携带一名死党去哟）</span></h3>
-        <h3>咖啡券<span>（带TA一起去）</span></h3>
-        <h3>超级礼物袋<span>（开袋有惊喜）</span></h3>
-        <h3>一次报名，吃喝玩乐都有啦</h3>
-        <p>ps:本次活动需要两人一组报名，每人20元</p>
+        <h3>牛满汕无门槛50元代金券一张</h3>
+        <h3>水晶城折叠伞一把</h3>
+        <h3>有茶出沫全城通用奶茶券2张</h3>
+        <h3>探庐者大礼包一份</h3>
+        <h3>……</h3>
+        <h3>不止于此</h3>
+        <p>ps:本次活动需要两人一组报名<br/>只需其中一人报名即可,每人20元</p>
 
     </section>
 
