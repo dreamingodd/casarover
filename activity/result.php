@@ -5,7 +5,7 @@ require 'model/message.php';
 $openid = $_GET['openid'];
 $message = new Message();
 $good = $message->get($openid);
-$showpage = "http://www.casarover.com";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,21 +53,21 @@ $showpage = "http://www.casarover.com";
     <!-- 第一次进入 -->
     <?php
     if( $openid == null){
-        header("Location:".$showpage);
+        header("Location:index.php");
         exit();
     }
     ?>
     <!-- 购买成功 -->
-    <?php if($good["status"] == 1): ?>
+    <?php if($good[0]["status"] == 1): ?>
          <div class="group-num">
             <h1>你们的组号</h1>
-            <h1><?php echo $good["id"]; ?></h1>
+            <h1><?php echo $good[0]["id"]; ?></h1>
          </div>
     <?php endif; ?>
     
     <!-- 如果没有支付 -->
     <?php
-        if($good["status"] == 0){
+        if($good[0]["status"] == 0){
             header("Location:person.php");
         }
     ?>
