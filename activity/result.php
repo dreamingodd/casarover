@@ -67,7 +67,7 @@ if($loc == null){
     <?php if($good[0]["status"] == 1): ?>
          <div class="group-num">
             <h1>你们的组号</h1>
-            <h1><?php echo $good[0]["id"]; ?></h1>
+            <h1><?php echo $good[0]["groudid"]; ?></h1>
          </div>
     <?php endif; ?>
     
