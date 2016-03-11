@@ -8,7 +8,7 @@
 $openid = $_GET['openid'];
 
 if(empty($openid)){
-    header("Location:index.php");
+   header("Location:index.php");
 };
 ?>
 <!DOCTYPE html>
@@ -97,7 +97,7 @@ if(empty($openid)){
 <div class="container">
 
     <div class="head-img">
-        <img src="http://7xp9p2.com1.z0.glb.clouddn.com/head2.jpg" width="100%" alt="">
+        <img src="http://7xp9p2.com1.z0.glb.clouddn.com/head3.jpg" width="100%" alt="">
     </div>
 
     
@@ -108,7 +108,7 @@ if(empty($openid)){
         <h3>探庐者大礼包一份</h3>
         <h3>……</h3>
         <h3>不止于此</h3>
-        <p>ps:本次活动需要两人一组报名<br/>只需其中一人报名即可,每人20元</p>
+        <p>ps:两人组队，一人报名，报名费共计40元</p>
 
     </section>
 
