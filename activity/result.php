@@ -1,3 +1,12 @@
+<?php
+
+require 'model/message.php';
+
+$openid = $_GET['openid'];
+$message = new Message();
+$good = $message->get($openid);
+$showpage = "http://www.casarover.com";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,20 +52,26 @@
     </div>
     <!-- 第一次进入 -->
     <?php
-        // 跳转到活动介绍的页面
-
+        header("Location:".$showpage);
     ?>
     <!-- 购买成功 -->
-<!--     <div class="group-num">
-        <h1>你们的组号</h1>
-        <h1>01</h1>
-    </div> -->
+    <?php if($good["status"] == 1): ?>
+         <div class="group-num">
+            <h1>你们的组号</h1>
+            <h1><?php echo $good["id"]; ?></h1>
+         </div>
+    <?php endif; ?>
     
     <!-- 如果没有支付 -->
-    <h3 style="text-align: center;">订单关闭（超时未付款）</h3>
-    <div class="weui_btn_area">
-        <a class="weui_btn weui_btn_primary" href="javascript:" id="showTooltips">去购买</a>
-    </div>
+    <?php
+        if($good["status"] == 0){
+            header("Location:person.php");
+        }
+    ?>
+<!--    <h3 style="text-align: center;">订单关闭（超时未付款）</h3>-->
+<!--    <div class="weui_btn_area">-->
+<!--        <a class="weui_btn weui_btn_primary" href="javascript:" id="showTooltips">去购买</a>-->
+<!--    </div>-->
 
     <div class="hd">
     <br>
