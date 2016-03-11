@@ -52,8 +52,9 @@ $showpage = "http://www.casarover.com";
     </div>
     <!-- 第一次进入 -->
     <?php
-    if(empty($openid)){
+    if( $openid == null){
         header("Location:".$showpage);
+        exit();
     }
     ?>
     <!-- 购买成功 -->
