@@ -6,7 +6,7 @@
 
 //
 $openid = $_GET['openid'];
-echo $openid;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,10 +49,44 @@ echo $openid;
             }
             if(phone.length != 11){
                 alert("请检查手机号是否正确");
+                return;
             }else{
                 //调支付操作，但是如果不能使用微信支付那么跳转到人工页面
-                window.location.href = 'person.php';
+                sedjson(phone);
             };
+        }
+        function sedjson(phone) {
+
+            var postData = {
+                "id": "<?php echo $openid; ?>",
+                "phone": phone
+            };
+
+            postData = (function(obj){
+                var str = "";
+                for(var prop in obj){
+                    str += prop + "=" + obj[prop] + "&"
+                }
+                return str;
+            })(postData);
+            var xhr = new XMLHttpRequest();
+             
+            xhr.open("POST", "./model/message.php", true);
+            xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function(){
+                var XMLHttpReq = xhr;
+                if (XMLHttpReq.readyState == 4) {
+                    if (XMLHttpReq.status == 200) {
+                        var text = XMLHttpReq.responseText;
+                        if(text == 'ok'){
+                            window.location.href = 'person.php';
+                        }else {
+                            alert('>_<');
+                        }
+                    }
+                }
+            };
+            xhr.send(postData);
         }
     </script>
 </head>
@@ -84,7 +118,7 @@ echo $openid;
     </div>
 
     <div class="weui_btn_area">
-        <a class="weui_btn weui_btn_primary" href="javascript:" id="pay" onclick="pay()">微信支付</a>
+        <a class="weui_btn weui_btn_primary" href="javascript:" id="pay" onclick="pay()">去支付</a>
     </div>
 </div>
 <!--<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>-->
