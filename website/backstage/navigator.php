@@ -23,7 +23,7 @@
                         aria-haspopup="true" aria-expanded="false">微信管理<span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="not_complete" href="<?php echo getBaseUrl()?>website/wechat/wechat_huge_pics_edit.php">轮播图</a></li>
+                    <li><a href="<?php echo getBaseUrl()?>activity/participate_list.php?status=0">游园会活动管理</a></li>
                     <li><a href="<?php echo getBaseUrl()?>website/wechat/wechat_series_list.php">探庐系列-子标题</a></li>
                     <li><a href="<?php echo getBaseUrl()?>website/wechat/wechat_article_list.php?type=1">探庐系列</a></li>
                     <li><a href="<?php echo getBaseUrl()?>website/wechat/wechat_article_list.php?type=2">民宿风采</a></li>

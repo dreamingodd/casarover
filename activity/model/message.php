@@ -71,4 +71,25 @@ class Message
         $result = $pre->fetchAll();
         return $result;
     }
+    public function getByStatus($status) {
+        $sql = "SELECT * FROM `activity_youyuan` where status=? ;";
+        $pre = $this->db->prepare($sql);
+        $pre->bindParam(1, $status);
+        $pre->execute();
+        $result = $pre->fetchAll();
+        rsort($result);
+        return $result;
+    }
+    /**
+     * update activity_youyuan's status depends on whether user pays the money.
+     * @param int $id
+     * @param int $status
+     */
+    public function updateStatus($id, $status) {
+        $sql = "update activity_youyuan set status = ? where id = ?;";
+        $pre = $this->db->prepare($sql);
+        $pre->bindParam(1, $status);
+        $pre->bindParam(2, $id);
+        return $pre->execute(); 
+    }
 }

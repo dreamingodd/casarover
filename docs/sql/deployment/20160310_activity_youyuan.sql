@@ -1,4 +1,5 @@
 use casarover;
+drop table if exists activity_youyuan;
 CREATE TABLE  activity_youyuan(
 `id` INT NOT NULL primary key auto_increment,
 `openid` VARCHAR( 64 ) NOT NULL unique,

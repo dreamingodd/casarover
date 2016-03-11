@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<?php $rand = rand(100,999);?>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen" />
 <link href="../backstage/css/all.css" rel="stylesheet" />
-<link href="css/wechat_backstage.css?rand=<?php echo $rand;?>" rel="stylesheet" />
+<link href="css/wechat_backstage.css" rel="stylesheet" />
 <script src="../js/integration/jquery.min.js"></script>
 <script src="../js/integration/bootstrap.min.js"></script>
 <script src="../js/integration/jquery.form.js"></script>
 <script src="../js/integration/json2.js"></script>
-<script src="../backstage/js/all.js?rand=<?php echo $rand;?>"></script>
+<script src="../backstage/js/all.js"></script>
 <title>探庐者后台-微信管理</title>
 </head>
 <body>
@@ -23,7 +22,7 @@
     <input type="hidden" id="page" value="wechat"/>
     <!-- nav bar end -->
 
-    
+
     <div class="options vertical5">
         <a href="wechat_article_edit.php?type=<?php echo $_GET['type']?>">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加微信文章
