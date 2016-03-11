@@ -99,6 +99,7 @@ if(empty($openid)){
     <div class="head-img">
         <img src="http://7xp9p2.com1.z0.glb.clouddn.com/head.jpg" width="100%" alt="">
     </div>
+
     
     <section>
         <h3>牛满汕无门槛50元代金券一张</h3>
