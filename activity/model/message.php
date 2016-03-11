@@ -79,9 +79,9 @@ class Message
         $sql = "update activity_youyuan set status = ? , groupid = ? where id = ?;";
         $pre = $this->db->prepare($sql);
         $pre->bindParam(1, $status);
-        $pre->bindColumn(2,$person_number);
+        $pre->bindParam(2,$person_number);
         $pre->bindParam(3, $id);
-        return $pre->execute(); 
+        return $pre->execute();
     }
 
 }
