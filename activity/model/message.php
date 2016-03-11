@@ -9,9 +9,6 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/common/PropertyMa
 
 
 
-//$message->get($openid);
-//$result = $message->getAll();
-//var_dump($result);
 class Message
 {
     private $db;
@@ -77,10 +74,14 @@ class Message
      * @param int $status
      */
     public function updateStatus($id, $status) {
-        $sql = "update activity_youyuan set status = ? where id = ?;";
+        $payarr = $this->getByStatus(1);
+        $person_number = count($payarr)+1;
+        $sql = "update activity_youyuan set status = ? , groupid = ? where id = ?;";
         $pre = $this->db->prepare($sql);
         $pre->bindParam(1, $status);
-        $pre->bindParam(2, $id);
+        $pre->bindColumn(2,$person_number);
+        $pre->bindParam(3, $id);
         return $pre->execute(); 
     }
+
 }

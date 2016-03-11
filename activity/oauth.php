@@ -4,6 +4,7 @@ require 'wxapi.php';
 require 'model/message.php';
 
 $code = $_GET['code'];
+$loc = $_GET['loc'];
 $wxapi = new WXapi();
 $openid = $wxapi->getOpenid($code);
 //echo $openid;
@@ -12,7 +13,7 @@ $message = new Message();
 $good = $message->get($openid);
 if($good)
 {
-   header("Location:result.php?openid=".$openid);
+   header("Location:result.php?openid=".$openid.'&loc='.$loc);
 }
 else
 {
