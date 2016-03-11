@@ -8,7 +8,7 @@
 $openid = $_GET['openid'];
 
 if(empty($openid)){
-    // header("Location:index.php");
+    header("Location:index.php");
 };
 ?>
 <!DOCTYPE html>
