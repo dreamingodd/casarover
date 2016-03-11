@@ -6,7 +6,7 @@
 
 //
 $openid = $_GET['openid'];
-
+echo $openid;
 ?>
 <!DOCTYPE html>
 <html lang="en">

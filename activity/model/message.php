@@ -6,6 +6,9 @@ $openid = $_POST['id'];
 $phone = $_POST['phone'];
 
 if($openid && $phone){
+    $message = new Message();
+    $data = array('openid' => $openid , 'phone' => $phone);
+    $message->save($data);
     echo "ok";
 }else{
     echo "error";
@@ -15,12 +18,10 @@ if($openid && $phone){
 //$phone = '13212312';
 
 
-$message = new Message();
-$data = array('openid' => $openid , 'phone' => $phone);
-//$message->save($data);
+
 //$message->get($openid);
-$result = $message->getAll();
-var_dump($result);
+//$result = $message->getAll();
+//var_dump($result);
 class Message
 {
     private $db;

@@ -10,6 +10,7 @@ $openid = $wxapi->getOpenid($code);
 //通过openid在数据库查询如果已经购买过跳转到购买成功的页面
 $message = new Message();
 $good = $message->get($openid);
+$openid = 'sdafa';
 if($good)
 {
    header("Location:result.php?openid=".$openid);
