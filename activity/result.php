@@ -6,7 +6,6 @@ $openid = $_GET['openid'];
 $message = new Message();
 $good = $message->get($openid);
 
-//对用户是否关注账号进行判断
 
 ?>
 <!DOCTYPE html>
@@ -61,9 +60,17 @@ $good = $message->get($openid);
     ?>
     <!-- 购买成功 -->
     <?php if($good[0]["status"] == 1): ?>
+        <?php
+        $loc = $_GET["loc"];
+        if($loc == null){
+            $page = 'http://mp.weixin.qq.com/s?__biz=MzI3MDA4NjAxNQ==&mid=401119888&idx=1&sn=b53c5bbbf6cf9117a78f4308c00af325#rd&ADUIN=744007114&ADSESSION=1451353714&ADTAG=CLIENT.QQ.5455_.0&ADPUBNO=26550';
+            header("Location:".$page);
+            exit();
+        }
+        ?>
          <div class="group-num">
             <h1>你们的组号</h1>
-            <h1><?php echo $good[0]["groudid"]; ?></h1>
+            <h1><?php echo $good[0]["groupid"]; ?></h1>
          </div>
     <?php endif; ?>
     
