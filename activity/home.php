@@ -7,6 +7,9 @@
 //
 $openid = $_GET['openid'];
 
+if(empty($openid)){
+    header("Location:index.php");
+};
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +74,7 @@ $openid = $_GET['openid'];
             })(postData);
             var xhr = new XMLHttpRequest();
              
-            xhr.open("POST", "./model/message.php", true);
+            xhr.open("POST", "./model/respose.php", true);
             xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
             xhr.onreadystatechange = function(){
                 var XMLHttpReq = xhr;
@@ -94,7 +97,7 @@ $openid = $_GET['openid'];
 <div class="container">
 
     <div class="head-img">
-        <img src="img/blq.png" width="100%" alt="">    
+        <img src="http://7xp9p2.com1.z0.glb.clouddn.com/blq.png" width="100%" alt="">
     </div>
 
     <div class="hd">

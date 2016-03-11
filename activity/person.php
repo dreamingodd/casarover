@@ -10,6 +10,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
+            padding-top: 1em;
         }
         .weui_cell{
             border-top: 1px solid #eee;
@@ -20,6 +21,7 @@
         }
         h3{
             margin-top: 5px;
+            text-align: center;
         }
         h3 span{
             font-size: 0.8em;
@@ -33,14 +35,28 @@
             width: 60%;
             margin:0 auto;
         }
+        .head-img{
+            width: 90%;
+            height: 100%;
+            overflow: hidden;
+            margin:0 auto;
+        }
+        p{
+            width: 90%;
+            margin:0 auto;
+            padding-left: 15px;
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <h3>请加小编为好友付款</h3>
     <div class="head-img">
-        <img src="img/blq.png" width="100%" alt="">
+        <img src="http://7xp9p2.com1.z0.glb.clouddn.com/198505975053684935.jpg" width="100%" alt="">
     </div>
+    <p>
+        小编确认后，在探庐者的公众号菜单中点击“者”查看你的组号
+    </p>
 </div>
 
 </body>
