@@ -6,7 +6,9 @@
 
 //
 $openid = $_GET['openid'];
-echo $openid;
+if(empty($openid)){
+    header("Location:index.php");
+};
 ?>
 <!DOCTYPE html>
 <html lang="en">
