@@ -30,6 +30,7 @@
             <th>序号</th>
             <th>手机号</th>
             <th>操作</th>
+            <th>组号</th>
         </tr>
     <?php
     $dao = new Message();
@@ -54,6 +55,9 @@
                     <button type="button" class="btn btn-xs btn-info">确认付款</button>
                 </a>
                 <?php }?>
+            </td>
+            <td>
+                <?php echo $item['groupid']; ?>
             </td>
         </tr>
     <?php 
