@@ -7,7 +7,7 @@
     <meta name="keywords" content="民宿,杭州,周末,去哪玩">
     <meta name="description" content="找到好民宿">
     <title>{民宿的名字}-民宿</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
     <!--[if lt IE 9]>
     <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -22,7 +22,7 @@
         <!-- logo -->
         <div class="nav-left">
             <a href="#">
-                <img src="images/logo.png" alt="logo">
+                <img src="../assets/images/logo.png" alt="logo">
             </a>
         </div>
         <div class="nav-middle">
@@ -40,7 +40,7 @@
     <!-- 民宿大图  -->
     <div class="head-photo">
         <div class="cover-photo">
-            <img src="images/head.png" width="100%" alt="">
+            <img src="../assets/images/head.png" width="100%" alt="">
         </div>
         <div class="show-mess">
             <!-- <div class="mark">浏览233</div> -->

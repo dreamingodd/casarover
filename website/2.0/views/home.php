@@ -7,7 +7,7 @@
     <meta name="keywords" content="民宿,杭州,周末,去哪玩">
     <meta name="description" content="找到好民宿">
     <title>探庐者-民宿</title>
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
     <!--[if lt IE 9]>
     <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -23,7 +23,7 @@
         <!-- logo -->
         <div class="nav-left">
             <a href="#">
-                <img src="assets/images/logo.png" alt="logo">
+                <img src="../assets/images/logo.png" alt="logo">
             </a>
         </div>
         <div class="nav-middle">
@@ -85,7 +85,7 @@
             <div class="item">
                 <div class="item-a">
                     <a href="">
-                        <img src="assets/images/fang.jpg" height="100%">
+                        <img src="../assets/images/fang.jpg" height="100%">
                         <div class="card">
                             <h3>花千谷</h3>
                         </div>
@@ -105,7 +105,7 @@
                 <div class="item">
                     <div class="item-b">
                     <a href="">
-                        <img src="assets/images/fang.jpg" height="100%">
+                        <img src="../assets/images/fang.jpg" height="100%">
                         <div class="card">
                             <h3>花千谷</h3>
                         </div>
