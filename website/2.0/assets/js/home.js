@@ -29,6 +29,7 @@ $(document).ready(function(){
 
         }
     })
+
     var theme = new Vue({
         el: '#theme',
         data: function () {
@@ -39,17 +40,12 @@ $(document).ready(function(){
 
         created: function () {
             vm = this;
-            // $("#test").click(function () {
-            //     $.getJSON('http://localhost/casarover/website/2.0/api/test.php',function (tests) {
-            //         vm.items = tests;
-            //     }.bind(vm));
-            // })
-            // console.log($(document.body).outerHeight(true));
         },
 
         methods: {
             turn: function (event){
-                $.getJSON('api/home.php?c=recom',function (tests) {
+                console.log(event);
+                $.getJSON('http://localhost/casarover/website/2.0/api/home.php',function (tests) {
                     vm.items = tests;
                     //console.log(tests);
                     // window.scrollTo(0,document.body.clientHeight);
@@ -81,22 +77,4 @@ $(document).ready(function(){
         }
     })
 
-    var example = new Vue({
-      el: '#example',
-      data: {
-        a: 1
-      },
-      created: function(){
-        console.log(this.b);
-        this.a = 2;
-        console.log(this.b);
-      },
-      computed: {
-        // 一个计算属性的 getter
-        b: function () {
-          // `this` 指向 vm 实例
-          return this.a + 1
-        }
-      }
-    })
 })

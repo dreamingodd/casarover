@@ -1,22 +1,24 @@
 $(function () {
-    $("#true-name").val($("#name").val());
-    var pic_name = $("#preview-head").children().attr("name");
-    $("#true-headpic").val(pic_name);
-
+    // 名字
+    var name = $("#name").val();
+    $("#true-name").val(name);
     // 防止后退数据不刷新
     $("#true-somepic").val('');
+    // 提交之前对真实数据进行更新
     $("#submit_btn").click(function () {
-        $("#true-name").val($("#name").val());
-        // 对四张图片进行收集
+        var head_pic_name = $("#preview-head input").val();
+        $("#true-headpic").val(head_pic_name);
+        // 四张图片
         var picdata ='';
-        $("#preview").children('img').each(function() {
-            var data = $(this).attr("name");
+        $("#some-pic").children('input').each(function() {
+            var data = $(this).val();
             picdata = picdata + data + ';';
         });
         $("#true-somepic").val(picdata);
         var recommendCasas = getRecommendCasaIdsAsStr();
         $("#recommendCasas").val(recommendCasas);
     });
+
     $('body').on('click','.del', function() {
         $(this).next().remove();
         $(this).remove();

@@ -32,11 +32,11 @@ class Home{
 //传入城市的名称
     public function recom($city)
     {
-        $sql = "SELECT *  `activity_` (`openid`, `phone`) VALUES (?, ?);";
-        $pre = $this->db->prepare($sql);
-        $pre->bindParam(1,$city);
-        $result = $pre->execute();
-        return $result;
+        // $sql = "SELECT *  `activity_` (`openid`, `phone`) VALUES (?, ?);";
+        // $pre = $this->db->prepare($sql);
+        // $pre->bindParam(1,$city);
+        // $result = $pre->execute();
+        // return $result;
         //通过$city 对城市是数据进行查询
         $title = '花千谷';
         $shortMess = '这个是对民宿的一句话介绍';
