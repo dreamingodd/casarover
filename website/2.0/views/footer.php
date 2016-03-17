@@ -1,7 +1,7 @@
 <footer>
     <div class="message">
         <div class="pic">
-            <img src="assets/images/qcode.jpg" height="100%" alt="二维码">
+            <img src="../assets/images/qcode.jpg" height="100%" alt="二维码">
         </div>
     </div>
     <div class="message">

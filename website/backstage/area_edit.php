@@ -12,13 +12,16 @@ $rand = rand(100, 999);
 <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="//cdn.bootcss.com/jquery.form/3.51/jquery.form.min.js"></script>
+<script src="../js/integration/require.min.js" data-main="js/OssPhotoUploader.js"></script>
 <script src="js/jquery.wallform.js"></script>
 <script src="js/area_edit.js?rand=<?php echo $rand;?>"></script>
 </head>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/controllers/check_admin_login_action.php';?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/models/AreaDao.php';?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/models/CasaDao.php';?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/common/PropertyManager.php';?>
 <?php
+    $pm = new PropertyManager();
     require_once '../../application/controllers/AreaController.php';
     $area = new AreaController();
     $message = $area->index();
@@ -36,26 +39,23 @@ $rand = rand(100, 999);
         <div class="photo">
             <h3>标题大图</h3>
             <span class="reminder">上传一张图(图片宽高比必须在3:1以上)</span>
-            <div class="uppic">
-                <form id="imageform-head" method="post" enctype="multipart/form-data" action="upload.php">
-                    <div id="up_btn-head" class="btn">
-                        <a href="#" class="btn btn-default">
-                        <?php
-                        if ($_GET['area_id']) {
-                            echo "更换图片";
-                        } else {
-                            echo "选择图片";
-                        }
-                        ?>
-                        <input id="photoimghead" type="file" name="photoimg" value="浏览" />
-                        </a>
-                    </div>
-                </form>
-                <div id="preview-head">
-                    <?php if(!empty($message->title_img)): ?>
-                    <img src="../../../photo/<?php echo $message->title_img;?>" alt="" name="<?php echo $message->title_img; ?>" class="preview"></div>
-                    <?php endif?>
+
+            <!-- OSS start -->
+            <div class="oss_photo_tool col-lg-12 clearfix" target_folder="casa" file_prefix="area" limit_size="1024"
+                 oss_address="<?php echo $pm->getProperty("oss_external")?>">
+                <div class="oss_button">
+                    <button class="show_uploader btn btn-primary btn-sm">插入图片</button>
+                </div>
+                <div class="oss_hidden_input" id="preview-head">
+                    <?php
+                    if (!empty($message->title_img)) {
+                        echo '<input type="hidden"  class="hidden_photo" value="'.$message->title_img.'"/>';
+                    }
+                    ?>
+                </div>
+                <div class="oss_photo"></div>
             </div>
+            <!-- OSS end -->
             <h3>区域名</h3>
         <input type="text" class="form-control" id="name" name="name" value="<?php echo $message->name?>" />
         </div>
@@ -64,22 +64,22 @@ $rand = rand(100, 999);
     <p>上传四张图片</p>
     <p>最佳尺寸520*325</p>
     <div class="uppic">
-        <form id="imageform" method="post" enctype="multipart/form-data" action="upload.php">
-            <div id="up_btn" class="btn">
-                <a href="#" class="btn btn-default">
-                    添加图片
-                    <input id="photoimg" type="file" name="photoimg" value="浏览" />
-                </a>
+        <!-- OSS start -->
+        <div class="oss_photo_tool col-lg-12 clearfix" target_folder="casa" file_prefix="area" limit_size="1024"
+             oss_address="<?php echo $pm->getProperty("oss_external")?>">
+            <div class="oss_button">
+                <button class="show_uploader btn btn-primary btn-sm">插入图片</button>
             </div>
-            <div class="btn" id="del">删除图片</div>
-        </form>
-        <div id="preview">
-            <?php if(!empty($message->content_img)):?>
-                <?php foreach ($message->content_img as $value): ?>
-                    <img src="../../../photo/<?php echo $value?>" name="<?php echo $value ?>" alt="" class="preview">
-                <?php endforeach; ?>
-            <?php endif?>
+            <div class="oss_hidden_input" id="some-pic">
+                <?php
+                foreach ($message->content_img as $photo_name) {
+                    echo '<input type="hidden" class="hidden_photo" value="'.$photo_name.'"/>';
+                }
+                ?>
+            </div>
+            <div class="oss_photo"></div>
         </div>
+        <!-- OSS end -->
     </div>
     <p style="color:red">每段最佳字数230</p>
     <!-- start -->

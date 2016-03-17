@@ -7,7 +7,7 @@
     <meta name="keywords" content="民宿,杭州,周末,去哪玩">
     <meta name="description" content="找到好民宿">
     <title>{区域的名字}-民宿</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
     <!--[if lt IE 9]>
     <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -20,7 +20,7 @@
         <!-- logo -->
         <div class="nav-left">
             <a href="#">
-                <img src="images/logo.png" alt="logo">
+                <img src="../assets/images/logo.png" alt="logo">
             </a>
         </div>
         <div class="nav-middle">
@@ -38,7 +38,7 @@
     <!-- 民宿大图  -->
     <div class="head-photo">
         <div class="cover-photo">
-            <img src="images/head.png" width="100%" alt="">
+            <img src="../assets/images/head.png" width="100%" alt="">
         </div>
         <div class="guide-mess">
             <h1>白乐桥</h1>
@@ -62,7 +62,7 @@
         <?php for($i=0;$i<4;$i++): ?>
             <div class="place-item">
                 <div class="place-img">
-                    <img src="images/fang.png" wdith="100%;" alt="">
+                    <img src="../assets/images/fang.png" wdith="100%;" alt="">
                 </div>
                 <div class="place-mess">
                     <h2>灵隐寺</h2>
@@ -79,7 +79,7 @@
         <div class="item">
             <div class="item-c">
             <a href="">
-                <img src="images/fang.jpg" height="100%">
+                <img src="../assets/images/fang.jpg" height="100%">
                 <div class="card">
                     <h3>花千谷</h3>
                 </div>
@@ -96,7 +96,7 @@
         <div class="item">
             <div class="item-d">
             <a href="">
-                <img src="images/fang.jpg" height="100%">
+                <img src="../assets/images/fang.jpg" height="100%">
                 <div class="card">
                     <h3>花千谷</h3>
                 </div>
@@ -113,7 +113,7 @@
         <div class="item">
             <div class="item-d">
             <a href="">
-                <img src="images/fang.jpg" height="100%">
+                <img src="../assets/images/fang.jpg" height="100%">
                 <div class="card">
                     <h3>花千谷</h3>
                 </div>
@@ -130,7 +130,7 @@
         <div class="item">
             <div class="item-c">
             <a href="">
-                <img src="images/fang.jpg" height="100%">
+                <img src="../assets/wimages/fang.jpg" height="100%">
                 <div class="card">
                     <h3>花千谷</h3>
                 </div>

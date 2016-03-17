@@ -3,9 +3,9 @@
 require 'model/message.php';
 
 $openid = $_GET['openid'];
+//$openid = '123';
 $message = new Message();
 $good = $message->get($openid);
-
 
 ?>
 <!DOCTYPE html>
@@ -62,6 +62,7 @@ $good = $message->get($openid);
     <?php if($good[0]["status"] == 1): ?>
         <?php
         $loc = $_GET["loc"];
+//        $loc = 1;
         if($loc == null){
             $page = 'http://mp.weixin.qq.com/s?__biz=MzI3MDA4NjAxNQ==&mid=401119888&idx=1&sn=b53c5bbbf6cf9117a78f4308c00af325#rd&ADUIN=744007114&ADSESSION=1451353714&ADTAG=CLIENT.QQ.5455_.0&ADPUBNO=26550';
             header("Location:".$page);
@@ -86,17 +87,23 @@ $good = $message->get($openid);
 <!--    </div>-->
 
     <div class="hd">
-    <br>
-        <h1 class="page_title">游园福利</h1>
+    <h3 style="text-align: center">
+        活动时间：3月20号13:00—18:00
+        <br/>
+        活动地点：杭州市西湖区白乐桥306号
+        <br/>
+        小编等你参加闯关赢免费房哦~
+    </h3>
     </div>
 
     <section>
-        <h3>牛满汕无门槛50元代金券一张</h3>
-        <h3>水晶城折叠伞一把</h3>
-        <h3>有茶出沫全城通用奶茶券2张</h3>
-        <h3>探庐者大礼包一份</h3>
-        <h3>……</h3>
-        <h3>不止于此</h3>
+        <p>来就送</p>
+        <p>牛满汕无门槛50元代金券一张</p>
+        <p>水晶城折叠伞一把</p>
+        <p>有茶出沫全城通用奶茶券2张</p>
+        <p>探庐者大礼包一份</p>
+        <p>……</p>
+        <p>不止于此</p>
     </section>
 </div>
 
