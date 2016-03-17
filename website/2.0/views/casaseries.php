@@ -8,7 +8,7 @@
     <meta name="description" content="找到好民宿">
     <title>探庐者-民宿</title>
     <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="add.css">
+    <link rel="stylesheet" href="../assets/css/casaseries.css">
     <!--[if lt IE 9]>
     <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -17,7 +17,7 @@
     <script src="../assets/js/integration/jquery.flexslider-min.js" type="text/javascript"></script>
     <script src="../assets/js/home.js" type="text/javascript"></script>
     <script src="../assets/js/vue.js" type="text/javascript"></script>
-    <script src="add.js" type="text/javascript"></script>
+    <script src="../assets/js/casaseries.js" type="text/javascript"></script>
 </head>
 <body>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/casarover/application/models/AttachmentDao.php';?>
@@ -63,7 +63,7 @@ $article_rows = $waDao->getByType($type, $series);
                     while ($row = mysql_fetch_array($series_list)) {
                         if ($row['type'] == 1) {
                     ?>
-                            <dd><a href="tanlu.php?type=1&series=<?php echo $row['id']?>"><?php echo $row['name']?></a>
+                            <dd><a href="casaseries.php?type=1&series=<?php echo $row['id']?>"><?php echo $row['name']?></a>
                             </dd>
                     <?php
                         }
