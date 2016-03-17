@@ -86,3 +86,14 @@
         </div>
     </div>
 </nav>
+<!-- 百度统计代码，为了能够所有页面都能访问，所以放在这个奇怪的位置 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?4f26b22fbfe63c2ca0935f07dc6159ca";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+

@@ -170,17 +170,6 @@ $picdir = 'http://casarover.oss-cn-hangzhou.aliyuncs.com/casa/';
         <img src="http://casarover.oss-cn-hangzhou.aliyuncs.com/image/logo.png" alt="">
     </div>
 <?php include 'footer.php';?>
-<script>
-// 统计代码
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?46316c8916d01d1ff13d37426a37a464";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
 </div>
 </body>
 </html>
